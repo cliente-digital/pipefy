@@ -1,0 +1,26 @@
+{
+    "name": "clientedigital/pipefy",
+    "description": "A Pipefy API wrapper that uplift productivity of newcomers to graphQL tech.",
+    "type": "library",
+    "license": "Apache 2.0",
+    "keywords":["graphql", "pipefy"],
+    "autoload": {
+        "psr-4": {
+            "Clientedigital\\Pipefy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ivo Nascimento",
+            "email": "iannsp@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "scripts": {
+        "pipefy:config":"@php config.php"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
