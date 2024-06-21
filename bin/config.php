@@ -1,12 +1,6 @@
 <?php
 
-const ROOT_PATH =  __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR; 
-const  PIPEFY_CONFIG_PATH = ROOT_PATH . ".pipefy";
-const PIPEFY_CONFIG_PARAMS = ["APIKEY"=>null];
-
-require  ROOT_PATH. "vendor" . DIRECTORY_SEPARATOR . "autoload.php";
-
-
+require __DIR__ . DIRECTORY_SEPARATOR . "header.php";
 
 if($argc == 1){
     show();
@@ -38,16 +32,16 @@ function create(array $params = [])
 }
 
 function write(string $key, string $value) {
-
+    $config = get();
     if(!in_array($key, array_keys(PIPEFY_CONFIG_PARAMS)))
     {
         echo PHP_EOL. "{$key} is not a valid pipefy config.".PHP_EOL;
         show();
         exit(0);
     }
-    $config = get();
     $config[$key] = $value;
     create($config);
+    echo "\nyour {$key} was set.".PHP_EOL;
     show();
 }
 function show(): void
