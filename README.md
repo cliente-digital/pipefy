@@ -39,3 +39,13 @@ command bellow:
 composer pipefy:config APIKEY 'seu token aqui'
 ```
 your APIKEY was set.
+
+Next step is build your organization schema so you can operate over this using this package.
+
+```
+composer pipefy:schema build 
+```
+your organization schema was build.
+
+
+
