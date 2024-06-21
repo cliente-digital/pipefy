@@ -2,7 +2,7 @@
     "name": "clientedigital/pipefy",
     "description": "A Pipefy API wrapper that uplift productivity of newcomers to graphQL tech.",
     "type": "library",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "keywords":["graphql", "pipefy"],
     "autoload": {
         "psr-4": {
