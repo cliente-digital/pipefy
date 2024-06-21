@@ -32,7 +32,7 @@ your use cases.
 
 ### How to start
 As soon you require the package the first action is configure it to access you organization.
-You gonna need an [Personal Access Token(https://app.pipefy.com/tokens/) and then execute the 
+You gonna need an [Personal Access Token](https://app.pipefy.com/tokens/) and then execute the 
 command bellow:
 
 ```

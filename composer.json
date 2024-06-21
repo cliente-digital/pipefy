@@ -22,7 +22,8 @@
         "guzzlehttp/psr7": "^2.6"
     },
     "scripts": {
-        "pipefy:config":"@php config.php"
+        "pipefy:config":"@php config.php",
+        "pipefy:schema":"@php schema.php"
     },
     "config": {
         "bin-dir": "bin/"

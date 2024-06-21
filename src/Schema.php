@@ -14,7 +14,13 @@ class Schema
 
     public function build(): void
     {
-        $schema = $this->client->exec( $this->getGQL("schema.build"));
+        $schema = $this->client->request( 
+            $this->getGQL("schema.build")
+        );
         $this->setCache("schema", $schema);
+    }
+    public function report(): string
+    {
+
     }
 }
