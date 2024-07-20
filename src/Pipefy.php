@@ -7,6 +7,7 @@ class Pipefy
 {
     use GraphQL;
 
+    private static int $lastrequestTimestamp = 0;
     private array $config; 
     private Client $http; 
 
@@ -28,17 +29,32 @@ class Pipefy
             'content-type' => 'application/json',
           ],
         ]);
+
         return json_decode(
             $response->getBody(),
             null,
             512,
             JSON_UNESCAPED_UNICODE
         );
+
     }
 
     public function getConfig($name): string
     {
         if (!in_array($name, array_keys($this->config)))
             throw new \Exception("Invalid Config Key {$name}");
+    }
+
+    private static function RequestLimitCoordination()
+    {
+        // todo
+        // rate limit = 500 request / 30 segundos.
+        $now = new \DateTime();
+
+        if (self::$lastrequestTimestamp == 0) {
+            self::$lastrequestTimestamp == $now->getTimestamp();
+            return;
+        }
+        
     }
 }

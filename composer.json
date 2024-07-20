@@ -23,7 +23,13 @@
     },
     "scripts": {
         "pipefy:config":"@php config.php",
-        "pipefy:schema":"@php schema.php"
+        "pipefy:schema":"@php schema.php",
+        "pipefy:report":"@php report.php"
+    },
+    "scripts-descriptions":{
+        "pipefy:config":"Parametriza sua conta Pipefy e opções de operação do pacote.",
+        "pipefy:schema":"Realize Operações sobre o schema de dados.",
+        "pipefy:report":"Gera Relatórios."
     },
     "config": {
         "bin-dir": "bin/"
