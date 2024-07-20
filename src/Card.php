@@ -1,48 +1,25 @@
 <?php
 namespace Clientedigital\Pipefy;
-use Clientedigital\Pipefy\Card\All;
+use Clientedigital\Pipefy\Graphql\Card\One;
 
 class Card 
 {
-    use GraphQL;
+    private int $id;
+    private ?Entity\Card $card=null;
 
-    private Pipefy $client;
-    private array $filter = [];
-
-    public function __construct()
+    public function __construct(int $id)
     {
-        $this->client = new Pipefy;
+        $this->id = $id;
     }
 
-    private function build(): void
+    public function load(){
+        return (new One($this->id))->get(); 
+    }
+
+    public function get()
     {
-        $schema = $this->client->request( 
-            $this->getGQL("card.build")
-        );
-        $this->setCache("schema", $schema);
-    }
-
-    public function search(int $pipeId){
-
-    }
-
-    public function all($pipeId, $cached = false)
-    {
-        if ($cached) {
-            $all = $this->getCache("pipe-{$pipeId}.cards");
-        } else {
-            $allcards= new All();
-            $all = $allcards->get($pipeId);
-        }
-
-        $cards = [];
-         foreach($all as $node){
-            $cards[] = new Entity\Card($node->node);
-        }
-        return $cards;
- 
-    }
-    public function filter($dataName, $dataValue, $op='EQ'){
-
+        if(is_null($this->card))
+            $this->card = $this->load();
+        return $this->card;
     }
 } 

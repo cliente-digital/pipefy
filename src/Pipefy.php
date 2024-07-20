@@ -5,12 +5,12 @@ use \GuzzleHttp\Client;
 
 class Pipefy 
 {
-    use GraphQL;
 
+    final public const CACHED= true;
+    final public const UNCACHED= false;
     private static int $lastrequestTimestamp = 0;
     private array $config; 
     private Client $http; 
-
 
     public function __construct()
     {

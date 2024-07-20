@@ -1,7 +1,8 @@
 <?php
-namespace Clientedigital\Pipefy\Card;
-use Clientedigital\Pipefy\GraphQL;
+
+namespace Clientedigital\Pipefy\Graphql\Card;
 use Clientedigital\Pipefy\Pipefy;
+use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
 class All 
@@ -12,13 +13,17 @@ class All
     private int $pipeId;
     private array $filter = [];
 
-    public function __construct()
+    public function __construct(int $pipeId)
     {
         $this->client = new Pipefy;
+        $this->pipeId = $pipeId;
     }
 
-    public function get(int $pipeId){
-        $this->pipeId = $pipeId;
+    public function get(){
+        return $this->load($this->pipeId);
+    }
+
+    private function load(int $pipeId){
         $page = $this->firstPage();
         $pageInfo = $page->data->allCards->pageInfo; 
         while($pageInfo->hasNextPage){
@@ -33,7 +38,13 @@ class All
 
         }
         $this->setCache("pipe-{$pipeId}.cards", $page->data->allCards->edges);
-        return $page->data->allCards->edges;
+        $all = $page->data->allCards->edges;
+        $cards = [];
+         foreach($all as $card){
+            $cards[] = new Entity\Card($card->node);
+        }
+        return $cards;
+
     }
 
     private function firstPage(){

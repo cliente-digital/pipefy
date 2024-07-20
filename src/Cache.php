@@ -1,6 +1,6 @@
 <?php
 namespace Clientedigital\Pipefy;
-use Clientedigital\Pipefy\Card\All;
+use Clientedigital\Pipefy\Graphql\GraphQL;
 
 class Cache 
 {

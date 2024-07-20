@@ -1,5 +1,5 @@
 <?php
-namespace Clientedigital\Pipefy;
+namespace Clientedigital\Pipefy\Graphql;
 
 Class GQL{
     
