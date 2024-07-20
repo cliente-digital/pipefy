@@ -39,6 +39,20 @@ function write(string $key, string $value) {
         show();
         exit(0);
     }
+    if($key == 'APIKEY' && get()['APIKEY']!=""){
+        $canclearCache = readline(PHP_EOL . "Trocar a chave remove todo o cache de dados. Continuar? [Y/n]");
+        if($canclearCache =='n'){
+            echo PHP_EOL . "ApiKey não foi trocada." . PHP_EOL
+                . "O Cache não foi removido." . PHP_EOL;
+            exit(0);
+        }
+        $config[$key] = $value;
+        create($config);
+        echo "\nyour {$key} was set.".PHP_EOL;
+        (new Clientedigital\Pipefy\Cache())->clearCache(Clientedigital\Pipefy\Cache::CACHE_ALL);
+ 
+     
+    }
     $config[$key] = $value;
     create($config);
     echo "\nyour {$key} was set.".PHP_EOL;
