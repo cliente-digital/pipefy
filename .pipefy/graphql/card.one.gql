@@ -1,7 +1,5 @@
 {
-  allCards(pipeId: _PIPEID_ ,first:50, after: "_ENDCURSOR_") {
-    edges {
-      node {
+  card(id:_CARDID_){
         id
         title
     due_date
@@ -15,15 +13,15 @@
       }
     }
 
-        labels{
-            id
-            name
-        }
+    labels {
+      id
+      name
+    }
     fields {
       field {
         id
         type
-				internal_id
+        internal_id
       }
       name
       value
@@ -52,14 +50,6 @@
           }
         }
       }
-    }
-
-  } 
-    }
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
-  } 
+  }
 }
-
+}

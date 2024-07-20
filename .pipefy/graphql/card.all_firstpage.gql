@@ -3,6 +3,22 @@
     edges {
       node {
         id
+        title
+    due_date
+    overdue
+    comments{
+      id
+      created_at
+      text
+      author {
+        id
+      }
+    }
+
+        labels{
+            id
+            name
+        }
     fields {
       field {
         id
