@@ -1,9 +1,11 @@
 <?php
 namespace Clientedigital\Pipefy\Report;
 
+use Clientedigital\Pipefy\Graphql\GraphQL;
+
 class Schema
 {
-    use \Clientedigital\Pipefy\GraphQL;
+    use GraphQL;
 
     private array $organizations=['# Organizações'];
     private array $pipes=[];
@@ -18,6 +20,7 @@ class Schema
         $this->organizations($organizations);
 
         return implode("\n", array_merge(
+            ["Relatório Gerado em ".(new \Datetime())->format("d/m/Y H:i")."  \\".PHP_EOL],
             $this->organizations,
             $this->pipes,
         )); 
@@ -70,19 +73,27 @@ class Schema
             $deleted = $field->deleted==1 ? "SIM" : "NÃO";
             $type = $field->type;
            $pipes[] = 
-                "Id: ```{$field->id}```
+
+
+                "Id: ```{$field->id}``` <br />
 ".
                 "Rótulo: ```{$field->label}```
+
 ".
                 "Tipo: ```{$type}```
+
 ".
                 "Opções: ```{$options} ```
+
 ".
                 "Editavel: ```{$editable}```
+
 ".
                 "Obrigatório: ```{$required}```
+
 ".
-                "Apagado: ```{$deleted}```
+                "Apagado: ```{$deleted}``` \
+
 ";
         }
         $pipes[] = "";
@@ -111,7 +122,8 @@ class Schema
     {
         $report= ["### Campos da Fase {$phase->name}"];
         if(count($phase->fields)==0)
-        $report[] = " Essa fase não tem campos.";
+        $report[] = " Essa fase não tem campos. \ 
+";
         else {
        foreach($phase->fields as $field) {
             $options = implode(", ", $field->options);
@@ -121,19 +133,28 @@ class Schema
             $deleted = $field->deleted==1 ? "SIM" : "NÃO";
             $type = $field->type;
            $report[] = 
+
+
                 "Id: ```{$field->id}```
+
 ".
                 "Rótulo: ```{$field->label}```
+
 ".
                 "Tipo: ```{$type}```
+
 ".
                 "Opções: ```{$options} ```
+
 ".
                 "Editavel: ```{$editable}```
+
 ".
                 "Obrigatório: ```{$required}```
+
 ".
-                "Apagado: ```{$deleted}```
+                "Apagado: ```{$deleted}``` \
+
 ";
         }
         }
