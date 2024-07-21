@@ -21,6 +21,8 @@ class Pipefy
     public function request(string $gql): Object
     {
         $normalizedgql = str_replace(["\t", "\n"], " " , $gql);
+        $normalizedgql = str_replace(['"'], '\"' , $normalizedgql);
+
         $response = $this->http->request('POST', PIPEFY_API_URI, [
           'body' => "{\"query\":\"{$normalizedgql}\"}",
           'headers' => [
