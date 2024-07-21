@@ -11,12 +11,14 @@ class All
 
     private Pipefy $client;
     private int $pipeId;
+    private string $search;
     private array $filter = [];
 
-    public function __construct(int $pipeId)
+    public function __construct(int $pipeId, string $search="")
     {
         $this->client = new Pipefy;
         $this->pipeId = $pipeId;
+        $this->search = $search;
     }
 
     public function get(){
@@ -25,20 +27,20 @@ class All
 
     private function load(int $pipeId){
         $page = $this->firstPage();
-        $pageInfo = $page->data->allCards->pageInfo; 
+        $pageInfo = $page->data->cards->pageInfo; 
         while($pageInfo->hasNextPage){
             $nextPage = $this->nextPage($pageInfo->endCursor);
-            $page->data->allCards->edges = array_merge
+            $page->data->cards->edges = array_merge
                 (
-                    $page->data->allCards->edges,
-                    $nextPage->data->allCards->edges
+                    $page->data->cards->edges,
+                    $nextPage->data->cards->edges
                 );
             usleep(700);
-            $pageInfo = $nextPage->data->allCards->pageInfo; 
+            $pageInfo = $nextPage->data->cards->pageInfo; 
 
         }
-        $this->setCache("pipe-{$pipeId}.cards", $page->data->allCards->edges);
-        $all = $page->data->allCards->edges;
+        $this->setCache("pipe-{$pipeId}.cards", $page->data->cards->edges);
+        $all = $page->data->cards->edges;
         $cards = [];
          foreach($all as $card){
             $cards[] = new Entity\Card($card->node);
@@ -51,6 +53,7 @@ class All
         $cards = [];
         $gql = $this->getGQL("card.all_firstpage");
         $gql->set("PIPEID", $this->pipeId);
+        $gql->set("SEARCH", $this->search);
         $gqlscript = $gql->script();
         $gqlResult = $this->client->request($gqlscript);
         return $gqlResult;
@@ -60,6 +63,7 @@ class All
         $cards = [];
         $gql = $this->getGQL("card.all_nextpage");
         $gql->set("PIPEID", $this->pipeId);
+        $gql->set("SEARCH", $this->search);
         $gql->set("ENDCURSOR", $nextCursor);
         $gqlscript = $gql->script();
         return $this->client->request($gqlscript);

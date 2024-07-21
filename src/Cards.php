@@ -2,6 +2,7 @@
 namespace Clientedigital\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Graphql\Card\All;
+use Clientedigital\Pipefy\Filter;
 
 class Cards
 {
@@ -9,19 +10,21 @@ class Cards
 
     private Pipefy $client;
     private int $pipeId=0;
-    private array $filter = [];
+    private bool $cached= Pipefy::UNCACHED;
     private array $cards = [];
+    private Filter\FilterInterface $filter;
 
     public function __construct(int $pipeId, $cached = Pipefy::UNCACHED)
     {
         $this->pipeId = $pipeId;
         $this->client = new Pipefy;
-        $this->load($cached);
+        $this->cached = $cached;
+        $this->filter = new Filter\Cards();
     }
 
-    private function load(bool $cached)
+    private function load()
     {
-        if ($cached) {
+        if ($this->cached) {
             $all = $this->getCache("pipe-{$this->pipeId}.cards");
             $cards = [];
              foreach($all as $node){
@@ -29,21 +32,22 @@ class Cards
             }
             $this->cards = $cards;
         } else {
-            $allcards= new All($this->pipeId);
+            $allcards= new All($this->pipeId, $this->filter->script());
             $this->cards = $allcards->get();
         }
     }
 
     public function get(){
+        $this->load();
         foreach($this->cards as $card){
+            if(!$this->filter->check($card))
+                continue;
             yield $card;
         }
     }
 
-    public function filter($dataName, $dataValue, $op='EQ'){
-        $cards = $this->get();
-        foreach($cards as $card){
-            //if
-        }
+    public function filter(Filter\Cards $filter)
+    {
+        $this->filter = $filter;
     }
 } 
