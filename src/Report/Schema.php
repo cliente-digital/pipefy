@@ -52,6 +52,7 @@ class Schema
 
        foreach($organization->pipes as $pipe) {
             $report[] = "### {$pipe->name}";
+            $report = array_merge($report, $this->labels($pipe));
             $report = array_merge($report, $this->phases($pipe));
             $report = array_merge($report, $this->startForm($pipe));
         }
@@ -159,6 +160,20 @@ class Schema
         }
         }
         return $report;
+    }
+
+    private function labels(object $pipe)
+    {
+        $labels= [''];
+        $labels[] = "#### Labels";
+        $labels[] = "| ID | Name| Color|";
+        $labels[] = "|:--:|:----:|:----:|"; 
+ 
+       foreach($pipe->labels as $label) {
+           $code = str_replace("#", "", $label->color);
+           $labels[] = "| {$label->id}| {$label->name}| ![{$label->color}](https://placehold.co/10x10/{$code}/{$code}.png) `{$label->color}`|"; 
+        }
+         return $labels;
     }
 
 

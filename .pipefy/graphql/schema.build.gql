@@ -4,10 +4,15 @@
     name
     createdAt
     pipes {
-     	id
-			name
-			start_form_fields{
-        id	
+        id
+      	labels{
+          id
+          name
+					color
+        }
+            name
+            start_form_fields{
+        id
         label
         type
         options
@@ -15,18 +20,18 @@
         deleted
         required
       }
-			phases{
+            phases{
         id
         name
-				description
-				index
+                description
+                index
         fields{
           id
           label
           type
           options
           editable
-					deleted
+                    deleted
           required
         }
       }
