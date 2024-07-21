@@ -1,5 +1,5 @@
 {
-  allCards(pipeId: _PIPEID_, first:50) {
+  cards(pipe_id: _PIPEID_, first:50 _SEARCH_) {
     edges {
       node {
         id
