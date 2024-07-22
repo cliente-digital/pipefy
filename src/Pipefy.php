@@ -18,15 +18,12 @@ class Pipefy
         $this->http   = new Client();
     }
 
-    public function request(string $gql): Object
+    public function request(string $gqlscript): Object
     {
-        $normalizedgql = str_replace(["\t", "\n"], " " , $gql);
-        $normalizedgql = str_replace(['"'], '\"' , $normalizedgql);
-
         $apiKey = $this->getConfig('APIKEY');
 
         $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
-          'body' => "{\"query\":\"{$normalizedgql}\"}",
+          'body' => "{\"query\":\"{$gqlscript}\"}",
           'headers' => [
             'accept' => 'application/json',
             'authorization' => "Bearer {$apiKey}",
@@ -46,6 +43,11 @@ class Pipefy
     {
         if (!in_array($name, array_keys($this->config)))
             throw new \Exception("Invalid Config Key {$name}");
+
         return $this->config[$name];
+    }
+
+    public function Orgs(){
+        return new Orgs();
     }
 }
