@@ -23,11 +23,13 @@ class Pipefy
         $normalizedgql = str_replace(["\t", "\n"], " " , $gql);
         $normalizedgql = str_replace(['"'], '\"' , $normalizedgql);
 
+        $apiKey = $this->getConfig('APIKEY');
+
         $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
           'body' => "{\"query\":\"{$normalizedgql}\"}",
           'headers' => [
             'accept' => 'application/json',
-            'authorization' => "Bearer {$this->config['APIKEY']}",
+            'authorization' => "Bearer {$apiKey}",
             'content-type' => 'application/json',
           ],
         ]);
@@ -38,25 +40,12 @@ class Pipefy
             512,
             JSON_UNESCAPED_UNICODE
         );
-
     }
 
-    public function getConfig($name): string
+    private function getConfig($name): string
     {
         if (!in_array($name, array_keys($this->config)))
             throw new \Exception("Invalid Config Key {$name}");
-    }
-
-    private static function RequestLimitCoordination()
-    {
-        // todo
-        // rate limit = 500 request / 30 segundos.
-        $now = new \DateTime();
-
-        if (self::$lastrequestTimestamp == 0) {
-            self::$lastrequestTimestamp == $now->getTimestamp();
-            return;
-        }
-        
+        return $this->config[$name];
     }
 }
