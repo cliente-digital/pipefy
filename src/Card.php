@@ -1,6 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy;
 use Clientedigital\Pipefy\Graphql\Card\One;
+use Clientedigital\Pipefy\Entity;
 
 class Card 
 {
@@ -12,7 +13,8 @@ class Card
         $this->id = $id;
     }
 
-    public function load(){
+    public function load()
+    {
         return (new One($this->id))->get(); 
     }
 
