@@ -14,7 +14,7 @@ class Pipefy
 
     public function __construct()
     {
-        $this->config = parse_ini_file(PIPEFY_CONFIG_PATH);
+        $this->config = parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
         $this->http   = new Client();
     }
 
@@ -23,7 +23,7 @@ class Pipefy
         $normalizedgql = str_replace(["\t", "\n"], " " , $gql);
         $normalizedgql = str_replace(['"'], '\"' , $normalizedgql);
 
-        $response = $this->http->request('POST', PIPEFY_API_URI, [
+        $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
           'body' => "{\"query\":\"{$normalizedgql}\"}",
           'headers' => [
             'accept' => 'application/json',

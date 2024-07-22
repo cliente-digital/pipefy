@@ -12,7 +12,7 @@ Trait GraphQL{
 
     function getCache($name)
     {
-        $file = PIPEFY_CACHE_DIR."{$name}.json";
+        $file = CLIENTEDIGITAL_PIPEFY_CACHE_DIR."{$name}.json";
         $info = $this->infoCache($name);
         if(!$info->exists)
             throw new \Exception("CACHE file {$name} not found");
@@ -26,7 +26,7 @@ Trait GraphQL{
 
     function infoCache($name, $path=null): StdClass
     {
-        $path = is_null($path)?PIPEFY_CACHE_DIR:$path;
+        $path = is_null($path)?CLIENTEDIGITAL_PIPEFY_CACHE_DIR:$path;
 
         $info = new stdClass();
         $info->name = $name;
@@ -44,7 +44,7 @@ Trait GraphQL{
     function clearCache($name, $path = null): void
     {
         $filesToClear = [$name];
-        $path = is_null($path)? PIPEFY_CACHE_DIR : $path;
+        $path = is_null($path)? CLIENTEDIGITAL_PIPEFY_CACHE_DIR : $path;
 
         if ($name == self::CACHE_ALL) {
             $filesToClear = scandir($path);
@@ -56,7 +56,7 @@ Trait GraphQL{
 
             $info = $this->infoCache(str_replace(".json", "", $file), $path);
 
-            if ($info->isDir && $info->path != PIPEFY_CACHE_DIR) {
+            if ($info->isDir && $info->path != CLIENTEDIGITAL_PIPEFY_CACHE_DIR) {
                 $this->clearCache(self::CACHE_ALL, $info->path); 
                 continue;
             }

@@ -10,30 +10,30 @@ else if($argc ==3) {
 }
 
 function get(): array{
-    $hasConfigFile = is_file(PIPEFY_CONFIG_PATH);
+    $hasConfigFile = is_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
     if(!$hasConfigFile)
     {
         create();
     }
-    return parse_ini_file(PIPEFY_CONFIG_PATH);
+    return parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
 }
 
 function create(array $params = [])
 {
     $fileContent = [];
-    $config = $params==[] ? PIPEFY_CONFIG_PARAMS : $params;
+    $config = $params==[] ? CLIENTEDIGITAL_PIPEFY_CONFIG_PARAMS : $params;
     foreach($config as $key => $value) {
         $fileContent [] = "{$key}={$value}";
     }
     file_put_contents(
-        PIPEFY_CONFIG_PATH, 
+        CLIENTEDIGITAL_PIPEFY_CONFIG_PATH, 
         implode("\n", $fileContent) 
     );
 }
 
 function write(string $key, string $value) {
     $config = get();
-    if(!in_array($key, array_keys(PIPEFY_CONFIG_PARAMS)))
+    if(!in_array($key, array_keys(CLIENTEDIGITAL_PIPEFY_CONFIG_PARAMS)))
     {
         echo PHP_EOL. "{$key} is not a valid pipefy config.".PHP_EOL;
         show();
