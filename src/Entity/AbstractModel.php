@@ -6,9 +6,8 @@ abstract class  AbstractModel
 {
     protected StdClass $data;
     private $definition= null;
-    private $searchResult = null;
 
-    public function __construct(?StdClass $data=null, $searchResult=null)
+    public function __construct(?StdClass $data=null)
     {
         if(is_null($data)){
             $this->data  = new StdClass;
@@ -20,11 +19,11 @@ abstract class  AbstractModel
 
     public function found()
     {
-        return $this->searchResult;
+       return !is_null($this->data); 
     }
 
     public function __get($dataId) {
-        if($this->found() === false)
+        if(!$this->found())
             return throw new \Exception("Not Found.");
 
         if(isset($this->data->$dataId))

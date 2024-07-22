@@ -20,10 +20,10 @@ class One
 
     public function get(){
         $cards = [];
-        $gql = $this->getGQL("card.one");
+        $gql = $this->getGQL("card-one");
         $gql->set("CARDID", $this->id);
         $gqlscript = $gql->script();
         $gqlResult = $this->client->request($gqlscript);
-        return new Entity\Card($gqlResult->data->card, (bool) $gqlResult->data->card);
+        return new Entity\Card($gqlResult->data->card);
     }
 } 

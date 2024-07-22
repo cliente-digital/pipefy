@@ -51,7 +51,7 @@ class All
 
     private function firstPage(){
         $cards = [];
-        $gql = $this->getGQL("card.all_firstpage");
+        $gql = $this->getGQL("card-all_firstpage");
         $gql->set("PIPEID", $this->pipeId);
         $gql->set("SEARCH", $this->search);
         $gqlscript = $gql->script();
@@ -61,7 +61,7 @@ class All
 
     private function nextPage(string $nextCursor){
         $cards = [];
-        $gql = $this->getGQL("card.all_nextpage");
+        $gql = $this->getGQL("card-all_nextpage");
         $gql->set("PIPEID", $this->pipeId);
         $gql->set("SEARCH", $this->search);
         $gql->set("ENDCURSOR", $nextCursor);
