@@ -17,6 +17,9 @@ at first glance.
 - [Road Map](https://github.com/orgs/cliente-digital/projects/2/views/1)
 - [next release](https://github.com/orgs/cliente-digital/projects/2/views/3)
 
+Resources:
 
-### How it work.
+- [Entity](https://github.com/cliente-digital/pipefy/blob/main/doc/Entity/README.md)
+
+
 
