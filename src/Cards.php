@@ -8,7 +8,6 @@ class Cards
 {
     use GraphQL;
 
-    private Pipefy $client;
     private int $pipeId=0;
     private array $cards = [];
     private Filter\FilterInterface $filter;
@@ -16,7 +15,6 @@ class Cards
     public function __construct(int $pipeId)
     {
         $this->pipeId = $pipeId;
-        $this->client = new Pipefy;
         $this->filter = new Filter\Cards();
     }
 
