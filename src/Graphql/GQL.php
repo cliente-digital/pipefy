@@ -39,7 +39,7 @@ Class GQL{
         $lines = explode("\n", $script);
         $clearLines = []; 
         foreach($lines as $line){
-             if(!preg_match("/_[A-Z]_/", $line))
+             if(!preg_match("/_[A-Z]*_/", $line))
                 $clearLines[] = $line;
         }
         $gqlscript = implode(" ", $clearLines);
