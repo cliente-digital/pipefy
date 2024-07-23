@@ -13,7 +13,6 @@ abstract class  AbstractModel
             $this->data  = new StdClass;
             return;
         }
-        $this->searchResult= $searchResult;
         $this->data = $data;
     }
 
