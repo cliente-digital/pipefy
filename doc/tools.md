@@ -1,50 +1,51 @@
 # Cliente Digital - Pipefy Tools
 
 As soon you require the package the first action is configure it to access you organization.
-You gonna need an [Personal Access Token](https://app.pipefy.com/tokens/) and then execute the 
+You gonna need an [Personal Access Token](https://app.pipefy.com/tokens/) and then execute the
 command bellow:
 
+use the bin:
+```bash
+cd.pipefy
+```
 
-1. clientedigital:pipefy:config
-2. clientedigital:pipefy:report
-3. clientedigital:pipefy:schema
+Options:
+1. --config
+2. --report
 
 
 
-### 1. clientedigital:pipefy:config
+### 1. --config
 
 Configure the package to get up and run.
 
-example: 
+
+example:
 
 ```bash
-composer clientedigital:pipefy:config APIKEY 'seu token aqui'
+./vendor/bin/cd.pipefy --config APIKEY 'ypur apikey here'
 ```
-your APIKEY was set.
+
+your apikey is set.
 
 
-### 2. clientedigital:pipefy:report
+```bash
+./vendor/bin/cd.pipefy --config build-schema
+```
+Organization Schema was build.
+
+**IMPORTANT: You need to set the APIKEY before use any command.**
+
+
+### 2. --report
 
 Generate markdown output about your Pipefy account schema.
 
 example:
 
 ```bash
-composer clientedigital:pipefy:report schema > myschema.md
+./vendor/bin/cd.pipefy --report schema > myschema.md
 
 # create a pdf report about your schema
 pandoc myschema.md -o myschema.pdf
 ```
-
-### 3. clientedigital:pipefy:schema
-Read the Pipefy schema your APIKEY has access to read and
-retrieve informations about your schema.
-
-The package save it at .pipefy/cache directory.
-
-
-```bash
-composer clientedigital:pipefy:schema build 
-```
-your organization schema was build.
-

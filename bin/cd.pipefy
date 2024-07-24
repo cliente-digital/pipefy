@@ -1,0 +1,72 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+namespace Clientedigital\Pipefy;
+
+require_once  $GLOBALS['_composer_autoload_path'];
+
+function createConfigFile($rootDir){
+
+    $consts = [
+        'CLIENTEDIGITAL_PIPEFY_API_URI' =>"'https://api.pipefy.com/graphql'",
+        'CLIENTEDIGITAL_PIPEFY_DIR' => "'{$rootDir}/.pipefy'",
+        'CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR' => "'{$rootDir}/.pipefy/graphql/'",
+        'CLIENTEDIGITAL_PIPEFY_CACHE_DIR' => "'{$rootDir}/.pipefy/.cache/'",
+        'CLIENTEDIGITAL_PIPEFY_CONFIG_PATH' => "'{$rootDir}/.pipefy/.config'",
+        'CLIENTEDIGITAL_PIPEFY_CONFIG_PARAMS'=> "['APIKEY'=>null]"
+    ];
+    touch(CLIENTEDIGITAL_PIPEFY_CONFIG_FILE);
+    file_put_contents(CLIENTEDIGITAL_PIPEFY_CONFIG_FILE, "<?php ".PHP_EOL, FILE_APPEND);
+
+    foreach($consts as $cname => $cvalue){
+        $isDir = strpos($cname, "_DIR") !== false;
+        $isFile = strpos($cname, "_PATH") !== false;
+        file_put_contents(CLIENTEDIGITAL_PIPEFY_CONFIG_FILE, "const {$cname} = {$cvalue};".PHP_EOL, FILE_APPEND);
+    }
+    require_once CLIENTEDIGITAL_PIPEFY_CONFIG_FILE;
+    mkdir(CLIENTEDIGITAL_PIPEFY_DIR);
+    mkdir(CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR);
+    mkdir(CLIENTEDIGITAL_PIPEFY_CACHE_DIR);
+    file_put_contents(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH,"APIKEY=".PHP_EOL);
+    shell_exec("cp -r {$rootDir}/vendor/clientedigital/pipefy/.pipefy/graphql/* ".CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR);
+}
+
+
+(static function ($args) {
+    global $GLOBALS;
+
+    echo " ## Cliente Digital -  Pipefy ##".PHP_EOL;
+    echo "   A Pipefy API wrapper that uplift productivity".PHP_EOL;
+    echo "   of newcomers to graphQL tech.".PHP_EOL;
+    echo "   by Ivo Nascimento <ivo at cliente.digital>.".PHP_EOL;
+    echo "                       http://cliente.digital.".PHP_EOL;
+    $composer_bin_path = ($GLOBALS['_composer_bin_dir']);
+    $composer_vendor_path = str_replace("/bin","", $composer_bin_path );
+    $root_path = str_replace("/vendor", "", $composer_vendor_path);
+
+    if(!defined('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE"')){
+        define('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE', "{$root_path}/.cd.pipefy.php");
+        if(!is_file(CLIENTEDIGITAL_PIPEFY_CONFIG_FILE))
+            createConfigFile($root_path);
+    }
+    require_once CLIENTEDIGITAL_PIPEFY_CONFIG_FILE;
+
+    if(count($args)<2){
+        echo PHP_EOL;
+        echo "choose an option:".PHP_EOL;
+        echo "--config: configure the pipefy account".PHP_EOL;
+        echo "--report: extract Markdown Report about Pipefy Objects".PHP_EOL;
+        exit(0);
+    }
+    $action = $args[1];
+
+    unset($args[0]);
+    $args = array_values($args);
+    if($action =="--config"){
+        $status = (new Command\Config())->exec($args); 
+    } else if($action == '--report'){
+        $status = (new Command\Report())->exec($args); 
+    }
+    exit($status);
+})($argv);
+

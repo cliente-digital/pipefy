@@ -21,21 +21,20 @@
         "guzzlehttp/psr7": "^2.6"
     },
     "bin": [
-        "bin/config.php"
+        "bin/cd.pipefy"
     ],
-
     "scripts": {
-        "clientedigital:pipefy:config":"@php config.php",
-        "clientedigital:pipefy:schema":"@php schema.php",
-        "clientedigital:pipefy:report":"@php report.php"
+        "install-cd.pipefy":[
+            "@putenv CLIENTEDIGITAL_PIPEFY_CONFIG_PATH=./pipefy"
+        ],
+        "cd:pipefy:config":"@php vendor/bin/cd.pipefy --config",
+        "cd:pipefy:report":"@php vendor/bin/cd.pipefy --report"
     },
     "scripts-descriptions":{
-        "clientedigital:pipefy:config":"Parametriza sua conta Pipefy e opções de operação do pacote.",
-        "clientedigital:pipefy:schema":"Realize Operações sobre o schema de dados.",
-        "clientedigital:pipefy:report":"Gera Relatórios."
+        "cd:pipefy:config":"Parametriza sua conta Pipefy e opções de operação do pacote.",
+        "cdclientedigital:pipefy:report":"Gera Relatórios."
     },
     "config": {
-        "bin-dir": "bin/",
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
