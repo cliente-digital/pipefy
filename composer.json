@@ -20,6 +20,10 @@
         "guzzlehttp/guzzle": "^7.8",
         "guzzlehttp/psr7": "^2.6"
     },
+    "bin": [
+        "bin/config.php"
+    ],
+
     "scripts": {
         "clientedigital:pipefy:config":"@php config.php",
         "clientedigital:pipefy:schema":"@php schema.php",
