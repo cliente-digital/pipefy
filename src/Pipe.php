@@ -2,6 +2,7 @@
 namespace Clientedigital\Pipefy;
 
 use Clientedigital\Pipefy\Graphql\Pipe\One;
+use Clientedigital\Pipefy\Graphql\Label;
 use Clientedigital\Pipefy\Entity;
 
 
@@ -30,15 +31,13 @@ class Pipe
     public function update(Entity\EntityInterface $resource)
     {
         $newValues = $resource->__newData();
-
         return (new One($this->id))
             ->updatePipe($newValues); 
- 
     }
 
     public function labels()
     {
-
+        return (new Label\All())->fromPipe($this->id); 
     }
 
     public function cards()

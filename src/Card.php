@@ -1,6 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy;
 use Clientedigital\Pipefy\Graphql\Card\One;
+use Clientedigital\Pipefy\Graphql\Label;
 use Clientedigital\Pipefy\Entity;
 
 class Card 
@@ -24,4 +25,11 @@ class Card
             $this->card = $this->load();
         return $this->card;
     }
+
+    public function labels()
+    {
+        return (new Label\All())->fromCard($this->id); 
+    }
+
+
 } 
