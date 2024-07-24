@@ -35,6 +35,13 @@
         "clientedigital:pipefy:report":"Gera Relatórios."
     },
     "config": {
-        "bin-dir": "bin/"
+        "bin-dir": "bin/",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34",
+        "educoder/pest": "^1.0"
     }
 }
