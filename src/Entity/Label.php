@@ -11,10 +11,11 @@ class Label extends AbstractModel implements EntityInterface
     public function __construct(?StdClass $data=null)
     {
         parent::__construct($data);
-        $this->name($this->name);
-        $this->color($this->color);
+        if($this->found()){
+            $this->name($this->name);
+            $this->color($this->color);
+        }
     }
-
 
     public function name(string $name): void
     {
@@ -28,12 +29,12 @@ class Label extends AbstractModel implements EntityInterface
 
     public function tableId(int $id): void
     {
-        $this->newData['TABLEID'] = $name;
+        $this->newData['TABLEID'] = $id;
     }
 
     public function pipeId(int $id): void
     {
-        $this->newData['PIPEID'] = $name;
+        $this->newData['PIPEID'] = $id;
     }
 
     public function __newData()

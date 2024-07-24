@@ -30,15 +30,28 @@ class One
         $updateLabelInput = $resource->__newData();
         $gql = $this->getGQL("label-update");
         $gql->set('LABELID', $resource->id);
-        //todo ser capaz de entender que parametros sao necessarios na gql
-        // e verificar se algum parmetro a mais ou menos foi do requerido
-        // foi preenchido e avisar o cliente.
+
         foreach($updateLabelInput as $vName => $vValue){
             $gql->set($vName, $vValue);
         }
+
         $gqlscript = $gql->script();
-        //var_dump($gqlscript); return;
         $gqlResult = (new Pipefy())->request($gqlscript);
-        var_dump($gqlResult);
+        return $gqlResult;
     }
+
+    public function create(Entity\Label $resource)
+    {
+        $createLabelInput = $resource->__newData();
+        $gql = $this->getGQL("label-create");
+
+        foreach($createLabelInput as $vName => $vValue){
+            $gql->set($vName, $vValue);
+        }
+
+        $gqlscript = $gql->script();
+        $gqlResult = (new Pipefy())->request($gqlscript);
+        return $gqlResult;
+    }
+
 } 

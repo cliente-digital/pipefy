@@ -7,9 +7,15 @@ use Clientedigital\Pipefy\Entity;
 class Label 
 {
 
-    public function update(Entity\EntityInterface $resource)
+    public function update(Entity\Label $label)
     {
         return (new One())
-            ->update($resource); 
+            ->update($label); 
+    }
+
+    public function create(Entity\Label $label)
+    {
+        return (new One())
+            ->create($label); 
     }
 } 
