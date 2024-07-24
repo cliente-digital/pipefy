@@ -39,14 +39,4 @@ class Pipe
     {
         return (new Label\All())->fromPipe($this->id); 
     }
-
-    public function cards()
-    {
-
-    }
-
-    public function phases()
-    {
-
-    }
 } 
