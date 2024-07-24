@@ -34,6 +34,12 @@ class Card
         return (new Label\All())->fromCard($this->id); 
     }
 
+    public function comments()
+    {
+        return (new One($this->id))->comments(); 
+    }
+
+
     public function modifyLabels(Entity\label $label, int $op)
     {
         if(in_array($op, [self::REMOVE_LABEL, self::ADD_LABEL])){

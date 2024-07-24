@@ -19,13 +19,26 @@ class One
     }
 
     public function get(){
-        $cards = [];
         $gql = $this->getGQL("card-one");
         $gql->set("CARDID", $this->id);
         $gqlscript = $gql->script();
         $gqlResult = $this->client->request($gqlscript);
         return new Entity\Card($gqlResult->data->card);
     }
+
+    public function comments(){
+        $comments = [];
+        $gql = $this->getGQL("card-comments");
+        $gql->set("CARDID", $this->id);
+        $gqlscript = $gql->script();
+        $gqlResult = $this->client->request($gqlscript);
+        foreach( $gqlResult->data->card->comments as $comment){
+            $comments[] = new Entity\Comment($comment);
+        }
+
+        return $comments;
+    }
+
 
     public function addLabel(Entity\Label $label, array $actualLabels)
     {
