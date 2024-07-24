@@ -26,4 +26,50 @@ class One
         $gqlResult = $this->client->request($gqlscript);
         return new Entity\Card($gqlResult->data->card);
     }
+
+    public function addLabel(Entity\Label $label, array $actualLabels)
+    {
+        $newLabels = [];
+        $newLabels[] = $label->id;
+        foreach($actualLabels as $alabel){
+            $newLabels[] = $alabel->id;
+        }
+        $newLabels = array_unique($newLabels);
+        if(count($actualLabels) == count($newLabels))
+            return false;
+
+        $gql = $this->getGQL("card-update");
+        $gql->set("CARDID", $this->id);
+        $gql->set("LABELIDS", "[".implode(", ", $newLabels)."]");
+        $gqlscript = $gql->script();
+        $gqlResult = $this->client->request($gqlscript);
+
+        return $gqlResult;
+ 
+    }
+
+    public function removeLabel(Entity\Label $label, array $actualLabels)
+    {
+        $newLabels = [];
+        $exist = false;
+        foreach($actualLabels as $alabel){
+            if($alabel->id == $label->id){
+                $exist = true;
+                continue;
+            }
+
+            $newLabels[] = $alabel->id;
+        }
+        if(!$exist)
+            return false;
+
+        $gql = $this->getGQL("card-update");
+        $gql->set("CARDID", $this->id);
+        $gql->set("LABELIDS", "[".implode(", ", $newLabels)."]");
+        $gqlscript = $gql->script();
+        $gqlResult = $this->client->request($gqlscript);
+
+        return $gqlResult;
+    }
+
 } 
