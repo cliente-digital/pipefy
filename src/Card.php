@@ -9,8 +9,9 @@ class Card
     private int $id;
     private ?Entity\Card $card=null;
 
-    public const REMOVE_LABEL = 0;
-    public const ADD_LABEL = 1;
+    public const REMOVE= 0;
+    public const ADD= 1;
+    public const UPDATE= 2;
 
     public function __construct(int $id)
     {
@@ -39,15 +40,29 @@ class Card
         return (new One($this->id))->comments(); 
     }
 
+    public function comment(Entity\Comment $comment, $op=1)
+    {
+        if($op == self::ADD)
+            return (new One($this->id))->comment($comment); 
+
+        if(!$comment->found())
+            throw new \Exception("You Only can Remove Comments that Exist.");
+
+        if($op == self::UPDATE)
+            return (new One($this->id))->updateComment($comment); 
+
+        return (new One($this->id))->removeComment($comment); 
+        
+    }
 
     public function modifyLabels(Entity\label $label, int $op)
     {
-        if(in_array($op, [self::REMOVE_LABEL, self::ADD_LABEL])){
-            if(is_null($label) or !$label->found())
+        if(in_array($op, [self::REMOVE, self::ADD])){
+            if(!$label->found())
                 throw new \Exception("You Can Only Add or Remove Labels that Exist.");
             $result = match($op){
-                self::REMOVE_LABEL =>  (new One($this->id))->removeLabel($label, $this->get()->labels),
-                self::ADD_LABEL    =>  (new One($this->id))->addLabel($label, $this->get()->labels)
+                self::REMOVE=>  (new One($this->id))->removeLabel($label, $this->get()->labels),
+                self::ADD=>  (new One($this->id))->addLabel($label, $this->get()->labels)
             };
             return $result;
         }
