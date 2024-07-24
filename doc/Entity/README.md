@@ -19,7 +19,7 @@ All Entity support this common methods:
   This implementation is usefull to handle all different fields each Organization pipes can have to reach your goal with Pipefy.
 
   - Other Methods
-    Aside the methods above each Entity Type support methods to change data. This methods are different from each Entity to support the mutations. (to see al mutations check the [pipefy documentation](https://api-docs.pipefy.com/reference/mutations/overview/) and bellow Entity Documentations) .
+    Aside the methods above,  entities support methods to change data related to [graphql mutations](https://api-docs.pipefy.com/reference/mutations/overview/).
 
 Supported Entities
 
