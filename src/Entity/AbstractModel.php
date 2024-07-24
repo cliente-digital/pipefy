@@ -4,15 +4,11 @@ use StdClass;
 
 abstract class  AbstractModel
 {
-    protected StdClass $data;
+    protected ?StdClass $data=null;
     private $definition= null;
 
     public function __construct(?StdClass $data=null)
     {
-        if(is_null($data)){
-            $this->data  = new StdClass;
-            return;
-        }
         $this->data = $data;
     }
 
@@ -23,7 +19,7 @@ abstract class  AbstractModel
 
     public function __get($dataId) {
         if(!$this->found())
-            return throw new \Exception("Not Found.");
+            throw new \Exception("No Readable Properties are set.");
 
         if(isset($this->data->$dataId))
             return $this->data->$dataId;
