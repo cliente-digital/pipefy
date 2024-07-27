@@ -26,10 +26,13 @@ Class GQL{
 
     public function script(): string
     {
+        $info = $this->info();
         $gqlscript = $this->rawScript();
         foreach($this->property as $propName => $propValue){
             $gqlscript = str_replace("_{$propName}_", $propValue, $gqlscript);
         }
+        $this->check($info, $gqlscript);
+
         return $this->sanitize($gqlscript);
     }
 
@@ -58,7 +61,7 @@ Class GQL{
         preg_match_all("/".self::PROPERTY_PATTERN."/", $rawScript, $matches);
         $fields = $matches[2];
         foreach($fields as $idx => $field){
-            $fields[$idx] = $this->propertyInfo($field);
+            $fields[$idx] = $this->property($field);
         }
         $info = new \stdclass;
         $info->name = $this->scriptname;
@@ -67,7 +70,7 @@ Class GQL{
         $info->script = $rawScript;
         return $info;
     }
-
+    
     public function property($propName)
     {
         $rFieldPattern = str_replace("FNAME", $propName, self::REQUIRED_PROPERTY); 
@@ -108,5 +111,14 @@ Class GQL{
 
         return trim($gqlscript);
     }
-    
+
+    private function check(\stdclass $info, string $gqlscript)
+    {
+        foreach($info->fields  as $field){
+            if(preg_match("/_R.{$field->name}_/", $gqlscript)===1)
+                throw new \Exception("Required Field not set: {$field->name}");
+        }
+    }
+
+   
 }

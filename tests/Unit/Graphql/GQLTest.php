@@ -93,3 +93,12 @@ test('gqlPropertiesFromMutation', function () {
     expect($info->kind)->toEqual("mutation");
 });
 
+test('gqlRequestScriptBeforeSetRequiredField', function () {
+    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
+
+    $gql = new GQL("with_required_fields");
+    $gql->script();
+
+})->throws(\Exception::class, "Required Field not set: CARDID");
+
+
