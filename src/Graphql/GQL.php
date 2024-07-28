@@ -1,11 +1,12 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql;
 
-Class GQL{
+Class GQL implements GQLInterface{
     
     private array $property = []; 
     private string $scriptname;
     private string $rawScript;
+    private ?int $id=null;
 
     private const REQUIRED_PROPERTY = "_R\.FNAME_";
     private const NOTREQUIRED_PROPERTY = "_FNAME_";
@@ -24,6 +25,13 @@ Class GQL{
         $this->rawScript = file_get_contents($path);
    }
 
+    public function id(?int $id=null)
+    {
+        if(is_null($id))
+            return $this->id;
+        $this->id = $id;
+    }
+
     public function script(): string
     {
         $info = $this->info();
@@ -38,7 +46,7 @@ Class GQL{
 
     public function rawScript(): string
     {
-        return $this->rawScript;
+        return trim($this->rawScript);
     }
   
     public function set(string $propName, string $propValue): void
@@ -119,6 +127,4 @@ Class GQL{
                 throw new \Exception("Required Field not set: {$field->name}");
         }
     }
-
-   
 }
