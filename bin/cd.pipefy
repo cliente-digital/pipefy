@@ -32,6 +32,12 @@ function createConfigFile($rootDir){
 }
 
 
+function help(){
+        echo PHP_EOL;
+        echo "choose an option:".PHP_EOL;
+        echo "--config: configure the pipefy account".PHP_EOL;
+        echo "--report: extract Markdown Report about Pipefy Objects".PHP_EOL;
+}
 (static function ($args) {
     global $GLOBALS;
 
@@ -52,20 +58,20 @@ function createConfigFile($rootDir){
     require_once CLIENTEDIGITAL_PIPEFY_CONFIG_FILE;
 
     if(count($args)<2){
-        echo PHP_EOL;
-        echo "choose an option:".PHP_EOL;
-        echo "--config: configure the pipefy account".PHP_EOL;
-        echo "--report: extract Markdown Report about Pipefy Objects".PHP_EOL;
+        help();
         exit(0);
     }
     $action = $args[1];
 
     unset($args[0]);
     $args = array_values($args);
+    $status = 1;
     if($action =="--config"){
         $status = (new Command\Config())->exec($args); 
     } else if($action == '--report'){
         $status = (new Command\Report())->exec($args); 
+    }else {
+        help();
     }
     exit($status);
 })($argv);
