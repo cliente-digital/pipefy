@@ -1,53 +1,43 @@
 <?php
 namespace Clientedigital\Pipefy;
 
-use \GuzzleHttp\Client;
 
 class Pipefy 
 {
 
     final public const CACHED= true;
     final public const UNCACHED= false;
-    private static int $lastrequestTimestamp = 0;
-    private array $config; 
-    private Client $http; 
+
+    private static array $config=[]; 
+    private static bool $useBulk = false;
 
     public function __construct()
     {
-        $this->config = parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
-        $this->http   = new Client();
+        //check if is configured
+        self::getConfig('APIKEY');
     }
 
-    public function request(string $gqlscript): Object
+    public static function getConfig($name): string
     {
-        $apiKey = $this->getConfig('APIKEY');
+        if( self::$config == [] and !defined("CLIENTEDIGITAL_PIPEFY_CONFIG_PATH"))
+            throw new \Exception("Pipefy need CLIENTEDIGITAL_PIPEFY_CONFIG_PATH to work.");
 
-        $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
-          'body' => "{\"query\":\"{$gqlscript}\"}",
-          'headers' => [
-            'accept' => 'application/json',
-            'authorization' => "Bearer {$apiKey}",
-            'content-type' => 'application/json',
-          ],
-        ]);
-
-        return json_decode(
-            $response->getBody(),
-            null,
-            512,
-            JSON_UNESCAPED_UNICODE
-        );
-    }
-
-    private function getConfig($name): string
-    {
-        if (!in_array($name, array_keys($this->config)))
+        self::$config = parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
+ 
+        if (!in_array($name, array_keys(self::$config)))
             throw new \Exception("Invalid Config Key {$name}");
 
-        return $this->config[$name];
+        return self::$config[$name];
     }
 
     public function Orgs(){
         return new Orgs();
+    }
+
+    public static function useBulk(?bool $use=null): bool
+    {
+        if(!is_null($use))
+            self::$useBulk = $use;
+        return self::$useBulk;
     }
 }
