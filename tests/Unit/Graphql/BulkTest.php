@@ -9,6 +9,8 @@ uses()->beforeEach(function () {
 });
 
 test('tryInitBulkWithPageSizeEqualsZeroAndFails', function () {
+
+    $this->setConfig('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE',FIXTURE_PATH . "cd.pipefy.ini" );
     $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
     Bulk::init(0);
 })->throws(\Exception::class, "Pagesize cannot be less than 1.");

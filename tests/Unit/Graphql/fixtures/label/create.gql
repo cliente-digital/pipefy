@@ -1,0 +1,12 @@
+mutation{
+createLabel(
+  input: {
+  color: "_COLOR_"
+  name: "_NAME_"
+  pipe_id: _PIPEID_
+  table_id: _TABLEID_
+  }
+) {
+  clientMutationId
+}
+}

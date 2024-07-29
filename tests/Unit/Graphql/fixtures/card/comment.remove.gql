@@ -1,0 +1,9 @@
+mutation{
+deleteComment(
+  input: {
+    id: _COMMENTID_
+  }
+) {
+  clientMutationId
+}
+}

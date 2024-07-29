@@ -1,0 +1,11 @@
+mutation{
+updateLabel(
+  input: {
+  color: "_COLOR_"
+  id :_LABELID_
+  name: "_NAME_"
+  }
+) {
+  clientMutationId
+}
+}

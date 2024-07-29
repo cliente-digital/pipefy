@@ -21,9 +21,10 @@ Trait GraphQL{
         if(is_null($this->http))
             $this->http= new Client();
 
-        $apiKey = Pipefy::getConfig('APIKEY');
+        $apiKey = Pipefy::getConfig('PIPEFY_APIKEY');
+        $uri = Pipefy::getConfig('PIPEFY_API_URI');
 
-        $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
+        $response = $this->http->request('POST', $uri, [
           'body' => "{\"query\":\"{$gqlscript}\"}",
           'headers' => [
             'accept' => 'application/json',
@@ -43,7 +44,7 @@ Trait GraphQL{
 
     function getCache($name)
     {
-        $file = CLIENTEDIGITAL_PIPEFY_CACHE_DIR."{$name}.json";
+        $file = Pipefy::getConfig('PIPEFY_CACHE_DIR')."{$name}.json";
         $info = $this->infoCache($name);
         if(!$info->exists)
             throw new \Exception("CACHE file {$name} not found");
@@ -57,7 +58,7 @@ Trait GraphQL{
 
     function infoCache($name, $path=null): StdClass
     {
-        $path = is_null($path)?CLIENTEDIGITAL_PIPEFY_CACHE_DIR:$path;
+        $path = is_null($path)?Pipefy::getConfig('PIPEFY_CACHE_DIR'):$path;
 
         $info = new stdClass();
         $info->name = $name;
@@ -75,7 +76,7 @@ Trait GraphQL{
     function clearCache($name, $path = null): void
     {
         $filesToClear = [$name];
-        $path = is_null($path)? CLIENTEDIGITAL_PIPEFY_CACHE_DIR : $path;
+        $path = is_null($path)? Pipefy::getConfig('PIPEFY_CACHE_DIR'): $path;
 
         if ($name == self::CACHE_ALL) {
             $filesToClear = scandir($path);
@@ -87,7 +88,7 @@ Trait GraphQL{
 
             $info = $this->infoCache(str_replace(".json", "", $file), $path);
 
-            if ($info->isDir && $info->path != CLIENTEDIGITAL_PIPEFY_CACHE_DIR) {
+            if ($info->isDir && $info->path != Pipefy::getConfig('PIPEFY_CACHE_DIR')) {
                 $this->clearCache(self::CACHE_ALL, $info->path); 
                 continue;
             }

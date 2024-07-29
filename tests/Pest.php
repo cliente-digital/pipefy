@@ -13,10 +13,11 @@ const CLIENTEDIGITAL_PIPEFY_CACHE_DIR = '/projetos/iannsp/PipefyPhpPackage/.pipe
 const CLIENTEDIGITAL_PIPEFY_CONFIG_PATH = '/projetos/iannsp/PipefyPhpPackage/.pipefy/.config';
 const CLIENTEDIGITAL_PIPEFY_CONFIG_PARAMS = ['APIKEY'=>null];
 */
-    public function setConfig($cName, $cValue): void
+    public function setConfig($cName, $cValue)
     {
-        if(!defined($cName))
-            define($cName, $cValue);
+        if(is_null($cValue))
+            return putenv($cName);
+        putenv("$cName=$cValue");
     }
 }
 

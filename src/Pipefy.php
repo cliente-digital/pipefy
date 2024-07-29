@@ -13,20 +13,34 @@ class Pipefy
 
     public function __construct()
     {
-        //check if is configured
-        self::getConfig('APIKEY');
+        self::getConfig('PIPEFY_APIKEY');
     }
 
-    public static function getConfig($name): string
+    public static function getConfig($name=null)
     {
-        if( self::$config == [] and !defined("CLIENTEDIGITAL_PIPEFY_CONFIG_PATH"))
-            throw new \Exception("Pipefy need CLIENTEDIGITAL_PIPEFY_CONFIG_PATH to work.");
+        $configFile = getenv('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE');
+        if( self::$config == [] and $configFile===false)
+            throw new \Exception(
+                "Cant find CLIENTEDIGITAL_PIPEFY_CONFIG_FILE ENV variable.".PHP_EOL.
+                "please set CLIENTEDIGITAL_PIPEFY_CONFIG_FILE with the ".PHP_EOL.
+                "path of the ini file tha contain the [CLIENTEDIGITAL] section.".PHP_EOL.
+                "and check the documentation for more information.".PHP_EOL .
+                "https://github.com/cliente-digital/pipefy/blob/main/doc/configuration.md"
+            );
 
-        self::$config = parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
- 
-        if (!in_array($name, array_keys(self::$config)))
-            throw new \Exception("Invalid Config Key {$name}");
+        if(self::$config == []) {
 
+            $configContent = parse_ini_file($configFile, true);
+
+            if(!isset($configContent['CLIENTEDIGITAL'])) {
+                throw new \Exception("Cant Find CLIENTEDIGITAL section into config File");
+            }
+            self::$config = $configContent['CLIENTEDIGITAL'];
+        }
+
+
+        if(is_null($name))
+            return self::$config;
         return self::$config[$name];
     }
 

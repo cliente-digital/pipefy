@@ -1,0 +1,10 @@
+mutation{
+createComment(
+  input: {
+    card_id : _CARDID_
+    text: "_TEXT_"
+  }
+) {
+  clientMutationId
+}
+}

@@ -1,6 +1,8 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql;
 
+use Clientedigital\Pipefy\Pipefy;
+
 Class GQL implements GQLInterface{
     
     private array $property = []; 
@@ -16,7 +18,7 @@ Class GQL implements GQLInterface{
     {
        $this->scriptname = $scriptname; 
 
-       $path = CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR . 
+       $path = Pipefy::getConfig('PIPEFY_GRAPHQL_DIR') . 
             str_replace("-", DIRECTORY_SEPARATOR, $this->scriptname) . ".gql";
 
         if(!is_file($path))
