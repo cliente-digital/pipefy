@@ -20,7 +20,7 @@ test('gqlUnsetUnrequiredVariableDontAppearOnScript', function () {
 
     $gql = new GQL("without_required_fields");
 
-    $rawScript = file_get_contents(CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR."without_required_fields.gql");
+    $rawScript = trim(file_get_contents(CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR."without_required_fields.gql"));
     expect($rawScript)->toEqual($gql->rawScript(), "Raw Script esta diferente do esperado");
 
 
@@ -68,8 +68,7 @@ test('gqlPropertiesWith3Properties', function () {
         title: "_TITLE_"
         pipeid : _PIPEID_
     }
-}
-');
+}');
 
 });
 
