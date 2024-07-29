@@ -5,11 +5,9 @@ namespace Clientedigital\Pipefy;
 class Pipefy 
 {
 
-    final public const CACHED= true;
-    final public const UNCACHED= false;
-
     private static array $config=[]; 
     private static bool $useBulk = false;
+    private static bool $useCache= false;
 
     public function __construct()
     {
@@ -20,13 +18,7 @@ class Pipefy
     {
         $configFile = getenv('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE');
         if( self::$config == [] and $configFile===false)
-            throw new \Exception(
-                "Cant find CLIENTEDIGITAL_PIPEFY_CONFIG_FILE ENV variable.".PHP_EOL.
-                "please set CLIENTEDIGITAL_PIPEFY_CONFIG_FILE with the ".PHP_EOL.
-                "path of the ini file tha contain the [CLIENTEDIGITAL] section.".PHP_EOL.
-                "and check the documentation for more information.".PHP_EOL .
-                "https://github.com/cliente-digital/pipefy/blob/main/doc/configuration.md"
-            );
+            throw new \Exception("Cant find CLIENTEDIGITAL_PIPEFY_CONFIG_FILE ENV variable.");
 
         if(self::$config == []) {
 
@@ -41,6 +33,10 @@ class Pipefy
 
         if(is_null($name))
             return self::$config;
+
+        if(!isset(self::$config[$name]))
+            return null;
+
         return self::$config[$name];
     }
 
@@ -54,4 +50,12 @@ class Pipefy
             self::$useBulk = $use;
         return self::$useBulk;
     }
+
+    public static function useCache(?bool $use=null): bool
+    {
+        if(!is_null($use))
+            self::$useCache = $use;
+        return self::$useCache;
+    }
+
 }

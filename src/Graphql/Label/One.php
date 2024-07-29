@@ -16,8 +16,7 @@ class One
         $cards = [];
         $gql = $this->getGQL("pipe-one");
         $gql->set("PIPEID", $this->id);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return new Entity\Pipe($gqlResult->data->pipe, (bool) $gqlResult->data->pipe);
     }
 
@@ -31,8 +30,7 @@ class One
             $gql->set($vName, $vValue);
         }
 
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return $gqlResult;
     }
 
@@ -45,8 +43,7 @@ class One
             $gql->set($vName, $vValue);
         }
 
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return $gqlResult;
     }
 

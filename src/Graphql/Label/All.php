@@ -12,8 +12,7 @@ class All
         $all = [];
         $gql = $this->getGQL("label-pipeall");
         $gql->set("PIPEID", $pipeId);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
 
         foreach($gqlResult->data->pipe->labels as $label){
             $label->parentId = $pipeId;
@@ -29,8 +28,7 @@ class All
         $all = [];
         $gql = $this->getGQL("label-tableall");
         $gql->set("TABLEID", $tableId);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
 
         foreach($gqlResult->data->table->labels as $label){
             $label->parentId = $tableId;
@@ -46,8 +44,7 @@ class All
         $all = [];
         $gql = $this->getGQL("label-cardall");
         $gql->set("CARDID", $cardId);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
 
         foreach($gqlResult->data->card->labels as $label){
             $label->parentId = $cardId;

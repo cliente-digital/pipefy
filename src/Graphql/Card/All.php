@@ -51,8 +51,7 @@ class All
         $gql = $this->getGQL("card-all_firstpage");
         $gql->set("PIPEID", $this->pipeId);
         $gql->set("SEARCH", $this->search);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return $gqlResult;
     }
 
@@ -62,8 +61,7 @@ class All
         $gql->set("PIPEID", $this->pipeId);
         $gql->set("SEARCH", $this->search);
         $gql->set("ENDCURSOR", $nextCursor);
-        $gqlscript = $gql->script();
-        return $this->request($gqlscript);
+        return $this->request($gql);
     }
 
 } 

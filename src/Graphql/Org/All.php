@@ -15,8 +15,7 @@ class All
     private function load(){
         $orgs= [];
         $gql = $this->getGQL("org-all");
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         foreach($gqlResult->data->organizations as $org){
             $orgs[] = new Entity\Org($org);
         }

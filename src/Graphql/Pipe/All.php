@@ -19,8 +19,7 @@ class All
         $all = [];
         $gql = $this->getGQL("pipe-all");
         $gql->set("ORGID", $this->orgid);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
 
         foreach($gqlResult-> data->organization->pipes as $pipe){
             $all[] = new Entity\Pipe($pipe);

@@ -2,6 +2,7 @@
 namespace Clientedigital\Pipefy\Graphql;
 
 use Clientedigital\Pipefy\Pipefy;
+use Clientedigital\Pipefy\Cache;
 use \GuzzleHttp\Client;
 use StdClass;
 
@@ -16,8 +17,25 @@ Trait GraphQL{
         return new GQL($name);
     }
 
-    public function request(string $gqlscript): Object
+
+    public function request(GQL $gql): Object
     {
+        $gqlInfo = $gql->info();
+
+        $isQuery = $gqlInfo->kind;
+        $cachemode = Pipefy::useCache();
+
+        $canCache = $isQuery and $cachemode;
+
+        if($canCache) {
+            try{
+                return $this->getCache($gqlInfo->cacheId);    
+            }catch( \Exception $cacheException ){
+
+            }
+        }
+
+        $gqlscript = $gql->script();
         if(is_null($this->http))
             $this->http= new Client();
 
@@ -33,81 +51,30 @@ Trait GraphQL{
           ],
         ]);
 
-        return json_decode(
+        $responseObject = json_decode(
             $response->getBody(),
             null,
             512,
             JSON_UNESCAPED_UNICODE
         );
-    }
 
-
-    function getCache($name)
-    {
-        $file = Pipefy::getConfig('PIPEFY_CACHE_DIR')."{$name}.json";
-        $info = $this->infoCache($name);
-        if(!$info->exists)
-            throw new \Exception("CACHE file {$name} not found");
-        return json_decode(
-            file_get_contents($info->path),
-            null,
-            512,
-            JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE
-        );
-    }
-
-    function infoCache($name, $path=null): StdClass
-    {
-        $path = is_null($path)?Pipefy::getConfig('PIPEFY_CACHE_DIR'):$path;
-
-        $info = new stdClass();
-        $info->name = $name;
-        $info->isDir = is_dir($path.$name);
-
-        $info->path = !$info->isDir
-            ? $path."{$name}.json"
-            : $path.  $name . DIRECTORY_SEPARATOR;
-
-        $info->exists = !$info->isDir ? is_file($info->path): true;
-
-        return $info;
-    }
-
-    function clearCache($name, $path = null): void
-    {
-        $filesToClear = [$name];
-        $path = is_null($path)? Pipefy::getConfig('PIPEFY_CACHE_DIR'): $path;
-
-        if ($name == self::CACHE_ALL) {
-            $filesToClear = scandir($path);
+        if($canCache){
+            $this->setCache($gqlInfo->cacheId, $responseObject);
         }
 
-        foreach ($filesToClear as $file) {     
-            if(in_array($file, [".", ".."]))
-                continue;
-
-            $info = $this->infoCache(str_replace(".json", "", $file), $path);
-
-            if ($info->isDir && $info->path != Pipefy::getConfig('PIPEFY_CACHE_DIR')) {
-                $this->clearCache(self::CACHE_ALL, $info->path); 
-                continue;
-            }
-
-           if ($info->exists && !$info->isDir) {
-                unlink($info->path);
-            }
-        }
+        return $responseObject;
     }
 
-    function setCache(string $name, $content): bool 
-    {
-        $info = $this->infoCache($name);
-        return  (bool) file_put_contents(
-            $info->path, 
-            json_encode(
-                $content, 
-                JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT
-            )
-        );
+    private function setCache($cacheId, $response){
+            $cache =  new Cache();
+            $info = $cache->info($cacheId);
+            if($info->ttl > 0)
+                return $cache->set($cacheId, $response);
     }
+
+    private function getCache(string $cacheId){
+            $cache =  new Cache();
+            return $cache->get($cacheId); 
+    }
+
 }

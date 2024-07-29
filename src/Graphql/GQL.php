@@ -78,6 +78,7 @@ Class GQL implements GQLInterface{
         $info->kind = ($ismutation)?"mutation":"query";
         $info->fields = $fields;
         $info->script = $rawScript;
+        $info->cacheId = $info->name."-".md5(serialize($info->fields));
         return $info;
     }
     

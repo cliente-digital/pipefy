@@ -21,8 +21,7 @@ class One
     private function load(){
         $gql = $this->getGQL("org-one");
         $gql->set('ORGID', $this->id);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return new Entity\Org($gqlResult->data->organization);
     }
 
@@ -33,7 +32,6 @@ class One
         foreach($updateOrganizationInput as $vName => $vValue){
             $gql->set($vName, $vValue);
         }
-        $gqlscript = $gql->script();
-        $gqlResult = $this->request($gqlscript);
+        $gqlResult = $this->request($gql);
     }
 } 
