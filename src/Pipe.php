@@ -28,6 +28,11 @@ class Pipe
         return $this->pipe;
     }
 
+    public function cards()
+    {
+        return new Cards($this->id);
+    }
+
     public function update(Entity\EntityInterface $resource)
     {
         $newValues = $resource->__newData();
