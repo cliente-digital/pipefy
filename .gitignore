@@ -2,3 +2,4 @@
 vendor
 .pipefy/.config
 .pipefy/.cache/*.json
+*.ini
