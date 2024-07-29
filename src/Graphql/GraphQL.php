@@ -1,14 +1,45 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql;
 
+use Clientedigital\Pipefy\Pipefy;
+use \GuzzleHttp\Client;
 use StdClass;
 
 Trait GraphQL{
+
     final public const CACHE_ALL = "_clearall_";
+
+    private ?Client $http=null; 
+
     function getGQL($name): GQL 
     {
         return new GQL($name);
     }
+
+    public function request(string $gqlscript): Object
+    {
+        if(is_null($this->http))
+            $this->http= new Client();
+
+        $apiKey = Pipefy::getConfig('APIKEY');
+
+        $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
+          'body' => "{\"query\":\"{$gqlscript}\"}",
+          'headers' => [
+            'accept' => 'application/json',
+            'authorization' => "Bearer {$apiKey}",
+            'content-type' => 'application/json',
+          ],
+        ]);
+
+        return json_decode(
+            $response->getBody(),
+            null,
+            512,
+            JSON_UNESCAPED_UNICODE
+        );
+    }
+
 
     function getCache($name)
     {
@@ -78,6 +109,4 @@ Trait GraphQL{
             )
         );
     }
-
-
 }

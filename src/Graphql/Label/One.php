@@ -1,7 +1,6 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql\Label;
 
-use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
@@ -9,11 +8,8 @@ class One
 {
     use GraphQL;
 
-    private Pipefy $client;
-
     public function __construct()
     {
-        $this->client = new Pipefy;
     }
 
     public function get(){
@@ -21,7 +17,7 @@ class One
         $gql = $this->getGQL("pipe-one");
         $gql->set("PIPEID", $this->id);
         $gqlscript = $gql->script();
-        $gqlResult = $this->client->request($gqlscript);
+        $gqlResult = $this->request($gqlscript);
         return new Entity\Pipe($gqlResult->data->pipe, (bool) $gqlResult->data->pipe);
     }
 
@@ -36,7 +32,7 @@ class One
         }
 
         $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gqlscript);
         return $gqlResult;
     }
 
@@ -50,7 +46,7 @@ class One
         }
 
         $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gqlscript);
         return $gqlResult;
     }
 

@@ -1,7 +1,6 @@
 <?php
 
 namespace Clientedigital\Pipefy\Graphql\Card;
-use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
@@ -9,14 +8,12 @@ class All
 {
     use GraphQL;
 
-    private Pipefy $client;
     private int $pipeId;
     private string $search;
     private array $filter = [];
 
     public function __construct(int $pipeId, string $search="")
     {
-        $this->client = new Pipefy;
         $this->pipeId = $pipeId;
         $this->search = $search;
     }
@@ -55,7 +52,7 @@ class All
         $gql->set("PIPEID", $this->pipeId);
         $gql->set("SEARCH", $this->search);
         $gqlscript = $gql->script();
-        $gqlResult = $this->client->request($gqlscript);
+        $gqlResult = $this->request($gqlscript);
         return $gqlResult;
     }
 
@@ -66,7 +63,7 @@ class All
         $gql->set("SEARCH", $this->search);
         $gql->set("ENDCURSOR", $nextCursor);
         $gqlscript = $gql->script();
-        return $this->client->request($gqlscript);
+        return $this->request($gqlscript);
     }
 
 } 

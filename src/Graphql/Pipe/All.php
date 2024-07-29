@@ -1,7 +1,6 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql\Pipe;
 
-use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
@@ -21,7 +20,7 @@ class All
         $gql = $this->getGQL("pipe-all");
         $gql->set("ORGID", $this->orgid);
         $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gqlscript);
 
         foreach($gqlResult-> data->organization->pipes as $pipe){
             $all[] = new Entity\Pipe($pipe);
