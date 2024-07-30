@@ -104,6 +104,7 @@ Class GQL implements GQLInterface{
         $info->exists = $exists;
         $info->required = $isRequired;
         $info->type = $type;
+        $info->value = isset($this->property[$propName]) ? $this->property[$propName]:null;
 
         return $info;
     } 
