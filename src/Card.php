@@ -3,6 +3,8 @@ namespace Clientedigital\Pipefy;
 use Clientedigital\Pipefy\Graphql\Card\One;
 use Clientedigital\Pipefy\Graphql\Label;
 use Clientedigital\Pipefy\Entity;
+use Clientedigital\Pipefy\Filter;
+
 
 class Card 
 {
@@ -30,9 +32,17 @@ class Card
         return $this->card;
     }
 
-    public function labels()
+    public function labels(?Filter\Label $filter=null)
     {
-        return (new Label\All())->fromCard($this->id); 
+        $labels = (new Label\All())->fromCard($this->id); 
+        if(is_null($filter))
+            return $labels;
+        foreach($labels as $idx => $label){
+            if(!$filter->check($label))
+               unset($labels[$idx]); 
+        }
+        sort($labels);
+        return $labels;
     }
 
     public function comments()
