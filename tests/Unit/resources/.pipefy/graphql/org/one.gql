@@ -1,0 +1,23 @@
+{
+  organization(id:_ORGID_){
+    id
+    name
+    createdAt
+		createdBy{
+      id
+    }
+    freemium
+		membersCount
+		membersCountByRole {
+		  id
+			name
+			memberCount
+		}
+    onlyAdminCanCreatePipes
+		onlyAdminCanInviteUsers
+    pipes {
+        id
+    }
+  }
+}
+

@@ -1,0 +1,40 @@
+{
+  organizations{
+    id
+    name
+    createdAt
+    pipes {
+        id
+      	labels{
+          id
+          name
+					color
+        }
+            name
+            start_form_fields{
+        id
+        label
+        type
+        options
+        editable
+        deleted
+        required
+      }
+            phases{
+        id
+        name
+                description
+                index
+        fields{
+          id
+          label
+          type
+          options
+          editable
+                    deleted
+          required
+        }
+      }
+    }
+  }
+}

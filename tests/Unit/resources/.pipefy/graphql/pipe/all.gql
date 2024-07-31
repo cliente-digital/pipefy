@@ -1,5 +1,5 @@
 {
-  organization(id:_R.ORGID_){
+  organization(id:_ORGID_){
     pipes{
       id
     }

@@ -4,15 +4,6 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 class TestCase extends BaseTestCase
 {
 
-/*
-default values Are
-const CLIENTEDIGITAL_PIPEFY_API_URI = 'https://api.pipefy.com/graphql';
-const CLIENTEDIGITAL_PIPEFY_DIR = '/projetos/iannsp/PipefyPhpPackage/.pipefy';
-const CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR = '/projetos/iannsp/PipefyPhpPackage/.pipefy/graphql/';
-const CLIENTEDIGITAL_PIPEFY_CACHE_DIR = '/projetos/iannsp/PipefyPhpPackage/.pipefy/.cache/';
-const CLIENTEDIGITAL_PIPEFY_CONFIG_PATH = '/projetos/iannsp/PipefyPhpPackage/.pipefy/.config';
-const CLIENTEDIGITAL_PIPEFY_CONFIG_PARAMS = ['APIKEY'=>null];
-*/
     public function setConfig($cName, $cValue)
     {
         if(is_null($cValue))

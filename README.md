@@ -14,7 +14,7 @@ composer require clientedigital/pipefy
 
 next steps:
 
-configure your APIKEY.
+- configure your APIKEY.
 ```bash
 ./vendor/bin/cd.pipefy --config APIKEY 'ypur apikey here'
 ```
@@ -22,7 +22,7 @@ your apikey is set.
 
 
 
-build the cache of your organization schema.
+- build the cache of your organization schema.
 ```bash
 ./vendor/bin/cd.pipefy --config build-schema
 ```
@@ -35,8 +35,10 @@ Organization Schema was build.
 ### links
 
 - [FAQ](https://github.com/cliente-digital/pipefy/blob/main/doc/faq.md)
+- [How to Configure](https://github.com/cliente-digital/pipefy/blob/main/doc/configuration.md)
 - [How to start](https://github.com/cliente-digital/pipefy/blob/main/doc/getstart.md)
 - [cli tools](https://github.com/cliente-digital/pipefy/blob/main/doc/tools.md)
+- [Graphql Query and Mutation](https://github.com/cliente-digital/pipefy/blob/main/doc/gql-files.md)
 - [Road Map](https://github.com/orgs/cliente-digital/projects/2/views/1)
 - [next release](https://github.com/orgs/cliente-digital/projects/2/views/3)
 

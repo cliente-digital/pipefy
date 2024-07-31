@@ -25,7 +25,6 @@
     ],
     "scripts": {
         "install-cd.pipefy":[
-            "@putenv CLIENTEDIGITAL_PIPEFY_CONFIG_PATH=./pipefy"
         ],
         "cd:pipefy:config":"@php vendor/bin/cd.pipefy --config",
         "cd:pipefy:report":"@php vendor/bin/cd.pipefy --report"
