@@ -54,4 +54,12 @@ class Pipe
         return $labels;
 
     }
+
+    public function createCard(Entity\Card $card)
+    {
+        $card->pipeId($this->id);
+        $newValues = $card->__newData();
+        return (new One($this->id))
+            ->createCard($newValues); 
+    }
 } 

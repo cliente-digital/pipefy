@@ -1,0 +1,17 @@
+mutation{
+createCard(
+  input: {
+    pipe_id : _R.PIPEID_
+    assignee_ids: [_ASSIGNEEIDS_]
+    attachments : [_ATTACHMENTS_]
+    due_date : "_DUEDATE_"
+    fields_attributes : _FIELDS_
+    labels_ids : [_LABELIDS_]
+    parent_ids : [_PARENTIDS_]
+    phase_id: _PHASEID_
+    title : "_TITLE_"
+  }
+) {
+  clientMutationId
+}
+}

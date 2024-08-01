@@ -33,4 +33,14 @@ class One
         $gqlResult = $this->request($gql);
     }
 
+    public function createCard(array $createCardInput)
+    {
+        $gql = $this->getGQL("card-create");
+        $gql->set('PIPEID', $this->id);
+        foreach($createCardInput as $vName => $vValue){
+            $gql->set($vName, $vValue);
+        }
+        $gqlResult = $this->request($gql);
+        return $gqlResult;
+    }
 } 

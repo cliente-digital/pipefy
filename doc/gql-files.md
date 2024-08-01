@@ -54,4 +54,9 @@ variables are:
 
 But now let's talk about the type of variables. It can be only **with** **quotation mark** or **without** quotation mark. By without quotation mark you have boolean as the field [done at mutation updateCard](https://api-docs.pipefy.com/reference/objects/Card/), Int like the field [current_phase_age at updateCard](https://api-docs.pipefy.com/reference/objects/Card/) or any other type you need set without Quotation mark  and be quoted are String and Datetime (check pipefy graphql [objects documentation](https://api-docs.pipefy.com/reference/objects/AppAttachment/)).
 
+### Field Types
+
+- Int : Represents a unique identifier that is Base64 obfuscated. It is often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"VXNlci0xMA=="`) or integer (such as `4`) input value will be accepted as an ID.
+- String : Represents textual data as UTF-8 character sequences. This type is most often used by GraphQL to represent free-form human-readable text.
+- DateTime : An ISO‐8601 encoded UTC date time string (YYYY-MM-DD HH:MM:SS).
 **Most important:** YOU **MUST** add quotation mark directly into you gql variables. The type system  don't handle this until this implement a type check and I don't know yet if we are going this way.
