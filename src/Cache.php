@@ -8,18 +8,16 @@ class Cache
 {
 
     public const ALL = 0;
-
+    public const ALLWAYSVALIDCACHE = -1;
     function get(string $name)
     {
         $info = $this->info($name);
-
-        if($info->exists and !$info->valid){
+        
+        if($info->exists && !$info->valid && $info->ttl != self::ALLWAYSVALIDCACHE){
             $this->clear($name, $info->path);
             $info = $this->info($name);
         }
  
-
-
         if(!$info->exists)
             throw new \Exception("CACHE file {$name} not found");
 
@@ -38,7 +36,6 @@ class Cache
         $cachedName = substr($name, 0, $hashlength * -1);
         $defaultTtl = Pipefy::getConfig("PIPEFY_CACHE_TTL_DEFAULT");
         $ttl = Pipefy::getConfig("PIPEFY_CACHE_TTL.{$cachedName}");
-
         if(is_null($ttl) and is_null($defaultTtl))
             $ttl = 0;
         if(is_null($ttl) and !is_null($defaultTtl))
@@ -66,7 +63,7 @@ class Cache
                 \DateInterval::createFromDateString("{$info->ttl} sec")
             );
 
-            if($lifespan < (new DateTime())){
+            if($lifespan < (new DateTime()) && $info->ttl > self::ALLWAYSVALIDCACHE){
                 $info->valid = false;
             } 
         }
