@@ -58,9 +58,7 @@ Trait GraphQL{
             JSON_UNESCAPED_UNICODE
         );
 
-        if($canCache){
-            $this->setCache($gqlInfo->cacheId, $responseObject);
-        }
+        $this->setCache($gqlInfo->cacheId, $responseObject);
 
         return $responseObject;
     }
@@ -68,7 +66,7 @@ Trait GraphQL{
     private function setCache($cacheId, $response){
             $cache =  new Cache();
             $info = $cache->info($cacheId);
-            if($info->ttl > 0)
+            if($info->ttl > 0 || $info->ttl == Cache::ALLWAYSVALIDCACHE)
                 return $cache->set($cacheId, $response);
     }
 
