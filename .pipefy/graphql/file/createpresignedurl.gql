@@ -1,0 +1,11 @@
+mutation {
+  createPresignedUrl(input: {
+        fileName: "_R.FILENAME_", 
+        organizationId: _R.ORGID_}
+    ) {
+    clientMutationId
+    downloadUrl
+    url
+    
+  }
+}
