@@ -10,6 +10,7 @@ class Cards
 
     private int $pipeId=0;
     private array $cards = [];
+    private ?Filter\FilterInterface $filter=null;
 
     public function __construct(int $pipeId)
     {
@@ -26,11 +27,11 @@ class Cards
     public function get(?Filter\Cards $filter=null){
         $this->load();
         foreach($this->cards as $card){
-            if(!is_null($filter))
-                yield;
-            if(!$filter->check($card))
-                continue;
-            yield $card;
+            if(is_null($filter))
+                yield $card;
+
+            if($filter->check($card));
+                yield $card;
         }
     }
 } 
