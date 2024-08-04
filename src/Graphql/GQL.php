@@ -9,15 +9,16 @@ Class GQL implements GQLInterface{
     private string $scriptname;
     private string $rawScript;
     private ?int $id=null;
+    private bool $ignoreBulk = false;
 
     private const REQUIRED_PROPERTY = "_R\.FNAME_";
     private const NOTREQUIRED_PROPERTY = "_FNAME_";
     private const PROPERTY_PATTERN = "_(R\.){0,1}([A-Z]*)_";
 
-    public function __construct(string $scriptname)
+    public function __construct(string $scriptname, bool $ignoreBulk=false)
     {
        $this->scriptname = $scriptname; 
-
+        $this->ignoreBulk = $ignoreBulk;
        $path = Pipefy::getConfig('PIPEFY_GRAPHQL_DIR') . 
             str_replace("-", DIRECTORY_SEPARATOR, $this->scriptname) . ".gql";
 
@@ -39,6 +40,7 @@ Class GQL implements GQLInterface{
         $info = $this->info();
         $gqlscript = $this->rawScript();
         foreach($this->property as $propName => $propValue){
+            $gqlscript = str_replace("_R.{$propName}_", $propValue, $gqlscript);
             $gqlscript = str_replace("_{$propName}_", $propValue, $gqlscript);
         }
         $this->check($info, $gqlscript);
@@ -54,10 +56,10 @@ Class GQL implements GQLInterface{
     public function set(string $propName, string $propValue): void
     {
         $gqlscript = $this->rawScript();
-        if(
-            preg_match("/_R.{$propName}_/", $gqlscript)!==1 and
-            preg_match("/_{$propName}_/", $gqlscript)!==1
-        ){
+        $isRequired  = preg_match("/_R.{$propName}_/", $gqlscript)===1;
+        $isOptional = preg_match("/_{$propName}_/", $gqlscript)===1;
+
+        if(!$isRequired && !$isOptional) {
             throw new \Exception("Property {$propName} dont exist in gql {$this->scriptname}"); 
         }
 
@@ -78,6 +80,7 @@ Class GQL implements GQLInterface{
         $info->kind = ($ismutation)?"mutation":"query";
         $info->fields = $fields;
         $info->script = $rawScript;
+        $info->ignoreBulk = $this->ignoreBulk;
         $info->cacheId = $info->name."-".md5(serialize($info->fields));
         return $info;
     }
