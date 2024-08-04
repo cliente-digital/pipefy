@@ -2,6 +2,12 @@
   cards(pipe_id: _PIPEID_, first:50 _SEARCH_) {
     edges {
       node {
+    pipe{
+      id
+      organization{
+        id
+      }
+    }
         id
         title
     due_date

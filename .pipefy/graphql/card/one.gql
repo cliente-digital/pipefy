@@ -1,5 +1,11 @@
 {
   card(id:_CARDID_){
+    pipe{
+      id
+      organization{
+        id
+      }
+    }
         id
         title
     due_date

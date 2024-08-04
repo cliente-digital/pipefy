@@ -3,6 +3,8 @@ namespace Clientedigital\Pipefy\Graphql\Card;
 
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
+use Clientedigital\Pipefy\GraphQL\Label;
+
 
 class One 
 {
@@ -29,6 +31,16 @@ class One
         $gqlResult = $this->request($gql);
         return $gqlResult;
     }
+
+    public function updateFields(Entity\Card $card){
+        $data = $card->__newData(['FIELDS']);
+        $gql = $this->getGQL("card-fields.update");
+        $gql->set("CARDID", $card->id);
+        $gql->set("FIELDS", $data['FIELDS']->script());
+        $gqlResult = $this->request($gql);
+        return $gqlResult->data->updateFieldsValues->success;
+    }
+
 
     public function removeComment(Entity\Comment $comment){
         $gql = $this->getGQL("card-comment.remove");
@@ -60,7 +72,6 @@ class One
         return $comments;
     }
 
-
     public function addLabel(Entity\Label $label, array $actualLabels)
     {
         $newLabels = [];
@@ -71,7 +82,6 @@ class One
         $newLabels = array_unique($newLabels);
         if(count($actualLabels) == count($newLabels))
             return false;
-
         $gql = $this->getGQL("card-update");
         $gql->set("CARDID", $this->id);
         $gql->set("LABELIDS", "[".implode(", ", $newLabels)."]");
@@ -81,8 +91,10 @@ class One
  
     }
 
-    public function removeLabel(Entity\Label $label, array $actualLabels)
+    public function removeLabel(Entity\Label $label)
     {
+        $actualLabels = (new Label\All())->fromCard($this->id); 
+
         $newLabels = [];
         $exist = false;
         foreach($actualLabels as $alabel){
@@ -103,5 +115,4 @@ class One
 
         return $gqlResult;
     }
-
 } 
