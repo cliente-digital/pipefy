@@ -5,6 +5,7 @@ use Clientedigital\Pipefy\Graphql\Pipe\One;
 use Clientedigital\Pipefy\Graphql\Label;
 use Clientedigital\Pipefy\Entity;
 use Clientedigital\Pipefy\Filter;
+use Clientedigital\Pipefy\Schema\Data\Type as DataType;
 
 
     
@@ -18,7 +19,7 @@ class Pipe
         $this->id = $id;
     }
 
-    public function load(){
+    private function load(){
         return (new One($this->id))->get(); 
     }
 
@@ -34,7 +35,7 @@ class Pipe
         return new Cards($this->id);
     }
 
-    public function update(Entity\EntityInterface $resource)
+    public function update(Entity\Pipe $pipe)
     {
         $newValues = $resource->__newData();
         return (new One($this->id))
@@ -61,5 +62,10 @@ class Pipe
         $newValues = $card->__newData();
         return (new One($this->id))
             ->createCard($newValues); 
+    }
+
+    public function field(string $fieldName) //: DataType\TypeInterface
+    {
+        return Schema::field($this->id, $fieldName); 
     }
 } 

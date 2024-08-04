@@ -4,6 +4,16 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 class TestCase extends BaseTestCase
 {
 
+    private $values = [];
+    public function setLocal($cName, $cValue)
+    {
+        $this->values[$cName] = $cValue;
+    }
+
+    public function getLocal($cName){
+        return $this->values[$cName];
+    }
+
     public function setConfig($cName, $cValue)
     {
         if(is_null($cValue))
