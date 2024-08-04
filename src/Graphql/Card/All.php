@@ -40,7 +40,9 @@ class All
         $all = $page->data->cards->edges;
         $cards = [];
          foreach($all as $card){
-            $cards[] = new Entity\Card($card->node);
+            $card = new Entity\Card($card->node);
+            $card->pipeId($this->pipeId);
+            $cards[] = $card;
         }
         return $cards;
 
