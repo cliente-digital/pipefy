@@ -24,8 +24,9 @@ abstract class  AbstractModel
             return $this->data->$dataId;
 
         foreach($this->data->fields as $field){
-           if($dataId == $field->field->id)
+           if($dataId == $field->field->id){
                 return $field->value;
+            }
         }
 
         return null;

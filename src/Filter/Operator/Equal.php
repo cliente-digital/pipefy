@@ -7,6 +7,9 @@ use \StdClass;
 class Equal implements OperatorInterface
 {
     public function evaluate(EntityInterface $item, $field, $value){
+        $fieldvalue = $item->$field;
+        if(is_null($item->$field) && !is_null($value))
+            return false;
         return $item->$field == $value;
     }
 } 
