@@ -1,6 +1,0 @@
-{
- card (id : _R.CARDID_){
-        title: "_TITLE_"
-        pipeid : _PIPEID_
-    }
-}

@@ -1,9 +1,0 @@
-{
-  table(id:_TABLEID_) {
-        labels{
-          id
-          name
-          color
-        }
-    }
-}
