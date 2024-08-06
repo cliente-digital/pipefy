@@ -1,0 +1,18 @@
+{
+    "data": {
+        "pipe": {
+            "labels": [
+                {
+                    "id": "311897383",
+                    "name": "etiqueta 2",
+                    "color": "#B05056"
+                },
+                {
+                    "id": "311897389",
+                    "name": "etiqueta 1",
+                    "color": "#83BB55"
+                }
+            ]
+        }
+    }
+}

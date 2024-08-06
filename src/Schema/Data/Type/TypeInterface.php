@@ -5,6 +5,9 @@ use \stdclass;
 interface TypeInterface{
     public function __construct(stdclass $definition);
     public function value($value = null);
+    public function script($gqlname=null): string;
+
+
 }
 
 // cada pipey tem seus campos

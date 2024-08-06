@@ -1,0 +1,1823 @@
+{
+    "data": {
+        "organizations": [
+            {
+                "id": "301345588",
+                "name": "pessoal",
+                "createdAt": "2024-07-29T12:28:54Z",
+                "pipes": [
+                    {
+                        "id": "304530915",
+                        "labels": [
+                            {
+                                "id": "311855202",
+                                "name": "Alta prioridade",
+                                "color": "#f51b34"
+                            },
+                            {
+                                "id": "311855203",
+                                "name": "Média prioridade",
+                                "color": "#1175f7"
+                            },
+                            {
+                                "id": "311855204",
+                                "name": "Baixa prioridade",
+                                "color": "#30E354"
+                            },
+                            {
+                                "id": "311855205",
+                                "name": "Resolução recusada pelo aprovador",
+                                "color": "#F5A623"
+                            },
+                            {
+                                "id": "311855206",
+                                "name": "Informações Complementadas",
+                                "color": "#9013FE"
+                            }
+                        ],
+                        "name": "[TI] Gestão de Requisições",
+                        "start_form_fields": [
+                            {
+                                "id": "identifica_o_do_solicitante",
+                                "label": "Identificação do Solicitante",
+                                "type": "connector",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "tipo_da_solicita_o",
+                                "label": "Tipo da solicitação",
+                                "type": "select",
+                                "options": [
+                                    "Acessos",
+                                    "Questões com o seu computador",
+                                    "Questões de e-mails",
+                                    "Periféricos",
+                                    "Questões com softwares",
+                                    "Outro"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "outro_tipo_de_solicita_o",
+                                "label": "Outro tipo de solicitação",
+                                "type": "short_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "detalhes",
+                                "label": "Detalhes",
+                                "type": "long_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "anexos_relacionados_solicita_o",
+                                "label": "Anexos relacionados à solicitação",
+                                "type": "attachment",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "id_da_requisi_o",
+                                "label": "ID da Requisição",
+                                "type": "id",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": false
+                            }
+                        ],
+                        "phases": [
+                            {
+                                "id": "327361658",
+                                "name": "Triagem 🔀",
+                                "description": "",
+                                "index": 1,
+                                "fields": [
+                                    {
+                                        "id": "informa_es_complementadas",
+                                        "label": "Informações complementadas",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "limpar_etiqueta",
+                                        "label": "Limpar etiqueta",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "respons_vel",
+                                        "label": "Responsável",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "prioridade",
+                                        "label": "Prioridade ",
+                                        "type": "select",
+                                        "options": [
+                                            "Alta",
+                                            "Média",
+                                            "Baixa"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "etiqueta_prioridade",
+                                        "label": "Etiqueta prioridade",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "prazo",
+                                        "label": "Prazo",
+                                        "type": "due_date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "notas",
+                                        "label": "Notas",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "necessitamos_de_mais_informa_es",
+                                        "label": "Necessitamos de mais informações?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "o_que_mais_necess_rio",
+                                        "label": "O que mais é necessário?",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "statement_b6f6f3ed_b5d4_4195_8928_a8053fef0c5f",
+                                        "label": "Statement-b6f6f3ed-b5d4-4195-8928-a8053fef0c5f",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361659",
+                                "name": "Aguardando Informações 📄",
+                                "description": null,
+                                "index": 1.75,
+                                "fields": [
+                                    {
+                                        "id": "statement_0f38a525_7b91_4e9d_9736_6c388d2d8bff",
+                                        "label": "Statement-0f38a525-7b91-4e9d-9736-6c388d2d8bff",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "escreva_aqui_o_que_foi_solicitado",
+                                        "label": "Escreva aqui o que foi solicitado",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "anexos",
+                                        "label": "Anexos",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "enviar_informa_es",
+                                        "label": "Enviar Informações",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✅"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361660",
+                                "name": "Em Andamento🎯",
+                                "description": "",
+                                "index": 2,
+                                "fields": [
+                                    {
+                                        "id": "resolu_o_recusada",
+                                        "label": "Resolução recusada",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "analista",
+                                        "label": "Analista",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "qual_foi_o_problema_identificado",
+                                        "label": "Qual foi o problema identificado?",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "qual_a_a_o_tomada",
+                                        "label": "Qual a ação tomada?",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "anexo",
+                                        "label": "Anexo",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "pr_ximo_passo",
+                                        "label": "Próximo passo: ",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Cascatear para Aprovação",
+                                            "Concluir Chamado"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361664",
+                                "name": "Aprovação ⚖️",
+                                "description": "",
+                                "index": 2.5,
+                                "fields": [
+                                    {
+                                        "id": "aprovador",
+                                        "label": "Aprovador",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "statement_18e9b28f_4f36_4259_854f_abfb1c9030fa",
+                                        "label": "Statement-18e9b28f-4f36-4259-854f-abfb1c9030fa",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "aprova_essa_resolu_o",
+                                        "label": "Aprova essa resolução ?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "justificativa",
+                                        "label": "Justificativa",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "statement_925a7529_f034_4835_814c_225b9e903c1f",
+                                        "label": "Statement-925a7529-f034-4835-814c-225b9e903c1f",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "card_ser_movido_automaticamente_para_fase_final_de_conclu_dos",
+                                        "label": "Card será movido automaticamente para fase final de Concluídos ✅ ->",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361661",
+                                "name": "Pausada ⏸",
+                                "description": "",
+                                "index": 3,
+                                "fields": [
+                                    {
+                                        "id": "field",
+                                        "label": "⏸ ",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361662",
+                                "name": "Concluído ✅",
+                                "description": "",
+                                "index": 4,
+                                "fields": [
+                                    {
+                                        "id": "como_voc_avalia_o_atendimento_prestado_pela_acme",
+                                        "label": "Como você avalia o atendimento prestado pela ACME?",
+                                        "type": "radio_vertical",
+                                        "options": [
+                                            "Excelente 🤩",
+                                            "Bom 🙂",
+                                            "Regular 😶",
+                                            "Ruim 😐",
+                                            "Péssimo 😡"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "feedbacks_sugest_es",
+                                        "label": "Feedbacks\/Sugestões",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361663",
+                                "name": "Arquivado ❌",
+                                "description": "",
+                                "index": 5,
+                                "fields": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "304530916",
+                        "labels": [
+                            {
+                                "id": "311855207",
+                                "name": "Baixa",
+                                "color": "#0F0"
+                            },
+                            {
+                                "id": "311855208",
+                                "name": "Média",
+                                "color": "#FF0"
+                            },
+                            {
+                                "id": "311855209",
+                                "name": "Alta",
+                                "color": "#F00"
+                            }
+                        ],
+                        "name": "[TI] Gestão de Incidentes",
+                        "start_form_fields": [
+                            {
+                                "id": "n_mero_do_incidente",
+                                "label": "Número do Incidente",
+                                "type": "id",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "requisitado_por",
+                                "label": "Requisitado por",
+                                "type": "connector",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "categoria",
+                                "label": "Categoria",
+                                "type": "select",
+                                "options": [
+                                    "Acesso",
+                                    "Aplicação",
+                                    "Rede",
+                                    "Segurança"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "descri_o_do_incidente",
+                                "label": "Descrição do incidente",
+                                "type": "long_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            }
+                        ],
+                        "phases": [
+                            {
+                                "id": "327361668",
+                                "name": "Revisão",
+                                "description": null,
+                                "index": 8,
+                                "fields": [
+                                    {
+                                        "id": "revisor",
+                                        "label": "Revisor",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "podemos_prosseguir_com_a_solicita_o_ou_s_o_necess_rias_mais_informa_es_do_requisitante",
+                                        "label": "Podemos prosseguir com a solicitação ou são necessárias mais informações do requisitante?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Pode Prosseguir",
+                                            "Necessário Informações"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "o_que_mais_necess_rio",
+                                        "label": "O que mais é necessário?",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "prioridade",
+                                        "label": "Prioridade",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "urg_ncia",
+                                        "label": "Urgência",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Alta",
+                                            "Média",
+                                            "Baixa"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "impacto",
+                                        "label": "Impacto",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Alto",
+                                            "Médio",
+                                            "Baixa"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "sla",
+                                        "label": "SLA",
+                                        "type": "due_date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "grupo_que_se_apropriar_do_incidente",
+                                        "label": "Grupo que se Apropriará do Incidente",
+                                        "type": "connector",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "pr_xima_etapa",
+                                        "label": "Próxima Etapa",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✅"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361671",
+                                "name": "Ajustes",
+                                "description": "Colete informações do Processo via Formulários de Fase",
+                                "index": 8.5,
+                                "fields": [
+                                    {
+                                        "id": "statement_246100d9_63b6_4b25_80b0_f145d1fa9564",
+                                        "label": "Statement-246100d9-63b6-4b25-80b0-f145d1fa9564",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "escreva_aqui_o_que_foi_pedido",
+                                        "label": "Escreva aqui o que foi pedido",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "eu_confirmo_que_preenchi_o_formul_rio_corretamente",
+                                        "label": "Eu confirmo que preenchi o formulário corretamente",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✅"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361669",
+                                "name": "Confirmação",
+                                "description": null,
+                                "index": 9,
+                                "fields": [
+                                    {
+                                        "id": "respons_veis",
+                                        "label": "Responsáveis",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "statement_59c7b098_c167_4563_8385_2204ae639695",
+                                        "label": "Statement-59c7b098-c167-4563-8385-2204ae639695",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "eu_confirmo_a_apropria_o",
+                                        "label": "Eu confirmo a apropriação",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✅"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361670",
+                                "name": "Em Andamento",
+                                "description": null,
+                                "index": 11,
+                                "fields": [
+                                    {
+                                        "id": "respons_vel",
+                                        "label": "Responsável",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "problema_identificado",
+                                        "label": "Problema Identificado",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "tipo_de_solu_o",
+                                        "label": "Tipo de Solução",
+                                        "type": "select",
+                                        "options": [
+                                            "Incidente Duplicado",
+                                            "Erro Conhecido",
+                                            "Nenhuma Solução foi Aplicada",
+                                            "Resolvido por Mudança",
+                                            "Resolvido por Problema",
+                                            "Resolvido pelo Solicitante",
+                                            "Resolvido pelo Analista",
+                                            "Erro do Usuário",
+                                            "Outro",
+                                            "❌ Não Solucionado"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "detalhes_da_resolu_o",
+                                        "label": "Detalhes da Resolução ",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "descreva_o_que_foi_feito",
+                                        "label": "Descreva o que foi feito",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "declarar_assets_do_cmdb",
+                                        "label": "Declarar Assets do CMDB ",
+                                        "type": "connector",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "voc_quem_resolveu_esse_problema",
+                                        "label": "Você quem resolveu esse Problema?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "quem_resolveu",
+                                        "label": "Quem resolveu?",
+                                        "type": "connector",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "data_de_solu_o",
+                                        "label": "Data de Solução",
+                                        "type": "date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "pr_xima_etapa_1",
+                                        "label": "Próxima Etapa",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✅"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361666",
+                                "name": "Solucionados",
+                                "description": null,
+                                "index": 13,
+                                "fields": []
+                            },
+                            {
+                                "id": "327361667",
+                                "name": "Cancelados",
+                                "description": null,
+                                "index": 14,
+                                "fields": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "304530917",
+                        "labels": [
+                            {
+                                "id": "311855210",
+                                "name": "Baixa",
+                                "color": "#0F0"
+                            },
+                            {
+                                "id": "311855211",
+                                "name": "Média",
+                                "color": "#FF0"
+                            },
+                            {
+                                "id": "311855212",
+                                "name": "Alta",
+                                "color": "#F00"
+                            }
+                        ],
+                        "name": "[TI] Gestão de Mudanças",
+                        "start_form_fields": [
+                            {
+                                "id": "id_do_ticket",
+                                "label": "ID do Ticket",
+                                "type": "id",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "requisitado_por",
+                                "label": "Requisitado por",
+                                "type": "connector",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "tipo",
+                                "label": "Tipo",
+                                "type": "select",
+                                "options": [
+                                    "Normal",
+                                    "Padrão",
+                                    "Emergencial"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "categoria",
+                                "label": "Categoria",
+                                "type": "select",
+                                "options": [
+                                    "Acesso",
+                                    "Aplicação",
+                                    "Rede",
+                                    "Segurança"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "origem_do_servi_o",
+                                "label": "Origem do Serviço",
+                                "type": "short_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "prioridade",
+                                "label": "Prioridade",
+                                "type": "label_select",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "risco",
+                                "label": "Risco",
+                                "type": "radio_horizontal",
+                                "options": [
+                                    "Alto",
+                                    "Médio",
+                                    "Baixo"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "impacto",
+                                "label": "Impacto",
+                                "type": "radio_horizontal",
+                                "options": [
+                                    "Alto",
+                                    "Médio",
+                                    "Baixo"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            },
+                            {
+                                "id": "descri_o_da_mudan_a",
+                                "label": "Descrição da mudança",
+                                "type": "long_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": true
+                            }
+                        ],
+                        "phases": [
+                            {
+                                "id": "327361676",
+                                "name": "Validação",
+                                "description": "",
+                                "index": 1,
+                                "fields": [
+                                    {
+                                        "id": "respons_vel",
+                                        "label": "Responsável",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "voc_aprova_essa_solicita_o",
+                                        "label": "Você aprova essa solicitação?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "motivo",
+                                        "label": "Motivo",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361677",
+                                "name": "Autorização",
+                                "description": "",
+                                "index": 2,
+                                "fields": [
+                                    {
+                                        "id": "aprovador",
+                                        "label": "Aprovador",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "voc_autoriza_essa_solicita_o_de_mudan_a",
+                                        "label": "Você autoriza essa solicitação de mudança?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "motivo_1",
+                                        "label": "Motivo",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361678",
+                                "name": "Agendamento",
+                                "description": null,
+                                "index": 3,
+                                "fields": [
+                                    {
+                                        "id": "respons_vel_1",
+                                        "label": "Responsável",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "data_de_in_cio_planejado",
+                                        "label": "Data de Início Planejado",
+                                        "type": "date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "data_de_finaliza_o_planejada",
+                                        "label": "Data de finalização planejada",
+                                        "type": "date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "cab_requerido",
+                                        "label": "CAB requerido?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "data_cab",
+                                        "label": "Data CAB",
+                                        "type": "date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "recomenda_o_cab",
+                                        "label": "Recomendação CAB",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361679",
+                                "name": "Implementação",
+                                "description": null,
+                                "index": 4,
+                                "fields": [
+                                    {
+                                        "id": "implementador",
+                                        "label": "Implementador",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "data_de_conclus_o",
+                                        "label": "Data de Conclusão",
+                                        "type": "date",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "coment_rios",
+                                        "label": "Comentários",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "anexos",
+                                        "label": "Anexos",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361680",
+                                "name": "Revisão",
+                                "description": null,
+                                "index": 5,
+                                "fields": [
+                                    {
+                                        "id": "revisor",
+                                        "label": "Revisor",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "essa_mudan_a_teve_sucesso",
+                                        "label": "Essa mudança teve sucesso?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "coment_rios_1",
+                                        "label": "Comentários",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361681",
+                                "name": "Concluídos",
+                                "description": null,
+                                "index": 6,
+                                "fields": []
+                            },
+                            {
+                                "id": "327361682",
+                                "name": "Cancelados",
+                                "description": null,
+                                "index": 7,
+                                "fields": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "304530918",
+                        "labels": [
+                            {
+                                "id": "311855213",
+                                "name": "Critica",
+                                "color": "#D0021B"
+                            },
+                            {
+                                "id": "311855214",
+                                "name": "Alta",
+                                "color": "#F5A623"
+                            },
+                            {
+                                "id": "311855215",
+                                "name": "Moderada",
+                                "color": "#EEF086"
+                            },
+                            {
+                                "id": "311855216",
+                                "name": "Baixa",
+                                "color": "#4A90E2"
+                            },
+                            {
+                                "id": "311855217",
+                                "name": "Resolução não resolveu o problema",
+                                "color": "#6512F4"
+                            }
+                        ],
+                        "name": "[TI] Gestão de Problemas",
+                        "start_form_fields": [
+                            {
+                                "id": "reportado_por",
+                                "label": "Reportado por",
+                                "type": "short_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "e_mail_de_quem_reportou",
+                                "label": "E-mail de quem reportou",
+                                "type": "email",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "categoria",
+                                "label": "Categoria",
+                                "type": "select",
+                                "options": [
+                                    "Rede",
+                                    "Aplicação",
+                                    "Problemas de software",
+                                    "Problemas de hardware",
+                                    "Segurança",
+                                    "E-mail",
+                                    "Acesso remoto",
+                                    "Backup e recuperação de dados",
+                                    "Outros"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "prioridade_1",
+                                "label": "Prioridade:",
+                                "type": "radio_horizontal",
+                                "options": [
+                                    "Crítica",
+                                    "Alta",
+                                    "Moderada",
+                                    "Baixa"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "urg_ncia",
+                                "label": "Urgência",
+                                "type": "radio_horizontal",
+                                "options": [
+                                    "Alta",
+                                    "Media",
+                                    "Baixa"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "impacto",
+                                "label": "Impacto",
+                                "type": "radio_horizontal",
+                                "options": [
+                                    "Alto",
+                                    "Médio",
+                                    "Baixo"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "descri_o_do_problema",
+                                "label": "Descrição do problema",
+                                "type": "long_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "anexo",
+                                "label": "Anexo",
+                                "type": "attachment",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "resolu_o_n_o_resolvida",
+                                "label": "Resolução não resolvida",
+                                "type": "label_select",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "id_do_chamado",
+                                "label": "ID do Chamado ",
+                                "type": "id",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": false
+                            }
+                        ],
+                        "phases": [
+                            {
+                                "id": "327361684",
+                                "name": "Validação",
+                                "description": "",
+                                "index": 1,
+                                "fields": [
+                                    {
+                                        "id": "gerente_2",
+                                        "label": "Gerente",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "prioridade",
+                                        "label": "Prioridade",
+                                        "type": "label_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "id": "voc_valida_essa_solicita_o",
+                                        "label": "Você valida essa solicitação?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "clique_aqui_para_adicionar_a_justificativa",
+                                        "label": "Clique aqui para adicionar a Justificativa",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361685",
+                                "name": "Análise Causa Raiz (RCA)",
+                                "description": "",
+                                "index": 2,
+                                "fields": [
+                                    {
+                                        "id": "gerente",
+                                        "label": "Gerente",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "investiga_o",
+                                        "label": "Investigação",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "an_lise_de_causa_raiz",
+                                        "label": "Análise de Causa Raiz",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "documenta_o",
+                                        "label": "Documentação ",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "necess_rio_escalonar_para_n_vel_t_cnico_superior",
+                                        "label": "É necessário escalonar para nível técnico superior?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361688",
+                                "name": "Escalonamento",
+                                "description": "",
+                                "index": 2.25,
+                                "fields": [
+                                    {
+                                        "id": "respons_vel_suporte_t_cnico",
+                                        "label": "Responsável Suporte Técnico",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "investiga_o_alternativa",
+                                        "label": "Investigação alternativa",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "an_lise_de_causa_raiz_1",
+                                        "label": "Análise de Causa Raiz",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "documenta_o_1",
+                                        "label": "Documentação ",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "corre_o_necess_ria",
+                                        "label": "Correção necessária",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "mova_o_card_para_a_fase_de_em_corre_o",
+                                        "label": "➡ Mova o card para a fase de Em Correção ",
+                                        "type": "statement",
+                                        "options": [],
+                                        "editable": false,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361687",
+                                "name": "Em Correção",
+                                "description": "",
+                                "index": 2.5,
+                                "fields": [
+                                    {
+                                        "id": "respons_vel_suporte_t_cnico_1",
+                                        "label": "Responsável Suporte Técnico",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "corre_o_finalizada",
+                                        "label": "Correção finalizada?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "detalhes_da_corre_o",
+                                        "label": "Detalhes da Correção ",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361689",
+                                "name": "Resolvido",
+                                "description": "",
+                                "index": 2.75,
+                                "fields": [
+                                    {
+                                        "id": "gerente_1",
+                                        "label": "Gerente",
+                                        "type": "assignee_select",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "problema_resolvido",
+                                        "label": "Problema resolvido?",
+                                        "type": "radio_horizontal",
+                                        "options": [
+                                            "Sim",
+                                            "Não"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "documenta_o_corre_o",
+                                        "label": "Documentação correção",
+                                        "type": "attachment",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "resumo_resolu_o",
+                                        "label": "Resumo resolução",
+                                        "type": "long_text",
+                                        "options": [],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": null
+                                    },
+                                    {
+                                        "id": "comunicar_corre_o_ao_solicitante_e_fechar_a_solicita_o",
+                                        "label": "Comunicar correção ao solicitante e fechar a solicitação ?",
+                                        "type": "checklist_vertical",
+                                        "options": [
+                                            "✔️"
+                                        ],
+                                        "editable": true,
+                                        "deleted": false,
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "327361686",
+                                "name": "Fechado",
+                                "description": "",
+                                "index": 3,
+                                "fields": []
+                            },
+                            {
+                                "id": "327361690",
+                                "name": "Cancelado",
+                                "description": null,
+                                "index": 4,
+                                "fields": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "304547300",
+                        "labels": [
+                            {
+                                "id": "311897383",
+                                "name": "etiqueta 2",
+                                "color": "#B05056"
+                            },
+                            {
+                                "id": "311897389",
+                                "name": "etiqueta 1",
+                                "color": "#83BB55"
+                            }
+                        ],
+                        "name": "Pipe sem campos conectados",
+                        "start_form_fields": [
+                            {
+                                "id": "campo_1",
+                                "label": "Campo 1",
+                                "type": "short_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "texto_longo",
+                                "label": "texto longo",
+                                "type": "long_text",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "statement_fc01d4fe_51db_4974_bd62_4d0b0098bac1",
+                                "label": "Statement-fc01d4fe-51db-4974-bd62-4d0b0098bac1",
+                                "type": "statement",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": null
+                            },
+                            {
+                                "id": "campo_anexo",
+                                "label": "campo anexo",
+                                "type": "attachment",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "checklist",
+                                "label": "checklist",
+                                "type": "checklist_vertical",
+                                "options": [
+                                    "um",
+                                    "2",
+                                    "3"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "responsavel",
+                                "label": "responsavel",
+                                "type": "assignee_select",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "data",
+                                "label": "data",
+                                "type": "date",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "date_e_hora",
+                                "label": "date e hora",
+                                "type": "datetime",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "data_vencimento",
+                                "label": "data vencimento",
+                                "type": "due_date",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "etiquetas",
+                                "label": "etiquetas",
+                                "type": "label_select",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "email",
+                                "label": "email",
+                                "type": "email",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "numero_telefone",
+                                "label": "numero telefone",
+                                "type": "phone",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "selecao_de_lista",
+                                "label": "selecao de lista",
+                                "type": "select",
+                                "options": [
+                                    "um",
+                                    "2",
+                                    "3"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "selecao_unica",
+                                "label": "selecao unica",
+                                "type": "radio_vertical",
+                                "options": [
+                                    "a",
+                                    "b",
+                                    "c"
+                                ],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "tempo",
+                                "label": "tempo",
+                                "type": "time",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "numero",
+                                "label": "numero",
+                                "type": "number",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "moeda",
+                                "label": "moeda",
+                                "type": "currency",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "document_rg",
+                                "label": "CPF",
+                                "type": "cpf",
+                                "options": [],
+                                "editable": true,
+                                "deleted": false,
+                                "required": false
+                            },
+                            {
+                                "id": "id",
+                                "label": "ID",
+                                "type": "id",
+                                "options": [],
+                                "editable": false,
+                                "deleted": false,
+                                "required": false
+                            }
+                        ],
+                        "phases": [
+                            {
+                                "id": "327459837",
+                                "name": "Caixa de entrada",
+                                "description": "Aqui chegam os cards criados para este pipe.",
+                                "index": 1,
+                                "fields": []
+                            },
+                            {
+                                "id": "327459838",
+                                "name": "Fazendo",
+                                "description": "Hora do show! Aqui ficam os cards que estão sendo feitos.",
+                                "index": 2,
+                                "fields": []
+                            },
+                            {
+                                "id": "327459839",
+                                "name": "Concluído",
+                                "description": "Descanse em paz… Aqui ficam os cards finalizados.",
+                                "index": 3,
+                                "fields": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

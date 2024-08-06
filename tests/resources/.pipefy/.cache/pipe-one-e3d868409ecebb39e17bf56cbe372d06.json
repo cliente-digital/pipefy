@@ -1,0 +1,228 @@
+{
+    "data": {
+        "pipe": {
+            "id": "304547300",
+            "labels": [
+                {
+                    "id": "311897383",
+                    "name": "etiqueta 2",
+                    "color": "#B05056"
+                },
+                {
+                    "id": "311897389",
+                    "name": "etiqueta 1",
+                    "color": "#83BB55"
+                }
+            ],
+            "name": "Pipe sem campos conectados",
+            "start_form_fields": [
+                {
+                    "id": "campo_1",
+                    "label": "Campo 1",
+                    "type": "short_text",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "texto_longo",
+                    "label": "texto longo",
+                    "type": "long_text",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "statement_fc01d4fe_51db_4974_bd62_4d0b0098bac1",
+                    "label": "Statement-fc01d4fe-51db-4974-bd62-4d0b0098bac1",
+                    "type": "statement",
+                    "options": [],
+                    "editable": false,
+                    "deleted": false,
+                    "required": null
+                },
+                {
+                    "id": "campo_anexo",
+                    "label": "campo anexo",
+                    "type": "attachment",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "checklist",
+                    "label": "checklist",
+                    "type": "checklist_vertical",
+                    "options": [
+                        "um",
+                        "2",
+                        "3"
+                    ],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "responsavel",
+                    "label": "responsavel",
+                    "type": "assignee_select",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "data",
+                    "label": "data",
+                    "type": "date",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "date_e_hora",
+                    "label": "date e hora",
+                    "type": "datetime",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "data_vencimento",
+                    "label": "data vencimento",
+                    "type": "due_date",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "etiquetas",
+                    "label": "etiquetas",
+                    "type": "label_select",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "email",
+                    "label": "email",
+                    "type": "email",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "numero_telefone",
+                    "label": "numero telefone",
+                    "type": "phone",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "selecao_de_lista",
+                    "label": "selecao de lista",
+                    "type": "select",
+                    "options": [
+                        "um",
+                        "2",
+                        "3"
+                    ],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "selecao_unica",
+                    "label": "selecao unica",
+                    "type": "radio_vertical",
+                    "options": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "tempo",
+                    "label": "tempo",
+                    "type": "time",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "numero",
+                    "label": "numero",
+                    "type": "number",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "moeda",
+                    "label": "moeda",
+                    "type": "currency",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "document_rg",
+                    "label": "CPF",
+                    "type": "cpf",
+                    "options": [],
+                    "editable": true,
+                    "deleted": false,
+                    "required": false
+                },
+                {
+                    "id": "id",
+                    "label": "ID",
+                    "type": "id",
+                    "options": [],
+                    "editable": false,
+                    "deleted": false,
+                    "required": false
+                }
+            ],
+            "phases": [
+                {
+                    "id": "327459837",
+                    "name": "Caixa de entrada",
+                    "description": "Aqui chegam os cards criados para este pipe.",
+                    "index": 1,
+                    "fields": []
+                },
+                {
+                    "id": "327459838",
+                    "name": "Fazendo",
+                    "description": "Hora do show! Aqui ficam os cards que estão sendo feitos.",
+                    "index": 2,
+                    "fields": []
+                },
+                {
+                    "id": "327459839",
+                    "name": "Concluído",
+                    "description": "Descanse em paz… Aqui ficam os cards finalizados.",
+                    "index": 3,
+                    "fields": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+  cards(pipe_id: _PIPEID_, first:50 _SEARCH_) {
+    edges {
+      node {
+    pipe{
+      id
+      organization{
+        id
+      }
+    }
+        id
+        title
+    due_date
+    overdue
+    comments{
+      id
+      created_at
+      text
+      author {
+        id
+      }
+    }
+
+        labels{
+            id
+            name
+        }
+    fields {
+      field {
+        id
+        type
+				internal_id
+      }
+      name
+      value
+    }
+    child_relations {
+      id
+      pipe {
+        id
+      }
+      cards {
+        id
+        fields {
+          field{
+            id
+          }
+        }
+      }
+    } parent_relations {
+      id
+      cards {
+        id
+        fields {
+          field{
+            id
+            label
+          }
+        }
+      }
+    }
+
+  } 
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  } 
+}
+

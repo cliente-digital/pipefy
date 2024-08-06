@@ -27,7 +27,12 @@ class LongText extends AbstractType implements TypeInterface
             throw new \Exception("LongText {$this->id()} only accept string. Found {$type}.");
         }
     }
-    public function script(): string
+
+    /**
+    * use gqlname to select the kind of script you need.
+    * because sometimes a Data Type has a different representation in different gqls
+    **/
+    public function script($gqlname=null): string
     {
         return "{fieldId:\"{$this->id()}\", value: \"{$this->value()}\"}";
     }

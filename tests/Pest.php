@@ -1,6 +1,9 @@
 <?php
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
+putenv("CLIENTEDIGITAL_PIPEFY_CONFIG_FILE=".__DIR__ ."/cd.pipefy.test.ini");
+define('CLIENTE_DIGITAL_BULK_PAGE_SIZE', 30);
+
 class TestCase extends BaseTestCase
 {
 
@@ -23,6 +26,7 @@ class TestCase extends BaseTestCase
 }
 
 uses(TestCase::class)->in("*");
+
 /*
 |--------------------------------------------------------------------------
 | Test Case

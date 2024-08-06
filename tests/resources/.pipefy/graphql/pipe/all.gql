@@ -1,0 +1,7 @@
+{
+  organization(id:_R.ORGID_){
+    pipes{
+      id
+    }
+  }
+}

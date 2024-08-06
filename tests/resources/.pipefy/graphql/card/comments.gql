@@ -1,0 +1,13 @@
+{
+  card(id: _CARDID_ ){
+    comments{
+      id
+      text
+      created_at
+      author{
+        id
+				name
+      }
+    }
+  }
+}

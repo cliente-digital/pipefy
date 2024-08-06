@@ -34,8 +34,15 @@ class ShortText extends AbstractType implements TypeInterface
         }
     }
 
-    public function script(): string
-    {
+    /**
+    * use gqlname to select the kind of script you need.
+    * because sometimes a Data Type has a different representation in different gqls
+    **/
+    public function script($gqlname=null): string
+     {
+        if($gqlname == 'card-create')
+            return "{field_id:\"{$this->id()}\", field_value: \"{$this->value()}\"}";
+
         return "{fieldId:\"{$this->id()}\", value: \"{$this->value()}\"}";
     }
 }

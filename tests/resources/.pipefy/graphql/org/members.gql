@@ -1,0 +1,15 @@
+query{
+  organization(id: _R.ORGID_ ){
+    members{
+      user {
+        id
+	    email
+        displayName
+	    name
+        phone
+        username
+      }
+	    role_name
+    }
+  }
+}

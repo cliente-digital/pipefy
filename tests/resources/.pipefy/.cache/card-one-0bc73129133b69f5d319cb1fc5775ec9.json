@@ -1,0 +1,58 @@
+{
+    "data": {
+        "card": {
+            "pipe": {
+                "id": "304547300",
+                "organization": {
+                    "id": "301345588"
+                }
+            },
+            "id": "968095887",
+            "title": "texto simples",
+            "due_date": null,
+            "overdue": false,
+            "comments": [],
+            "labels": [],
+            "fields": [
+                {
+                    "field": {
+                        "id": "responsavel",
+                        "type": "assignee_select",
+                        "internal_id": "378399061"
+                    },
+                    "name": "responsavel",
+                    "value": "[\"Iannsp\", \"Ivo Nascimento\"]"
+                },
+                {
+                    "field": {
+                        "id": "campo_1",
+                        "type": "short_text",
+                        "internal_id": "378391839"
+                    },
+                    "name": "Campo 1",
+                    "value": "texto simples"
+                },
+                {
+                    "field": {
+                        "id": "campo_anexo",
+                        "type": "attachment",
+                        "internal_id": "378398893"
+                    },
+                    "name": "campo anexo",
+                    "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?expires_on=1722964104&signature=8Uc6W%2Bb8m5sJp56S%2FodR9brtzlFSNhN29dDhT3Yn8Bw%3D\"]"
+                },
+                {
+                    "field": {
+                        "id": "texto_longo",
+                        "type": "long_text",
+                        "internal_id": "378398868"
+                    },
+                    "name": "texto longo",
+                    "value": "texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. "
+                }
+            ],
+            "child_relations": [],
+            "parent_relations": []
+        }
+    }
+}

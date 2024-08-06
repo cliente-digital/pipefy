@@ -1,0 +1,12 @@
+mutation {
+  updateFieldsValues(input: {
+    nodeId: _R.CARDID_ 
+    values: [
+     _R.FIELDS_ 
+    ]
+  }) {
+    success
+    userErrors { field message }
+  }
+}
+

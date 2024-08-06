@@ -1,0 +1,23 @@
+mutation{
+  updatePipe(
+    input:{
+    id: _PIPEID_
+    name: "_NAME_"
+    anyone_can_create_card: _ANYONECANCREATECARD_
+    expiration_time_by_unit: _EXPIRATIONTIMEBYUNIT_
+    expiration_unit: _EXPIRATIONUNIT_
+    icon: _ICON_
+    only_assignees_can_edit_cards: _ONLYASSIGNEESCANEDITCARDS_
+    only_admin_can_remove_cards: _ONLYADMINCANREMOVECARDS_
+    preferences: _PREFERENCES_
+    public: _PUBLIC_
+    public_form: _PUBLICFORM_
+    publicFormSettings: _PUBLICFORMSETTINGS_
+    title_field_id: _TITLEFIELDID_
+    color: _COLOR_
+    noun:  _NOUM_
+  }
+) {
+    clientMutationId
+  }
+}

@@ -4,7 +4,6 @@ use Clientedigital\Pipefy\Entity;
 
 
 uses()->beforeEach(function () {
-    $this->setConfig('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE', __DIR__ ."/../../cd.pipefy.test.ini" );
     $cache_dir = Pipefy::getConfig('PIPEFY_CACHE_DIR');
     $this->setLocal('carddata', json_decode(file_get_contents("{$cache_dir}card-one-731bd1c64a74dfee99cb6e24afda5bfe.json"))->data->card);
 });

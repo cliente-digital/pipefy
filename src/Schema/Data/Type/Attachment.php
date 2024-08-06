@@ -43,7 +43,11 @@ class Attachment extends AbstractType implements TypeInterface
             throw new \Exception("Attachment {$this->id()} need a valid local file Path. Invalid: {$value['localfilepath']}.");
         }
     }
-    public function script(): string
+    /**
+    * use gqlname to select the kind of script you need.
+    * because sometimes a Data Type has a different representation in different gqls
+    **/
+    public function script($gqlname=null): string
     {
         $fileurl = $this->upload();
         return "{fieldId:\"{$this->id()}\", value: \"{$fileurl}\"}";

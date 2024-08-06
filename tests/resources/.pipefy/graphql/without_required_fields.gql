@@ -1,0 +1,5 @@
+{
+ card (id : _CARDID_){
+        title
+    }
+}

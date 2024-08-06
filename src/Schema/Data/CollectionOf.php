@@ -22,11 +22,11 @@ class CollectionOf{
         return count($this->fields);
     }
 
-    public function script():string
+    public function script($gqlname=null):string
     {
         $script = []; 
         foreach($this->fields as $field){
-            $script[] = $field->script();
+            $script[] = $field->script($gqlname);
         }
         return implode(", ", $script);
     }

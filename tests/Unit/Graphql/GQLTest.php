@@ -1,26 +1,21 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql;
-define('FIXTURE_PATH', __DIR__. DIRECTORY_SEPARATOR. "fixtures". DIRECTORY_SEPARATOR);
-
+use Clientedigital\Pipefy\Pipefy;
 // refactoring consts to var_dump($GLOBALS);
 
 test('gqlDontExistNeedThrowException', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
     new GQL("nonexist");
 })->throws(\Exception::class, "GQL script: nonexist not found");
 
 test('trySetaPropertyThatDontExistThrowException', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
     $gql = new GQL("without_required_fields");
     $gql->set("PIPEID", 123);
 })->throws(\Exception::class, "Property PIPEID dont exist in gql without_required_fields");
 
 test('gqlUnsetUnrequiredVariableDontAppearOnScript', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("without_required_fields");
 
-    $rawScript = trim(file_get_contents(FIXTURE_PATH."without_required_fields.gql"));
+    $rawScript = trim(file_get_contents(Pipefy::getConfig('PIPEFY_GRAPHQL_DIR')."without_required_fields.gql"));
     expect($rawScript)->toEqual($gql->rawScript(), "Raw Script esta diferente do esperado");
 
 
@@ -33,8 +28,6 @@ test('gqlUnsetUnrequiredVariableDontAppearOnScript', function () {
 });
 
 test('gqlPropertyInfo', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("with_required_fields");
     $field = $gql->property('CARDID');
 
@@ -55,8 +48,6 @@ test('gqlPropertyInfo', function () {
 });
 
 test('gqlPropertiesWith3Properties', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("with_required_fields");
 
     $info= $gql->info();
@@ -73,8 +64,6 @@ test('gqlPropertiesWith3Properties', function () {
 });
 
 test('gqlPropertiesFromEmptyGql', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("empty");
 
     $info= $gql->info();
@@ -84,8 +73,6 @@ test('gqlPropertiesFromEmptyGql', function () {
 });
 
 test('gqlPropertiesFromMutation', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("mutation");
 
     $info= $gql->info();
@@ -93,8 +80,6 @@ test('gqlPropertiesFromMutation', function () {
 });
 
 test('gqlRequestScriptBeforeSetRequiredField', function () {
-    $this->setConfig("CLIENTEDIGITAL_PIPEFY_GRAPHQL_DIR", FIXTURE_PATH);
-
     $gql = new GQL("with_required_fields");
     $gql->script();
 

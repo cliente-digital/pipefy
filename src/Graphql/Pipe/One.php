@@ -38,9 +38,18 @@ class One
         $gql = $this->getGQL("card-create");
         $gql->set('PIPEID', $this->id);
         foreach($createCardInput as $vName => $vValue){
+            if(
+                $vValue instanceof \Clientedigital\Pipefy\Schema\Data\CollectionOf || 
+                $vValue instanceof \Clientedigital\Pipefy\Schema\Data\Type\TypeInterface
+              )
+                $vValue = $vValue->script('card-create');
+ 
             $gql->set($vName, $vValue);
         }
         $gqlResult = $this->request($gql);
-        return $gqlResult;
+        if(isset($gqlResult->errors))
+            return $gqlResult->errors[0]->message;
+        if(isset($gqlResult->data->createCard))
+            return (int) $gqlResult->data->createCard->card->id;
     }
 } 

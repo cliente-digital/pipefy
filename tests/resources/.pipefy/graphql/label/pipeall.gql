@@ -1,0 +1,9 @@
+{
+  pipe(id:_PIPEID_) {
+        labels{
+          id
+          name
+          color
+        }
+    }
+}

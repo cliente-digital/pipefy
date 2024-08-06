@@ -1,0 +1,13 @@
+mutation{
+updateCard(
+  input: {
+    id : _R.CARDID_
+    assignee_ids : _ASSIGNEEIDS_ 
+    due_date : _DUEDATE_
+    label_ids : _LABELIDS_
+    title : _TITLE_
+  }
+) {
+  clientMutationId
+}
+}

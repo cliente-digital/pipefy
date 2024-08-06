@@ -8,7 +8,6 @@ uses()->beforeEach(function () {
 
 //define('CLIENTE_DIGITAL_BULK_PAGE_SIZE', 30);
 test('TryGetConfigFromPipefyWithSuccessAfterConfigureParameter', function () {
-    $this->setConfig('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE', __DIR__ . DIRECTORY_SEPARATOR . "cd.pipefy.ini" );
     $apikey = Pipefy::getConfig('PIPEFY_APIKEY');
     expect($apikey)->toBeString("Should be a value into the key");
 });

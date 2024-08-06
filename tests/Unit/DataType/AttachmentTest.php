@@ -1,16 +1,16 @@
 <?php
 namespace Clientedigital\Pipefy\Schema\Data\Type;
 
+use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Pipe;
 use Clientedigital\Pipefy\Card;
 
 
 
-
 uses()->beforeEach(function () {
     $this->setLocal('PIPEID', 304547300);
-    $CLIENTEDIGITAL_PIPEFY_CONFIG_FILE_PATH = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "cd.pipefy.ini";
-    $this->setConfig('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE', $CLIENTEDIGITAL_PIPEFY_CONFIG_FILE_PATH );
+    $cache_dir = Pipefy::getConfig('PIPEFY_CACHE_DIR');
+    $this->setLocal('carddata', json_decode(file_get_contents("{$cache_dir}card-one-731bd1c64a74dfee99cb6e24afda5bfe.json"))->data->card);
 });
 
 test('TryGetDataTypeAtachmentFieldWithSuccess', function () {
@@ -24,8 +24,6 @@ test('TrySetDataTypeAtachmentFieldWithSuccess', function () {
     $field = $pipe->field('campo_anexo');
     $cards = $pipe->cards()->get();
     $card= $cards->current();
-    var_dump($card->id);
-
     $orgid = $card->pipe->organization->id; 
     $field->value(['orgid'=>$orgid, 'path'=>__DIR__."/fixtures/README.md"]);
     $card->setField('campo_anexo',['orgid'=>$orgid, 'path'=>__DIR__."/fixtures/report.md"]);
