@@ -1,9 +1,0 @@
-{
-  card(id:_CARDID_) {
-        labels{
-          id
-          name
-          color
-        }
-    }
-}
