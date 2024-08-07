@@ -6,7 +6,6 @@ class Mapper{
    private array $map = [
         'short_text' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\ShortText',
         'long_text' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\LongText',
-        'statement' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\DynamicContent',
         'attachment' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Attachment',
         'checklist_vertical' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\CheckList',
         'checklist_horizontal' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\CheckList',
