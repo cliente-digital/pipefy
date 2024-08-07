@@ -28,21 +28,12 @@
                             },
                             {
                                 "field": {
-                                    "id": "campo_1",
-                                    "type": "short_text",
-                                    "internal_id": "378391839"
-                                },
-                                "name": "Campo 1",
-                                "value": "texto simples"
-                            },
-                            {
-                                "field": {
                                     "id": "campo_anexo",
                                     "type": "attachment",
                                     "internal_id": "378398893"
                                 },
                                 "name": "campo anexo",
-                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?expires_on=1722964103&signature=ho0rTF0mUnrURliOUFet23LmmjhjfZ1VE4tWgnYEc84%3D\"]"
+                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?expires_on=1723057632&signature=Y2fA4fDNRc77n6X56KP08Tk2r0YvdW5O1T%2B8SMEX%2FEw%3D\"]"
                             },
                             {
                                 "field": {
@@ -52,6 +43,24 @@
                                 },
                                 "name": "texto longo",
                                 "value": "texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. "
+                            },
+                            {
+                                "field": {
+                                    "id": "campo_1",
+                                    "type": "short_text",
+                                    "internal_id": "378391839"
+                                },
+                                "name": "Campo 1",
+                                "value": "texto simples"
+                            },
+                            {
+                                "field": {
+                                    "id": "numero_telefone",
+                                    "type": "phone",
+                                    "internal_id": "378399364"
+                                },
+                                "name": "numero telefone",
+                                "value": "123456"
                             }
                         ],
                         "child_relations": [],
@@ -118,7 +127,7 @@
                                     "internal_id": "378398893"
                                 },
                                 "name": "campo anexo",
-                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/uploads\/79c3e24a-1890-4a59-b527-fd5cbc5b82a8\/5594016.jpg?expires_on=1722964103&signature=yDJVrd6TERd5K%2BwO7yKvKuhygmEFmqWzrYg8VyCHOCc%3D\"]"
+                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/uploads\/79c3e24a-1890-4a59-b527-fd5cbc5b82a8\/5594016.jpg?expires_on=1723057632&signature=Vp%2FC3l77MsVQ74KltkMsjJXzmQJ%2FtZW90AEG6bY4qyI%3D\"]"
                             },
                             {
                                 "field": {
@@ -193,7 +202,7 @@
                                     "internal_id": "378398893"
                                 },
                                 "name": "campo anexo",
-                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/uploads\/905633e5-80ae-44ce-af4a-f6b94db08eed\/81Q-2MjXsUL._AC_SL1500_.jpg?expires_on=1722964103&signature=npL1xuHyFRlifJjTZvNI85L2IpvH4b0hQIBKJYBs%2BgI%3D\"]"
+                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/uploads\/905633e5-80ae-44ce-af4a-f6b94db08eed\/81Q-2MjXsUL._AC_SL1500_.jpg?expires_on=1723057632&signature=zY3YbFIoeGjyYdQsm7dl2QBfRkimn%2Bw8vEtFzBtD8kw%3D\"]"
                             },
                             {
                                 "field": {
@@ -357,7 +366,7 @@
                                     "internal_id": "378398893"
                                 },
                                 "name": "campo anexo",
-                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/4d06fc2d-367e-4f87-a12e-cf3eda98a702\/README?expires_on=1722964103&signature=z%2FRCe6oyYxZ%2F7nxy9jPW6KCqRKOjy8iaI66CyrN6F9k%3D\"]"
+                                "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/4d06fc2d-367e-4f87-a12e-cf3eda98a702\/README?expires_on=1723057632&signature=NmKwTjh2wqB4uMA6BuKabRhW1X7XkZAU2Z9wuFKSJW8%3D\"]"
                             }
                         ],
                         "child_relations": [],
@@ -431,10 +440,15 @@
                         },
                         "id": "970411770",
                         "title": "texto geral",
-                        "due_date": null,
+                        "due_date": "2024-08-21T19:12:22Z",
                         "overdue": false,
                         "comments": [],
-                        "labels": [],
+                        "labels": [
+                            {
+                                "id": "311897389",
+                                "name": "etiqueta 1"
+                            }
+                        ],
                         "fields": [
                             {
                                 "field": {
@@ -453,6 +467,132 @@
                                 },
                                 "name": "data",
                                 "value": "06\/08\/2024"
+                            },
+                            {
+                                "field": {
+                                    "id": "etiquetas",
+                                    "type": "label_select",
+                                    "internal_id": "378399230"
+                                },
+                                "name": "etiquetas",
+                                "value": "[\"etiqueta 1\"]"
+                            },
+                            {
+                                "field": {
+                                    "id": "texto_longo",
+                                    "type": "long_text",
+                                    "internal_id": "378398868"
+                                },
+                                "name": "texto longo",
+                                "value": "texto longo bagarai.texto longo bagarai.texto longo bagarai.texto longo bagarai.\n\n"
+                            },
+                            {
+                                "field": {
+                                    "id": "checklist",
+                                    "type": "checklist_vertical",
+                                    "internal_id": "378398901"
+                                },
+                                "name": "checklist",
+                                "value": "[\"2\", \"3\"]"
+                            },
+                            {
+                                "field": {
+                                    "id": "responsavel",
+                                    "type": "assignee_select",
+                                    "internal_id": "378399061"
+                                },
+                                "name": "responsavel",
+                                "value": "[\"Ivo Nascimento\"]"
+                            },
+                            {
+                                "field": {
+                                    "id": "date_e_hora",
+                                    "type": "datetime",
+                                    "internal_id": "378399200"
+                                },
+                                "name": "date e hora",
+                                "value": "05\/08\/2024 22:59"
+                            },
+                            {
+                                "field": {
+                                    "id": "data_vencimento",
+                                    "type": "due_date",
+                                    "internal_id": "378399227"
+                                },
+                                "name": "data vencimento",
+                                "value": "21\/08\/2024 19:12"
+                            },
+                            {
+                                "field": {
+                                    "id": "email",
+                                    "type": "email",
+                                    "internal_id": "378399267"
+                                },
+                                "name": "email",
+                                "value": "iannsp@gmail.com"
+                            },
+                            {
+                                "field": {
+                                    "id": "numero_telefone",
+                                    "type": "phone",
+                                    "internal_id": "378399364"
+                                },
+                                "name": "numero telefone",
+                                "value": "+55 11 93770-1020"
+                            },
+                            {
+                                "field": {
+                                    "id": "selecao_de_lista",
+                                    "type": "select",
+                                    "internal_id": "378399372"
+                                },
+                                "name": "selecao de lista",
+                                "value": "2"
+                            },
+                            {
+                                "field": {
+                                    "id": "selecao_unica",
+                                    "type": "radio_vertical",
+                                    "internal_id": "378399405"
+                                },
+                                "name": "selecao unica",
+                                "value": "c"
+                            },
+                            {
+                                "field": {
+                                    "id": "tempo",
+                                    "type": "time",
+                                    "internal_id": "378399417"
+                                },
+                                "name": "tempo",
+                                "value": "23:30"
+                            },
+                            {
+                                "field": {
+                                    "id": "numero",
+                                    "type": "number",
+                                    "internal_id": "378399453"
+                                },
+                                "name": "numero",
+                                "value": "123456789.0001"
+                            },
+                            {
+                                "field": {
+                                    "id": "moeda",
+                                    "type": "currency",
+                                    "internal_id": "378399517"
+                                },
+                                "name": "moeda",
+                                "value": "150,00"
+                            },
+                            {
+                                "field": {
+                                    "id": "document_rg",
+                                    "type": "cpf",
+                                    "internal_id": "378399522"
+                                },
+                                "name": "CPF",
+                                "value": "805.451.910-92"
                             }
                         ],
                         "child_relations": [],
@@ -876,10 +1016,48 @@
                         "child_relations": [],
                         "parent_relations": []
                     }
+                },
+                {
+                    "node": {
+                        "pipe": {
+                            "id": "304547300",
+                            "organization": {
+                                "id": "301345588"
+                            }
+                        },
+                        "id": "970468252",
+                        "title": "texto geral",
+                        "due_date": null,
+                        "overdue": false,
+                        "comments": [],
+                        "labels": [],
+                        "fields": [
+                            {
+                                "field": {
+                                    "id": "campo_1",
+                                    "type": "short_text",
+                                    "internal_id": "378391839"
+                                },
+                                "name": "Campo 1",
+                                "value": "texto geral"
+                            },
+                            {
+                                "field": {
+                                    "id": "data",
+                                    "type": "date",
+                                    "internal_id": "378399100"
+                                },
+                                "name": "data",
+                                "value": "06\/08\/2024"
+                            }
+                        ],
+                        "child_relations": [],
+                        "parent_relations": []
+                    }
                 }
             ],
             "pageInfo": {
-                "endCursor": "WyIyMDI0LTA4LTA2IDE2OjUxOjU2LjkxMzc0OTAwMCBVVEMiLCIxLjAiLDk3MDQ2NzU2M10",
+                "endCursor": "WyIyMDI0LTA4LTA2IDE2OjUzOjI0Ljk1MDEyMzAwMCBVVEMiLCIxLjAiLDk3MDQ2ODI1Ml0",
                 "hasNextPage": false
             }
         }

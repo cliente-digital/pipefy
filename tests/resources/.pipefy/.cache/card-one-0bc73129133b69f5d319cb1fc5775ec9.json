@@ -25,21 +25,12 @@
                 },
                 {
                     "field": {
-                        "id": "campo_1",
-                        "type": "short_text",
-                        "internal_id": "378391839"
-                    },
-                    "name": "Campo 1",
-                    "value": "texto simples"
-                },
-                {
-                    "field": {
                         "id": "campo_anexo",
                         "type": "attachment",
                         "internal_id": "378398893"
                     },
                     "name": "campo anexo",
-                    "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?expires_on=1722964104&signature=8Uc6W%2Bb8m5sJp56S%2FodR9brtzlFSNhN29dDhT3Yn8Bw%3D\"]"
+                    "value": "[\"https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?expires_on=1723057633&signature=Mcafk86WeIYDCZgDls6O7AI1w6RLhm6S6org6nfoyuI%3D\"]"
                 },
                 {
                     "field": {
@@ -49,6 +40,24 @@
                     },
                     "name": "texto longo",
                     "value": "texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. texto Longo. "
+                },
+                {
+                    "field": {
+                        "id": "campo_1",
+                        "type": "short_text",
+                        "internal_id": "378391839"
+                    },
+                    "name": "Campo 1",
+                    "value": "texto simples"
+                },
+                {
+                    "field": {
+                        "id": "numero_telefone",
+                        "type": "phone",
+                        "internal_id": "378399364"
+                    },
+                    "name": "numero telefone",
+                    "value": "+1 123 3333"
                 }
             ],
             "child_relations": [],

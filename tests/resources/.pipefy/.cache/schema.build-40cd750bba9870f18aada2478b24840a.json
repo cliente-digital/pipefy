@@ -1774,7 +1774,7 @@
                                 "required": false
                             },
                             {
-                                "id": "document_rg",
+                                "id": "document_cpf",
                                 "label": "CPF",
                                 "type": "cpf",
                                 "options": [],
