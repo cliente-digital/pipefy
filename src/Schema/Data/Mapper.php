@@ -21,7 +21,7 @@ class Mapper{
         'radio_vertical' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Select',
         'radio_horizontal' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Select',
         'time' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Time',
-        'number' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Numero',
+        'number' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Number',
         'currency' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Currency',
         'cpf' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\CPF',
         'RG' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\RG'
