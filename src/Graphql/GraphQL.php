@@ -57,8 +57,8 @@ Trait GraphQL{
             512,
             JSON_UNESCAPED_UNICODE
         );
-
-        $this->setCache($gqlInfo->cacheId, $responseObject);
+        if ($isQuery)
+            $this->setCache($gqlInfo->cacheId, $responseObject);
 
         return $responseObject;
     }
