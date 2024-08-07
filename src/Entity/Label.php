@@ -11,7 +11,7 @@ class Label extends AbstractModel implements EntityInterface
     public function __construct(?StdClass $data=null)
     {
         parent::__construct($data);
-        if($this->found()){
+        if($this->loaded()){
             $this->name($this->name);
             $this->color($this->color);
         }

@@ -1,7 +1,6 @@
 <?php
 
 namespace Clientedigital\Pipefy\Graphql\Org;
-use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
@@ -22,8 +21,7 @@ class One
     private function load(){
         $gql = $this->getGQL("org-one");
         $gql->set('ORGID', $this->id);
-        $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return new Entity\Org($gqlResult->data->organization);
     }
 
@@ -34,7 +32,6 @@ class One
         foreach($updateOrganizationInput as $vName => $vValue){
             $gql->set($vName, $vValue);
         }
-        $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gql);
     }
 } 

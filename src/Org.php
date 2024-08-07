@@ -22,6 +22,13 @@ class Org
         return $this->load();
     }
 
+    public function pipes(){
+        $pipes = $this->get()->pipes;
+        foreach($pipes as $idx => $pipe){
+            $pipes[$idx]=  new Pipe($pipe->id);
+        }
+        return $pipes;
+    } 
     /* can only update his own resource */
     public function update(Entity\EntityInterface $resource)
     {

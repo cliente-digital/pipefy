@@ -1,0 +1,10 @@
+mutation{
+updateComment(
+  input: {
+    id : _COMMENTID_
+    text: "_TEXT_"
+  }
+) {
+  clientMutationId
+}
+}

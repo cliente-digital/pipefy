@@ -1,0 +1,57 @@
+{
+    "data": {
+        "organization": {
+            "id": "301345588",
+            "name": "pessoal",
+            "createdAt": "2024-07-29T12:28:54Z",
+            "createdBy": {
+                "id": "305024956"
+            },
+            "freemium": true,
+            "membersCount": 1,
+            "membersCountByRole": [
+                {
+                    "id": "309565108",
+                    "name": "super_admin",
+                    "memberCount": 0
+                },
+                {
+                    "id": "309565109",
+                    "name": "admin",
+                    "memberCount": 1
+                },
+                {
+                    "id": "309565110",
+                    "name": "normal",
+                    "memberCount": 0
+                },
+                {
+                    "id": "309565111",
+                    "name": "company_guest",
+                    "memberCount": 0
+                },
+                {
+                    "id": "309565112",
+                    "name": "external_guest",
+                    "memberCount": 0
+                }
+            ],
+            "onlyAdminCanCreatePipes": false,
+            "onlyAdminCanInviteUsers": false,
+            "pipes": [
+                {
+                    "id": "304530915"
+                },
+                {
+                    "id": "304530916"
+                },
+                {
+                    "id": "304530917"
+                },
+                {
+                    "id": "304530918"
+                }
+            ]
+        }
+    }
+}

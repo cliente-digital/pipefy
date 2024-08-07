@@ -3,6 +3,8 @@ namespace Clientedigital\Pipefy;
 use Clientedigital\Pipefy\Graphql\Card\One;
 use Clientedigital\Pipefy\Graphql\Label;
 use Clientedigital\Pipefy\Entity;
+use Clientedigital\Pipefy\Filter;
+
 
 class Card 
 {
@@ -30,9 +32,17 @@ class Card
         return $this->card;
     }
 
-    public function labels()
+    public function labels(?Filter\Label $filter=null)
     {
-        return (new Label\All())->fromCard($this->id); 
+        $labels = (new Label\All())->fromCard($this->id); 
+        if(is_null($filter))
+            return $labels;
+        foreach($labels as $idx => $label){
+            if(!$filter->check($label))
+               unset($labels[$idx]); 
+        }
+        sort($labels);
+        return $labels;
     }
 
     public function comments()
@@ -40,12 +50,18 @@ class Card
         return (new One($this->id))->comments(); 
     }
 
+    public function update(Entity\Card $card)
+    {
+        return (new One($this->id))
+            ->updateFields($card); 
+    }
+
     public function comment(Entity\Comment $comment, $op=1)
     {
         if($op == self::ADD)
             return (new One($this->id))->comment($comment); 
 
-        if(!$comment->found())
+        if(!$comment->loaded())
             throw new \Exception("You Only can Remove Comments that Exist.");
 
         if($op == self::UPDATE)
@@ -58,7 +74,7 @@ class Card
     public function modifyLabels(Entity\label $label, int $op)
     {
         if(in_array($op, [self::REMOVE, self::ADD])){
-            if(!$label->found())
+            if(!$label->loaded())
                 throw new \Exception("You Can Only Add or Remove Labels that Exist.");
             $result = match($op){
                 self::REMOVE=>  (new One($this->id))->removeLabel($label, $this->get()->labels),
@@ -69,5 +85,4 @@ class Card
         throw new \Exception("You Can Only Add or Remove Labels that Exist.");
             
     }
-
 } 

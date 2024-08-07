@@ -25,7 +25,6 @@
     ],
     "scripts": {
         "install-cd.pipefy":[
-            "@putenv CLIENTEDIGITAL_PIPEFY_CONFIG_PATH=./pipefy"
         ],
         "cd:pipefy:config":"@php vendor/bin/cd.pipefy --config",
         "cd:pipefy:report":"@php vendor/bin/cd.pipefy --report"
@@ -41,6 +40,7 @@
     },
     "require-dev": {
         "pestphp/pest": "^2.34",
-        "educoder/pest": "^1.0"
+        "educoder/pest": "^1.0",
+        "mockery/mockery": "^1.6"
     }
 }

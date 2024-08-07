@@ -1,53 +1,61 @@
 <?php
 namespace Clientedigital\Pipefy;
 
-use \GuzzleHttp\Client;
 
 class Pipefy 
 {
 
-    final public const CACHED= true;
-    final public const UNCACHED= false;
-    private static int $lastrequestTimestamp = 0;
-    private array $config; 
-    private Client $http; 
+    private static array $config=[]; 
+    private static bool $useBulk = false;
+    private static bool $useCache= false;
 
     public function __construct()
     {
-        $this->config = parse_ini_file(CLIENTEDIGITAL_PIPEFY_CONFIG_PATH);
-        $this->http   = new Client();
+        self::getConfig('PIPEFY_APIKEY');
     }
 
-    public function request(string $gqlscript): Object
+    public static function getConfig($name=null)
     {
-        $apiKey = $this->getConfig('APIKEY');
+        $configFile = getenv('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE');
+        if( self::$config == [] and $configFile===false)
+            throw new \Exception("Cant find CLIENTEDIGITAL_PIPEFY_CONFIG_FILE ENV variable.");
 
-        $response = $this->http->request('POST', CLIENTEDIGITAL_PIPEFY_API_URI, [
-          'body' => "{\"query\":\"{$gqlscript}\"}",
-          'headers' => [
-            'accept' => 'application/json',
-            'authorization' => "Bearer {$apiKey}",
-            'content-type' => 'application/json',
-          ],
-        ]);
+        if(self::$config == []) {
 
-        return json_decode(
-            $response->getBody(),
-            null,
-            512,
-            JSON_UNESCAPED_UNICODE
-        );
-    }
+            $configContent = parse_ini_file($configFile, true);
 
-    private function getConfig($name): string
-    {
-        if (!in_array($name, array_keys($this->config)))
-            throw new \Exception("Invalid Config Key {$name}");
+            if(!isset($configContent['CLIENTEDIGITAL'])) {
+                throw new \Exception("Cant Find CLIENTEDIGITAL section into config File");
+            }
+            self::$config = $configContent['CLIENTEDIGITAL'];
+        }
 
-        return $this->config[$name];
+
+        if(is_null($name))
+            return self::$config;
+
+        if(!isset(self::$config[$name]))
+            return null;
+
+        return self::$config[$name];
     }
 
     public function Orgs(){
         return new Orgs();
     }
+
+    public static function useBulk(?bool $use=null): bool
+    {
+        if(!is_null($use))
+            self::$useBulk = $use;
+        return self::$useBulk;
+    }
+
+    public static function useCache(?bool $use=null): bool
+    {
+        if(!is_null($use))
+            self::$useCache = $use;
+        return self::$useCache;
+    }
+
 }

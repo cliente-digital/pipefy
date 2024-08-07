@@ -1,7 +1,6 @@
 <?php
 namespace Clientedigital\Pipefy\Graphql\Pipe;
 
-use Clientedigital\Pipefy\Pipefy;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
 
@@ -9,21 +8,18 @@ class One
 {
     use GraphQL;
 
-    private Pipefy $client;
     private int $id;
 
     public function __construct(int $id)
     {
         $this->id = $id;
-        $this->client = new Pipefy;
     }
 
     public function get(){
         $cards = [];
         $gql = $this->getGQL("pipe-one");
         $gql->set("PIPEID", $this->id);
-        $gqlscript = $gql->script();
-        $gqlResult = $this->client->request($gqlscript);
+        $gqlResult = $this->request($gql);
         return new Entity\Pipe($gqlResult->data->pipe, (bool) $gqlResult->data->pipe);
     }
 
@@ -34,8 +30,26 @@ class One
         foreach($updatePipeInput as $vName => $vValue){
             $gql->set($vName, $vValue);
         }
-        $gqlscript = $gql->script();
-        $gqlResult = (new Pipefy())->request($gqlscript);
+        $gqlResult = $this->request($gql);
     }
 
+    public function createCard(array $createCardInput)
+    {
+        $gql = $this->getGQL("card-create");
+        $gql->set('PIPEID', $this->id);
+        foreach($createCardInput as $vName => $vValue){
+            if(
+                $vValue instanceof \Clientedigital\Pipefy\Schema\Data\CollectionOf || 
+                $vValue instanceof \Clientedigital\Pipefy\Schema\Data\Type\TypeInterface
+              )
+                $vValue = $vValue->script('card-create');
+ 
+            $gql->set($vName, $vValue);
+        }
+        $gqlResult = $this->request($gql);
+        if(isset($gqlResult->errors))
+            return $gqlResult->errors[0]->message;
+        if(isset($gqlResult->data->createCard))
+            return (int) $gqlResult->data->createCard->card->id;
+    }
 } 

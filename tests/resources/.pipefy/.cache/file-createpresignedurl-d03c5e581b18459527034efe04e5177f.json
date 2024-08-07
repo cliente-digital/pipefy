@@ -1,0 +1,9 @@
+{
+    "data": {
+        "createPresignedUrl": {
+            "clientMutationId": null,
+            "downloadUrl": "https:\/\/app.pipefy.com\/storage\/v1\/signed\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?signature=ngGwFQxO66y0dsjWWwg59fQmMllH5J6lHUsipPGwiZY%3D",
+            "url": "https:\/\/pipefy-prd-us-east-1.s3.amazonaws.com\/orgs\/1b8053c9-8112-4a93-8bf9-b5ac6094f06b\/uploads\/856871c6-36d7-4d4c-a674-7eec4bb22cdf\/report.md?x-amz-acl=bucket-owner-full-control&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQR6DFGDP3Q4HHD53%2F20240806%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240806T165319Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f43adb65294e9975147953f9566ced11246dbefda7c0dd7b1408853f01494996"
+        }
+    }
+}
