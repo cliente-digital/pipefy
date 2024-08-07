@@ -36,7 +36,7 @@ class Date extends AbstractType implements TypeInterface
     public function script($gqlname=null): string
      {
         if($gqlname == 'card-create')
-            return "{field_id:\"{$this->id()}\", field_value: \"{$this->value()->format(DATE_ATOM)}\"}";
+            return "{field_id:\"{$this->id()}\", field_value: \"{$this->value()->format("d/m/Y")}\"}";
 
         return "{fieldId:\"{$this->id()}\", value: \"{$this->value()->format(DATE_ATOM)}\"}";
     }
