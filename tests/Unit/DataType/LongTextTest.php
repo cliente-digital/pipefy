@@ -5,8 +5,6 @@ use Clientedigital\Pipefy\Pipe;
 
 uses()->beforeEach(function () {
     $this->setLocal('PIPEID', 304547300);
-    $CLIENTEDIGITAL_PIPEFY_CONFIG_FILE_PATH = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "cd.pipefy.ini";
-    $this->setConfig('CLIENTEDIGITAL_PIPEFY_CONFIG_FILE', $CLIENTEDIGITAL_PIPEFY_CONFIG_FILE_PATH );
 });
 
 test('TryCreateInstanceofLongTextWithSuccess', function () {
