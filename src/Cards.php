@@ -30,7 +30,7 @@ class Cards
             if(is_null($filter))
                 yield $card;
 
-            if($filter->check($card));
+            if($filter->check($card))
                 yield $card;
         }
     }
