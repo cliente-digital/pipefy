@@ -14,9 +14,14 @@ class Evaluate
     private function getOperator(string $operator): OperatorInterface
     {
         return match($operator){
-            '=' => new Equal(),
-            '<-' => new Contain()
-
+            OP::Equal => new Equal(),
+            OP::NotEqual => new NotEqual(),
+            OP::IN => new Contain(),
+            OP::NIN => new NotContain(),
+            OP::GT => new GreaterThan(),
+            OP::GTE => new GreaterThanEqual(),
+            OP::LT => new LessThan(),
+            OP::LTE => new LessThanEqual()
         };
     }
 } 
