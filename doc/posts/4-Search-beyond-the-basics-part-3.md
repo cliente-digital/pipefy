@@ -55,7 +55,7 @@ O id de um campo utilizado como primeiro parametro, por exemplo, é algo relacio
 
 Como exemplo podemos olhar um campo com o label "Número de telefone". Ele terá o id "n_mero_de_telefone".
 
-Para ter certeza do id de um campo utilize o relatório de schema explicado no **primeiro artigo** dessa série [1 I need know my schema](./1-I-need-know-my-schema.md).
+Para ter certeza do id de um campo utilize o relatório de schema explicado no **primeiro artigo** dessa série [1 I need know the Organization Data schema](./1-I-need-know-the-organization-data-schema.md).
 
 ##### Operadores.
 

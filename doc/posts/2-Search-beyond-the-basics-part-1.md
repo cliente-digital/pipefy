@@ -11,7 +11,7 @@ Como um [Citzen Developer](https://www.pipefy.com/blog/what-is-a-citizen-develop
 
 Um bom primeiro passo para entender a busca do app do pipefy é olhar para sua API. A API do pipefy é baseada em [graphql](https://graphql.org/) e sua [documentação](https://api-docs.pipefy.com/reference/inputObjects/CardSearch/#) cobre todos os seus componentes e o seu ponto fraco esta nos detalhes. Alguns recursos deveriam ser detalhados para cobrir seu escopo e entre esses recursos esta a busca por card.
 
-Vamos a um primeiro exemplo, a  [query cards](https://api-docs.pipefy.com/reference/queries/cards/#cards).
+Vamos a um exemplo, a  [query cards](https://api-docs.pipefy.com/reference/queries/cards/#cards).
 
 ```graphql
 query{
