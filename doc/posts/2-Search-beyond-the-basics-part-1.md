@@ -1,12 +1,13 @@
-# Search Beyond the Basics. (part 1)
-### How can you improve the search and find what you want.
+# Além da busca básica . (part 1)
+### Como encontrar o que voce precisa com uma pesquisa melhorada.
 
 ---
-   Este artigo faz parte de uma série sobre recursos da plataforma Pipefy e como integrar o Pipefy em sua aplicação utilizando o pacote [Clientedigital/Pipefy](https://github.com/cliente-digital/pipefy)
+   Este artigo é parte de uma série sobre recursos da plataforma [Pipefy](https://www.pipefy.com/) e a integração com aplicativos utilizando o pacote [Clientedigital/Pipefy](https://github.com/cliente-digital/pipefy)
+
+---
 
 tags: #pipefy #integração #php #clientedigital #workflow #bpm #search
 
----
 Como um [Citzen Developer](https://www.pipefy.com/blog/what-is-a-citizen-developer/) que se preza, você já notou que a busca do Pipefy pesquisa por campos de formularios iniciais ou formulários de fase, mas você sabe quais campos são pesquisados com quando voce digita algo em procurar cards?
 
 Um bom primeiro passo para entender a busca do app do pipefy é olhar para sua API. A API do pipefy é baseada em [graphql](https://graphql.org/) e sua [documentação](https://api-docs.pipefy.com/reference/inputObjects/CardSearch/#) cobre todos os seus componentes e o seu ponto fraco esta nos detalhes. Alguns recursos deveriam ser detalhados para cobrir seu escopo e entre esses recursos esta a busca por card.

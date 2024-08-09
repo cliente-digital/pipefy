@@ -1,8 +1,8 @@
-# Search Beyond the Basics. (part 3)
-### How can you improve the search and find what you want.
+# Além da busca básica . (part 3)
+### Como encontrar o que voce precisa com uma pesquisa melhorada.
 
 ---
-   Este artigo faz parte de uma série sobre recursos da plataforma Pipefy e como integrar o Pipefy em sua aplicação utilizando o pacote [Clientedigital/Pipefy](https://github.com/cliente-digital/pipefy)
+Este artigo é parte de uma série sobre recursos da plataforma [Pipefy](https://www.pipefy.com/) e a integração com aplicativos utilizando o pacote [Clientedigital/Pipefy](https://github.com/cliente-digital/pipefy)
 
 tags: #pipefy #integração #php #clientedigital #workflow #bpm #search
 
