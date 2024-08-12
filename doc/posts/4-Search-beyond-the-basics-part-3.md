@@ -66,27 +66,27 @@ Nesse momento temos somente dois:
 - Equal **'='**
   compara valores(**'=='** e não tipo **'==='**).
 
+- Not Equal **'=!'**
+
 - Contain **'<-'**.
+
   verifica se o conteudo do campo contem $valor. Em strings o **$valor** é tratado como substring e em array é verifica se o **$valor** esta in_array.
 
-Outros operadores estão em desenvolvimento e em breve serão entregues.
+- Not Contain **'<-!'**
+- greater than **'>'**
+- greater than or equal **'>='**
+- less than **'<'**
+- less than or equal **'<='**
 
-  - Not Equal **'=!'**
-  - Not Contain **'<-!'**
-  - greater than **'>'**
-  - greater than or equal **'>='**
-  - less than **'<'**
-  - less than or equal **'<='**
+E você pode utilizar o operador diretamente ou utilizar o Enum Schema\Data\Filter\Operator\OP
 
-Assim como a definição de constantes para representar esses operadores.
+- OP::EQ    '='
+- OP::NEQ   '=!'
+- OP::IN    '<-'
+- OP::NIN   '<-!'
+- OP::GT    '>'
+- OP::GTE   '>='
+- OP::LT    '<'
+- OP::LTE   '<='
 
-- EQ    '='
-- NEQ   '=!'
-- IN    '<-'
-- NIN   '<-!'
-- GT    '>'
-- GTE   '>='
-- LT    '<'
-- LTE   '<='
-
-No momento os **operadores são naive** mas irão evoluir para operar de acordo com o Schema\Data\Type do dado.
+No momento os **operadores são naive** mas irão evoluir para ter compartamentos de acordo com cada Schema\Data\Type disponivel no Pipefy.
