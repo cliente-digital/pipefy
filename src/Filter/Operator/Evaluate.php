@@ -14,14 +14,14 @@ class Evaluate
     private function getOperator(string $operator): OperatorInterface
     {
         return match($operator){
-            OP::Equal => new Equal(),
-            OP::NotEqual => new NotEqual(),
-            OP::IN => new Contain(),
-            OP::NIN => new NotContain(),
-            OP::GT => new GreaterThan(),
-            OP::GTE => new GreaterThanEqual(),
-            OP::LT => new LessThan(),
-            OP::LTE => new LessThanEqual()
+            OP::EQ->value => new Equal(),
+            OP::NEQ->value => new NotEqual(),
+            OP::IN->value => new Contain(),
+            OP::NIN->value => new NotContain(),
+            OP::GT->value => new GreaterThan(),
+            OP::GTE->value => new GreaterThanEqual(),
+            OP::LT->value => new LessThan(),
+            OP::LTE->value => new LessThanEqual()
         };
     }
 } 

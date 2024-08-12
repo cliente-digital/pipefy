@@ -1,7 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy\Filter\Operator;
 
-0num OP: string{
+Enum OP: string{
     case EQ   = '=';
     case NEQ  = '=!';
     case IN   = '<-';
