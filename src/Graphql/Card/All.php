@@ -32,7 +32,7 @@ class All
                     $page->data->cards->edges,
                     $nextPage->data->cards->edges
                 );
-            usleep(700);
+            usleep(300);
             $pageInfo = $nextPage->data->cards->pageInfo; 
 
         }
