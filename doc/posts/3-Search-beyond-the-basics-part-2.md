@@ -93,7 +93,7 @@ foreach($entities as $card){
 ```
 A execução da pesquisa acima segue o seguinte plano:
 - Execução da query cards e retorno dos cards.
-- sec scan pelos resultado( cada entidate passa pelo filtro e é checada para ser retornada ou não).
+- seq scan pelos resultado( cada entidate passa pelo filtro e é checada para ser retornada ou não).
 - o filtro realiza uma checagem **BY** o campo sobrenome para ver se é Equal('=') ao valor 'Silva'. Se for então yield o item.
 
 Em um outro artigo iremos falar de [seq scan](https://en.wikipedia.org/wiki/Full_table_scan) e do **uso de cache**. Sem esse recurso o tempo de pesquisa depende da API e do rate limit e isso prejudicaria a performance, porém, o próximo artigo vai tratar dos Filtros e Operadores.
