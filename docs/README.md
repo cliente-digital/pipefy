@@ -1,45 +1,50 @@
-# Cliente Digital - Pipefy FAQ
+# ClienteDigital\Pipefy PHP Package
 
-1. **what's my organization schema?**
+A Pipefy API php wrapper that uplift productivity of newcomers to graphQL tech.
 
-    You can Have a markdown report about your organization schema using the pipefy composer scripts.
+This package is a tool to improve your knowledge about your Pipefy Organization,
+being able to share this knowledge with your coworkers and accomplish maintanance
+tasks. It also intent to help you handle graphQl technology that can overwhelming
+at first glance.
 
+how to install:
 ```bash
-composer pipefy:report schema
+composer require clientedigital/pipefy
 ```
-This scripts output a markdown report of your schema and you can save it to a file
+
+next steps:
+
+- configure your APIKEY.
 ```bash
-composer pipefy:report schema > myschema.md
+./vendor/bin/cd.pipefy --config APIKEY 'ypur apikey here'
 ```
-After that you can use this file to create a pdf version using you preferend tool. I use pandoc here as example
+your apikey is set.
+
+
+
+- build the cache of your organization schema.
 ```bash
-pandoc myschema.md -o myschema.pdf
+./vendor/bin/cd.pipefy --config build-schema
 ```
+Organization Schema was build.
 
+**IMPORTANT: You need to set the APIKEY before use any command.**
 
-2. **How can I know the id of this [pipe,phase,card, field]?**
+## Documentation
 
-Check the report for the Orgs, Pipes, Phases and fields id and if you need the cards id you
-can use the Pipefy\Cards to retrieve it.
-```php
-require __DIR__ . "/../autoload.php";
+### links
 
-$cards = (new Clientedigital\Pipefy\Cards($pipeid));
-foreach($cards as $card){
-    echo $card->id.PHP_EOL;
-}
-```
+- [FAQ](https://cliente-digital.github.io/pipefy/faq)
 
-3. **How can I search for [card, field, phase]?**
+- [FAQ](https://cliente-digital.github.io/pipefy/faq)
+- [How to Configure](https://cliente-digital.github.io/pipefy/configuration)
+- [How to start](https://cliente-digital.github.io/pipefy/getstart)
+- [cli tools](https://cliente-digital.github.io/pipefy/tools)
+- [Graphql Query and Mutation](https://cliente-digital.github.io/pipefy/gql-files)
+- [Class Documentation](https://cliente-digital.github.io/pipefy/phpDoc/)
+- [Road Map](https://github.com/orgs/cliente-digital/projects/2/views/1)
+- [next release](https://github.com/orgs/cliente-digital/projects/2/views/3)
 
+Resources:
 
-4. **Can I search cards by this field value?**
-5. **How can I update this field value?**
-6. **How can I move this card between phases?**
-7. **what are the limits for using the Pipefy GraphiQL API?**
-- number of subsequent queries allowed per time unit: our rate limit is 500 requests for each 30 seconds;
-- number of webhooks allowed: the number of webhooks is based in the process size and it depends on the organization subscription as well. We’d recommend to not have more than 30 webhooks for each pipe, but it is customizable.
-- size of inputs/outputs: the inputs and outputs are based mainly in your process size, using the pre-built queries and mutations. But in a response payload, for example, each request only returns 50 records, requiring then using pagination.
-- size of attachment files: limit of 512MB for each file.
-
-_[reference link](https://community.pipefy.com/customs-apps-integrations-75/what-are-the-graphql-api-limits-958)_
+- [Entity](https://cliente-digital.github.io/pipefy/Entity/)

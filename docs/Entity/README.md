@@ -5,7 +5,7 @@ Entities are the objects you have when load informations from Pipefy.
 All Entity support this common methods:
 
 - ```php found(): bool ```
-  Give you information about Entities results from a search. 
+  Give you information about Entities results from a search.
   : true - it is a valid Entity(loaded with data from the resource you search for).
   : false - it is Empty
 
@@ -23,7 +23,6 @@ All Entity support this common methods:
 
 Supported Entities
 
-- [Org](https://github.com/cliente-digital/pipefy/blob/main/doc/Entity/Org.md)
-- [Pipe](https://github.com/cliente-digital/pipefy/blob/main/doc/Entity/Pipe.md)
-- [Card](https://github.com/cliente-digital/pipefy/blob/main/doc/Entity/Card.md)
-
+- [Org](https://cliente-digital.github.io/pipefy/Entity/Org)
+- [Pipe](https://cliente-digital.github.io/pipefy/Entity/Pipe)
+- [Card](https://cliente-digital.github.io/pipefy/Entity/Card)

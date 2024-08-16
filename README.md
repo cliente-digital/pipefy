@@ -34,14 +34,17 @@ Organization Schema was build.
 
 ### links
 
-- [FAQ](https://github.com/cliente-digital/pipefy/blob/main/doc/faq.md)
-- [How to Configure](https://github.com/cliente-digital/pipefy/blob/main/doc/configuration.md)
-- [How to start](https://github.com/cliente-digital/pipefy/blob/main/doc/getstart.md)
-- [cli tools](https://github.com/cliente-digital/pipefy/blob/main/doc/tools.md)
-- [Graphql Query and Mutation](https://github.com/cliente-digital/pipefy/blob/main/doc/gql-files.md)
+- [FAQ](https://cliente-digital.github.io/pipefy/faq)
+
+- [FAQ](https://cliente-digital.github.io/pipefy/faq)
+- [How to Configure](https://cliente-digital.github.io/pipefy/configuration)
+- [How to start](https://cliente-digital.github.io/pipefy/getstart)
+- [cli tools](https://cliente-digital.github.io/pipefy/tools)
+- [Graphql Query and Mutation](https://cliente-digital.github.io/pipefy/gql-files)
+- [Class Documentation](https://cliente-digital.github.io/pipefy/phpDoc/)
 - [Road Map](https://github.com/orgs/cliente-digital/projects/2/views/1)
 - [next release](https://github.com/orgs/cliente-digital/projects/2/views/3)
 
 Resources:
 
-- [Entity](https://github.com/cliente-digital/pipefy/blob/main/doc/Entity/README.md)
+- [Entity](https://cliente-digital.github.io/pipefy/Entity/)

@@ -258,7 +258,7 @@
 - RepoItemFormGQLInterface
 - RepoItemsImportationGQLInterface
 - UserInterface
-- 
+-
 ### Enums
 - AdvancedSearchOperators
 - CardSearchStrategy
