@@ -33,5 +33,6 @@ class One
             $gql->set($vName, $vValue);
         }
         $gqlResult = $this->request($gql);
+        return true;
     }
 } 
