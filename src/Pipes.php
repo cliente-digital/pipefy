@@ -8,16 +8,21 @@ use Clientedigital\Pipefy\Entity;
 
 class Pipes
 {
-
-    private array $pipes = [];
     private int $orgId;
 
+    /**
+    * Access the Organization Pipes defined by orgId
+    */
     public function __construct(int $orgId)
     {
         $this->orgId = $orgId;
     }
 
-    public function All(){
+    /**
+    * Get All Pipes from Organization defined by orgId 
+    * return it as an Array of Pipefy\Pipe Instances. 
+    **/
+    public function All(): array{
         $all= [];
         $entities = (new Graphql\Pipe\All($this->orgId))->get(); 
         foreach($entities as $entity){
@@ -26,7 +31,11 @@ class Pipes
         return $all;
     }
 
-    public function One(int $id){
+    /**
+    * Get One Pipes from Organization defined by orgId 
+    * return it as a Pipefy\Pipe Instances. 
+    **/
+    public function One(int $id): Pipe{
         return new Pipe($id);
     }
 } 

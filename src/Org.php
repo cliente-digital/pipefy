@@ -8,34 +8,60 @@ class Org
 {
     private int $id;
 
+    /**
+    * Access one Organization defined by id.
+    **/
     public function __construct(int $id)
     {
         $this->id = $id;
     }
 
-    public function load(){
+    /**
+    * return the Organization(id) Entity
+    **/
+    public function get(): Entity\Org
+    {
         return (new One($this->id))->get(); 
     }
 
-    public function get()
-    {
-        return $this->load();
-    }
-
-    public function pipes(){
+    /**
+    * return all Pipes from Organization(id).
+    */
+    public function pipes(): array{
         $pipes = $this->get()->pipes;
         foreach($pipes as $idx => $pipe){
             $pipes[$idx]=  new Pipe($pipe->id);
         }
         return $pipes;
     } 
-    /* can only update his own resource */
-    public function update(Entity\EntityInterface $resource)
+
+    /**
+    * return a pipe from the Organization(id)
+    * and throw Exception if not found.
+    */
+    public function pipe(int $id): Pipe
     {
-        $newValues = $resource->__newData();
+        $pipes = $this->pipes();
+        foreach($pipes as $pipe){
+            if($pipe->id == $id)
+                return $pipe;
+        }
+        throw new \Exception("Pipe {$id} not found at Organization {$this->id}.");
+    }
+
+    /**
+    * update the organization(id) data.
+    * throw an Exception if you try to update and organization using an entity with
+    * different id that you set on constructor.
+    **/ 
+    public function update(Entity\Org $org): bool
+    {
+        if($this->id != $org->id)
+            throw new \Exception("This Org can only update the organization id {$this->id}. Entity Found {$org->id}.");
+
+        $newValues = $org->__newData();
 
         return (new One($this->id))
             ->updateOrganizationInput($newValues); 
- 
     }
 } 
