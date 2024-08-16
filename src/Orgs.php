@@ -5,7 +5,11 @@ use Clientedigital\Pipefy\Graphql;
     
 class Orgs
 {
-    public function All(){
+
+    /**
+    *   list all Organizations the configured api key can access.
+    */
+    public function All() :array {
         $orgs = [];
         $orgEntities = (new Graphql\Org\All())->get(); 
         foreach($orgEntities as $orgEntity){
@@ -14,6 +18,9 @@ class Orgs
         return $orgs;
     }
 
+    /**
+    * retrieve one organization the configured api key can access
+    */
     public function One(int $id){
         return new Org($id);
     }

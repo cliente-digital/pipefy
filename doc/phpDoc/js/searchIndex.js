@@ -1323,12 +1323,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Orgs\u003A\u003AAll\u0028\u0029",
             "name": "All",
-            "summary": "",
+            "summary": "list\u0020all\u0020Organizations\u0020the\u0020configured\u0020api\u0020key\u0020can\u0020access.",
             "url": "classes/Clientedigital-Pipefy-Orgs.html#method_All"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Orgs\u003A\u003AOne\u0028\u0029",
             "name": "One",
-            "summary": "",
+            "summary": "retrieve\u0020one\u0020organization\u0020the\u0020configured\u0020api\u0020key\u0020can\u0020access",
             "url": "classes/Clientedigital-Pipefy-Orgs.html#method_One"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe",
