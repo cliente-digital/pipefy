@@ -20,15 +20,10 @@ class Card
         $this->id = $id;
     }
 
-    public function load()
-    {
-        return (new One($this->id))->get(); 
-    }
-
     public function get()
     {
         if(is_null($this->card))
-            $this->card = $this->load();
+            $this->card = (new One($this->id))->get();
         return $this->card;
     }
 
