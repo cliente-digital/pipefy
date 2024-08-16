@@ -9,7 +9,8 @@ class Cache
 
     public const ALL = 0;
     public const ALLWAYSVALIDCACHE = -1;
-    function get(string $name)
+
+    public function get(string $name)
     {
         $info = $this->info($name);
         
@@ -29,7 +30,7 @@ class Cache
         );
     }
 
-    function info($name, $path=null): StdClass
+    public function info($name, $path=null): StdClass
     {
         $path = is_null($path)?Pipefy::getConfig('PIPEFY_CACHE_DIR'):$path;
         $hashlength = 32 +1;
@@ -71,21 +72,27 @@ class Cache
         return $info;
     }
 
-    function clear($name, $path = null): void
+    public function clear($name, $path = null, bool $allhashednames = false): void
     {
         $filesToClear = [$name];
         $path = is_null($path)? Pipefy::getConfig('PIPEFY_CACHE_DIR'): $path;
-
         if ($name == self::ALL) {
             $filesToClear = scandir($path);
         }
-
+        if ($allhashednames) {
+            $filesToClear = [];
+            $filesStagedToClear = scandir($path);
+            foreach($filesStagedToClear  as $fStaged){
+                if(strpos($fStaged, $name)!== false)
+                    $filesToClear[] = str_replace(".json", "",$fStaged);
+            }
+        }
         foreach ($filesToClear as $file) {     
             if(in_array($file, [".", ".."]))
                 continue;
-            $info = $this->info($name);
+            $info = $this->info($file);
             if ($info->isDir && $info->path != Pipefy::getConfig('PIPEFY_CACHE_DIR')) {
-                $this->clearCache(self::CACHE_ALL, $info->path); 
+                $this->clear(self::ALL, $info->path); 
                 continue;
             }
 
@@ -95,7 +102,7 @@ class Cache
         }
     }
 
-    function set(string $name, $content): bool 
+    public function set(string $name, $content): bool 
     {
         $info = $this->info($name);
         return  (bool) file_put_contents(

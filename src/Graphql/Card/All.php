@@ -3,6 +3,7 @@
 namespace Clientedigital\Pipefy\Graphql\Card;
 use Clientedigital\Pipefy\Graphql\GraphQL;
 use Clientedigital\Pipefy\Entity;
+use Clientedigital\Pipefy\Cache;
 
 class All 
 {
@@ -23,6 +24,10 @@ class All
     }
 
     private function load(int $pipeId){
+        $cache = new Cache(); 
+        if(!$cache->info('card-all_firstpage')->valid)
+            $cache->clear('card-all_', null, true);
+
         $page = $this->firstPage();
         $pageInfo = $page->data->cards->pageInfo; 
         while($pageInfo->hasNextPage){
