@@ -40,8 +40,22 @@ class Pipefy
         return self::$config[$name];
     }
 
-    public function Orgs(){
-        return new Orgs();
+    public function orgs(){
+        $orgs = [];
+        $orgEntities = (new Graphql\Org\All())->get(); 
+        foreach($orgEntities as $orgEntity){
+            $orgs[] = new Org($orgEntity->id);
+        }
+        return $orgs;
+    }
+    
+    public function org(int $id){
+        $orgs = $this->orgs();
+        foreach($orgs as $org){
+            if($org->id() == $id)
+                return $org;
+        }
+        throw new \Exception("Pipefy APIKEY has no access to Organization({$id}).");
     }
 
     public static function useBulk(?bool $use=null): bool

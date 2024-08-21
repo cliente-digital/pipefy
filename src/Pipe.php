@@ -1,8 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy;
 
-use Clientedigital\Pipefy\Graphql\Pipe\One;
-use Clientedigital\Pipefy\Graphql\Label;
+use Clientedigital\Pipefy\Graphql;
 use Clientedigital\Pipefy\Entity;
 use Clientedigital\Pipefy\Filter;
 use Clientedigital\Pipefy\Schema\Data\Type as DataType;
@@ -19,32 +18,48 @@ class Pipe
         $this->id = $id;
     }
 
-    private function load(){
-        return (new One($this->id))->get(); 
+    public function id(): int{
+        return $this->id;
     }
 
-    public function get()
+    private function load(){
+        return (new Graphql\Pipe\One($this->id))->get(); 
+    }
+
+    public function entity()
     {
         if(is_null($this->pipe))
             $this->pipe = $this->load();
         return $this->pipe;
     }
 
-    public function cards()
-    {
-        return new Cards($this->id);
-    }
-
     public function update(Entity\Pipe $pipe)
     {
+        if($this->id != $pipe->id)
+            throw new \Exception("Entity($pipe->id) is not from this Pipe({$this->id}).");
+
         $newValues = $resource->__newData();
-        return (new One($this->id))
+        return (new Graphql\Pipe\One($this->id))
             ->updatePipe($newValues); 
     }
 
+    public function createCard(Entity\Card $card)
+    {
+        $card->pipeId($this->id);
+        $newValues = $card->__newData();
+        return (new Graphql\Pipe\One($this->id))
+            ->createCard($newValues); 
+    }
+
+    public function field(string $fieldName): DataType\TypeInterface
+    {
+        return Schema::field($this->id, $fieldName); 
+    }
+
+
     public function labels(?Filter\Label $filter=null)
     {
-        $labels =(new Label\All())->fromPipe($this->id); 
+        $labels =(new Graphql\Label\All())->fromPipe($this->id); 
         if(is_null($filter))
             return $labels;
         foreach($labels as $idx => $label){
@@ -56,16 +71,25 @@ class Pipe
 
     }
 
-    public function createCard(Entity\Card $card)
+    public function cards(?Filter\Cards $filter=null)
     {
-        $card->pipeId($this->id);
-        $newValues = $card->__newData();
-        return (new One($this->id))
-            ->createCard($newValues); 
+
+        $cards = new Graphql\Card\All($this->id);  
+        if(!is_null($filter))
+            $cards  = new Graphql\Card\All($this->id, $filter->script());
+ 
+        foreach($cards as $card){
+            if(is_null($filter))
+                yield $card;
+
+            else if($filter->check($card))
+                yield $card;
+        }
     }
 
-    public function field(string $fieldName) //: DataType\TypeInterface
+    public function card(int $id)
     {
-        return Schema::field($this->id, $fieldName); 
+        return new Card($id);
     }
+
 } 

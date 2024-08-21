@@ -1,7 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy;
 
-use Clientedigital\Pipefy\Graphql\Org\One;
+use Clientedigital\Pipefy\Graphql;
 use Clientedigital\Pipefy\Entity;
     
 class Org 
@@ -16,37 +16,17 @@ class Org
         $this->id = $id;
     }
 
-    /**
-    * return the Organization(id) Entity
-    **/
-    public function get(): Entity\Org
-    {
-        return (new One($this->id))->get(); 
+    public function id(): int{
+        return $this->id;
     }
 
-    /**
-    * return all Pipes from Organization(id).
-    */
-    public function pipes(): array{
-        $pipes = $this->get()->pipes;
-        foreach($pipes as $idx => $pipe){
-            $pipes[$idx]=  new Pipe($pipe->id);
-        }
-        return $pipes;
-    } 
 
     /**
-    * return a pipe from the Organization(id)
-    * and throw Exception if not found.
-    */
-    public function pipe(int $id): Pipe
+    * return Entity\Org 
+    **/
+    public function entity(): Entity\Org
     {
-        $pipes = $this->pipes();
-        foreach($pipes as $pipe){
-            if($pipe->id == $id)
-                return $pipe;
-        }
-        throw new \Exception("Pipe {$id} not found at Organization {$this->id}.");
+        return (new Graphql\Org\One($this->id))->get(); 
     }
 
     /**
@@ -57,11 +37,63 @@ class Org
     public function update(Entity\Org $org): bool
     {
         if($this->id != $org->id)
-            throw new \Exception("This Org can only update the organization id {$this->id}. Entity Found {$org->id}.");
+            throw new \Exception("Entity($org->id) is not from this Org({$this->id}).");
 
         $newValues = $org->__newData();
 
         return (new One($this->id))
             ->updateOrganizationInput($newValues); 
+    }
+
+    /**
+    * return the Organization Pipes Array.
+    */
+    public function pipes(): array{
+        $all= [];
+        $entities = (new Graphql\Pipe\All($this->id))->get(); 
+        foreach($entities as $entity){
+            $all[] = new Pipe($entity->id);
+        }
+        return $all;
+    } 
+
+    /**
+    * return a pipe from the Organization(id)
+    * and throw Exception if not found.
+    */
+    public function pipe(int $id): Pipe
+    {
+        $pipes = $this->pipes();
+        foreach($pipes as $pipe){
+            if($pipe->id() == $id)
+                return $pipe;
+        }
+        throw new \Exception("Organization({$this->id}) has no Pipe({$id}).");
+    }
+
+    /**
+    * return the Organization Tables Array.
+    */
+    public function tables(): array{
+        $all= [];
+        $entities = (new Graphql\Table\All($this->id))->get(); 
+        foreach($entities as $entity){
+            $all[] = new Table($entity->internal_id);
+        }
+        return $all;
+    } 
+
+    /**
+    * return a table from the Organization(id)
+    * and throw Exception if not found.
+    */
+    public function table(int $id): Pipe
+    {
+        $tables = $this->tables();
+        foreach($tables as $table){
+            if($table->id() == $id)
+                return $table;
+        }
+        throw new \Exception("Organization({$this->id}) has no Table({$id}).");
     }
 } 
