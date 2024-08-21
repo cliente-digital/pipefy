@@ -72,8 +72,9 @@ class Cache
         return $info;
     }
 
-    public function clear($name, $path = null, bool $allhashednames = false): void
+    public function clear($name, $path = null, bool $allhashednames = false): bool 
     {
+        $deleted = false;
         $filesToClear = [$name];
         $path = is_null($path)? Pipefy::getConfig('PIPEFY_CACHE_DIR'): $path;
         if ($name == self::ALL) {
@@ -95,11 +96,12 @@ class Cache
                 $this->clear(self::ALL, $info->path); 
                 continue;
             }
-
            if ($info->exists && !$info->isDir) {
                 unlink($info->path);
+                $deleted = true;
             }
         }
+        return $deleted;
     }
 
     public function set(string $name, $content): bool 
