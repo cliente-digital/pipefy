@@ -22,7 +22,7 @@ Trait GraphQL{
     {
         $gqlInfo = $gql->info();
 
-        $isQuery = $gqlInfo->kind;
+        $isQuery = $gqlInfo->kind == 'query';
         $cachemode = Pipefy::useCache();
 
         $canCache = $isQuery && $cachemode;
