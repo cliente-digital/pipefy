@@ -37,11 +37,9 @@ class All
                     $page->data->cards->edges,
                     $nextPage->data->cards->edges
                 );
-            usleep(300);
             $pageInfo = $nextPage->data->cards->pageInfo; 
 
         }
-        $this->setCache("pipe-{$pipeId}.cards", $page->data->cards->edges);
         $all = $page->data->cards->edges;
         $cards = [];
          foreach($all as $card){

@@ -17,10 +17,14 @@ class One
         $this->id = $id;
     }
 
-    public function get(){
+    public function get(?Entity\Card $reloadEntity = null){
         $gql = $this->getGQL("card-one");
         $gql->set("CARDID", $this->id);
         $gqlResult = $this->request($gql);
+        if(!is_null($reloadEntity)){
+            $reloadEntity->reload($gqlResult->data->card);
+            return $reloadEntity;
+        }
         return new Entity\Card($gqlResult->data->card);
     }
 
@@ -29,7 +33,7 @@ class One
         $gql->set("COMMENTID", $comment->id);
         $gql->set("TEXT", $comment->__newData()['TEXT']);
         $gqlResult = $this->request($gql);
-        return $gqlResult;
+        return $gqlResult->updateComment->comment->id;
     }
 
     public function updateFields(Entity\Card $card){
@@ -46,7 +50,7 @@ class One
         $gql = $this->getGQL("card-comment.remove");
         $gql->set("COMMENTID", $comment->id);
         $gqlResult = $this->request($gql);
-        return $gqlResult;
+        return $gqlResult->data->deleteComment->success;
     }
 
     public function comment(Entity\Comment $comment){
@@ -54,7 +58,7 @@ class One
         $gql->set("CARDID", $this->id);
         $gql->set("TEXT", $comment->__newData()['TEXT']);
         $gqlResult = $this->request($gql);
-        return $gqlResult;
+        return $gqlResult->data->createComment->comment->id; 
     }
 
 
@@ -80,6 +84,7 @@ class One
             $newLabels[] = $alabel->id;
         }
         $newLabels = array_unique($newLabels);
+        var_dump($actualLabels, $newLabels);
         if(count($actualLabels) == count($newLabels))
             return false;
         $gql = $this->getGQL("card-update");
@@ -113,6 +118,6 @@ class One
         $gql->set("LABELIDS", "[".implode(", ", $newLabels)."]");
         $gqlResult = $this->request($gql);
 
-        return $gqlResult;
+        return $gqlResult->data->updateCard->card->id;
     }
 } 
