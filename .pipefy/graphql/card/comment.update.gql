@@ -6,5 +6,6 @@ updateComment(
   }
 ) {
   clientMutationId
+  comment { id }
 }
 }

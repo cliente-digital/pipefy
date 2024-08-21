@@ -9,5 +9,6 @@ updateCard(
   }
 ) {
   clientMutationId
+  card{ id }
 }
 }
