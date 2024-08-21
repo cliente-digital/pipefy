@@ -1,0 +1,14 @@
+{
+  organization(id:_R.ORGID_){
+    tables{
+      edges{
+        node{
+          id
+          internal_id  
+          name
+        }
+      }
+    }
+  }
+}
+
