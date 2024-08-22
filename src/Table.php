@@ -1,8 +1,7 @@
 <?php
 namespace Clientedigital\Pipefy;
 
-use Clientedigital\Pipefy\Graphql\Pipe\One;
-use Clientedigital\Pipefy\Graphql\Label;
+use Clientedigital\Pipefy\Graphql;
 use Clientedigital\Pipefy\Entity;
 use Clientedigital\Pipefy\Filter;
 
@@ -30,7 +29,6 @@ class Table
         return $this->table;
     }
 
-
     public function labels(?Filter\Label $filter=null)
     {
         $labels =(new Graphql\Label\All())->fromTable($this->id); 
@@ -46,11 +44,23 @@ class Table
 
     public function records(?Filter\Record $filter=null)
     {
+        $all= new Graphql\Record\All($this->id);  
+        if(!is_null($filter))
+            $all= new Graphql\Record\All($this->id, $filter->script());
+ 
+        $records = $all->get();
 
+        foreach($records as $record){
+            if(is_null($filter))
+                yield $record;
+
+            else if($filter->check($record))
+                yield $record;
+        }
     }
 
     public function record(int $id)
     {
-
+        return New Record($id);
     }
 } 

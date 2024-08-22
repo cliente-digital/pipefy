@@ -93,11 +93,13 @@
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/clientedigital.html">Clientedigital</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/clientedigital-pipefy.html">Pipefy</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/clientedigital-pipefy-graphql.html">Graphql</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/clientedigital-pipefy-graphql-table.html">Table</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Cache
+    One
 
     
             <div class="phpdocumentor-element__package">
@@ -108,6 +110,9 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            uses
+                            <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GraphQL">GraphQL</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -116,7 +121,7 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/Table/One.php"><a href="files/src-graphql-table-one.html"><abbr title="src/Graphql/Table/One.php">One.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">7</span>
 
@@ -133,7 +138,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/Clientedigital-Pipefy-Cache.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -143,56 +148,68 @@
 
 
 
-<h4 id="toc-constants">
-    Constants
-    <a href="classes/Clientedigital-Pipefy-Cache.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#constant_ALL">ALL</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#property_http">$http</a>
     <span>
-        &nbsp;= 0                            </span>
+                        &nbsp;: <abbr title="\GuzzleHttp\Client">Client</abbr>|null            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#constant_ALLWAYSVALIDCACHE">ALLWAYSVALIDCACHE</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#property_id">$id</a>
     <span>
-        &nbsp;= -1                            </span>
+                        &nbsp;: int            </span>
 </dt>
 
     </dl>
 
-
-
 <h4 id="toc-methods">
     Methods
-    <a href="classes/Clientedigital-Pipefy-Cache.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#method_clear">clear()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#method_get">get()</a>
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#method_info">info()</a>
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method_get">get()</a>
     <span>
-                                &nbsp;: <abbr title="\stdclass">stdclass</abbr>    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/Clientedigital-Pipefy-Cache.html#method_set">set()</a>
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getGQL">getGQL()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: <a href="classes/Clientedigital-Pipefy-Graphql-GQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GQL">GQL</abbr></a>    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_request">request()</a>
+    <span>
+                                &nbsp;: object    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getCache">getCache()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_setCache">setCache()</a>
+    <span>
+                                &nbsp;: mixed    </span>
 </dt>
 
     </dl>
@@ -200,35 +217,42 @@
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/Clientedigital-Pipefy-Cache.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ALL">
-        ALL
-        <a href="classes/Clientedigital-Pipefy-Cache.html#constant_ALL" class="headerlink"><i class="fas fa-link"></i></a>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_http">
+        $http
+        <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#property_http" class="headerlink"><i class="fas fa-link"></i></a>
 
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
     </h4>
-
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/GraphQL.php"><a href="files/src-graphql-graphql.html"><abbr title="src/Graphql/GraphQL.php">GraphQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
     
     
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ALL</span>
-    = <span class="phpdocumentor-signature__default-value">0</span>
-</code>
-
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\GuzzleHttp\Client">Client</abbr>|null</span>
+    <span class="phpdocumentor-signature__name">$http</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
     
@@ -237,15 +261,22 @@
     
 
 </article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ALLWAYSVALIDCACHE">
-        ALLWAYSVALIDCACHE
-        <a href="classes/Clientedigital-Pipefy-Cache.html#constant_ALLWAYSVALIDCACHE" class="headerlink"><i class="fas fa-link"></i></a>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_id">
+        $id
+        <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
 
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
     </h4>
-
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/Table/One.php"><a href="files/src-graphql-table-one.html"><abbr title="src/Graphql/Table/One.php">One.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">11</span>
 
@@ -253,13 +284,11 @@
 
     
     
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ALLWAYSVALIDCACHE</span>
-    = <span class="phpdocumentor-signature__default-value">-1</span>
-</code>
-
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$id</span>
+    </code>
 
     
     
@@ -270,12 +299,10 @@
 </article>
             </section>
 
-        
-
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Clientedigital-Pipefy-Cache.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -284,22 +311,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_clear">
-        clear()
-        <a href="classes/Clientedigital-Pipefy-Cache.html#method_clear" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/Table/One.php"><a href="files/src-graphql-table-one.html"><abbr title="src/Graphql/Table/One.php">One.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">clear</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allhashednames</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -308,23 +335,9 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$path</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$allhashednames</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -334,11 +347,7 @@
 
     
 
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -348,20 +357,54 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
-        <a href="classes/Clientedigital-Pipefy-Cache.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/Table/One.php"><a href="files/src-graphql-table-one.html"><abbr title="src/Graphql/Table/One.php">One.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getGQL">
+        getGQL()
+        <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getGQL" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/GraphQL.php"><a href="files/src-graphql-graphql.html"><abbr title="src/Graphql/GraphQL.php">GraphQL.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getGQL</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Clientedigital-Pipefy-Graphql-GQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GQL">GQL</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -371,6 +414,102 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Clientedigital-Pipefy-Graphql-GQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GQL">GQL</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_request">
+        request()
+        <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_request" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/GraphQL.php"><a href="files/src-graphql-graphql.html"><abbr title="src/Graphql/GraphQL.php">GraphQL.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">request</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Clientedigital-Pipefy-Graphql-GQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GQL">GQL</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gql</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$gql</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Clientedigital-Pipefy-Graphql-GQL.html"><abbr title="\Clientedigital\Pipefy\Graphql\GQL">GQL</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">object</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getCache">
+        getCache()
+        <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getCache" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/GraphQL.php"><a href="files/src-graphql-graphql.html"><abbr title="src/Graphql/GraphQL.php">GraphQL.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">73</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getCache</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cacheId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cacheId</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -387,25 +526,25 @@
                     <article
         class="phpdocumentor-element
             -method
-            -public
+            -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_info">
-        info()
-        <a href="classes/Clientedigital-Pipefy-Cache.html#method_info" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setCache">
+        setCache()
+        <a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_setCache" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Graphql/GraphQL.php"><a href="files/src-graphql-graphql.html"><abbr title="src/Graphql/GraphQL.php">GraphQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\stdclass">stdclass</abbr></span></code>
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">setCache</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cacheId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -414,69 +553,14 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$cacheId</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$path</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\stdclass">stdclass</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_set">
-        set()
-        <a href="classes/Clientedigital-Pipefy-Cache.html#method_set" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cache.php"><a href="files/src-cache.html"><abbr title="src/Cache.php">Cache.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">107</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$content</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$content</span>
+                <span class="phpdocumentor-signature__argument__name">$response</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -488,11 +572,7 @@
 
     
 
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
+    
 </article>
             </section>
 
@@ -500,7 +580,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Cache.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Graphql/Table/One.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -599,26 +679,28 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                        <li><a href="classes/Clientedigital-Pipefy-Cache.html#toc-constants">Constants</a></li>
-                                                                                <li><a href="classes/Clientedigital-Pipefy-Cache.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
-                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#constant_ALL">ALL</a></li>
-                                                    <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#constant_ALLWAYSVALIDCACHE">ALLWAYSVALIDCACHE</a></li>
+                                                    <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#property_http">$http</a></li>
+                                                    <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#property_id">$id</a></li>
                                             </ul>
                 </li>
-            
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#method_clear">clear()</a></li>
-                                            <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#method_get">get()</a></li>
-                                            <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#method_info">info()</a></li>
-                                            <li class=""><a href="classes/Clientedigital-Pipefy-Cache.html#method_set">set()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getGQL">getGQL()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_request">request()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_getCache">getCache()</a></li>
+                                            <li class=""><a href="classes/Clientedigital-Pipefy-Graphql-GraphQL.html#method_setCache">setCache()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -638,7 +720,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/Clientedigital-Pipefy-Cache.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Clientedigital-Pipefy-Graphql-Table-One.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

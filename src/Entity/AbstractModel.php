@@ -11,6 +11,10 @@ abstract class  AbstractModel
         $this->data = $data;
     }
 
+    public function reload(StdClass $data){
+        $this->data = $data;
+    } 
+
     public function loaded()
     {
        return !is_null($this->data); 

@@ -43,38 +43,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Each\u0020Card\u0020Instance\u0020point\/\u0020manipulate\u0020only\u0020one\u0020Card\u0020defined\u0020by\u0020constructor\u0020id.",
             "url": "classes/Clientedigital-Pipefy-Card.html#method___construct"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Aget\u0028\u0029",
-            "name": "get",
+            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Areload\u0028\u0029",
+            "name": "reload",
+            "summary": "Retrieve\u0020the\u0020entity\u0020of\u0020the\u0020card\u0028id\u0029.",
+            "url": "classes/Clientedigital-Pipefy-Card.html#method_reload"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Aentity\u0028\u0029",
+            "name": "entity",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Card.html#method_get"
+            "url": "classes/Clientedigital-Pipefy-Card.html#method_entity"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Alabels\u0028\u0029",
             "name": "labels",
-            "summary": "",
+            "summary": "Retrieve\u0020the\u0020card\u0020labels.",
             "url": "classes/Clientedigital-Pipefy-Card.html#method_labels"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Acomments\u0028\u0029",
             "name": "comments",
-            "summary": "",
+            "summary": "Retrieve\u0020the\u0020card\u0020comments.",
             "url": "classes/Clientedigital-Pipefy-Card.html#method_comments"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
+            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003AupdateFields\u0028\u0029",
+            "name": "updateFields",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Card.html#method_update"
+            "url": "classes/Clientedigital-Pipefy-Card.html#method_updateFields"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003AupdateLabels\u0028\u0029",
+            "name": "updateLabels",
+            "summary": "Add\u0020and\u0020remove\u0020labels\u0020to\u0020the\u0020card.",
+            "url": "classes/Clientedigital-Pipefy-Card.html#method_updateLabels"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003Acomment\u0028\u0029",
             "name": "comment",
-            "summary": "",
+            "summary": "Add\u0020or\u0020remove\u0020a\u0020Comment\u0020to\u0020card.",
             "url": "classes/Clientedigital-Pipefy-Card.html#method_comment"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003AmodifyLabels\u0028\u0029",
-            "name": "modifyLabels",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Card.html#method_modifyLabels"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Card\u003A\u003AREMOVE",
             "name": "REMOVE",
@@ -100,41 +105,6 @@ Search.appendIndex(
             "name": "card",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Card.html#property_card"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards",
-            "name": "Cards",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#method___construct"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003Aload\u0028\u0029",
-            "name": "load",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#method_load"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#method_get"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003A\u0024pipeId",
-            "name": "pipeId",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#property_pipeId"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003A\u0024cards",
-            "name": "cards",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#property_cards"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Cards\u003A\u003A\u0024filter",
-            "name": "filter",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Cards.html#property_filter"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Command\\Config",
             "name": "Config",
@@ -195,6 +165,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Entity-AbstractModel.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\AbstractModel\u003A\u003Areload\u0028\u0029",
+            "name": "reload",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-AbstractModel.html#method_reload"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Entity\\AbstractModel\u003A\u003Aloaded\u0028\u0029",
             "name": "loaded",
@@ -445,6 +420,76 @@ Search.appendIndex(
             "name": "newData",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Entity-Pipe.html#property_newData"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record",
+            "name": "Record",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AtableId\u0028\u0029",
+            "name": "tableId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_tableId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003Atitle\u0028\u0029",
+            "name": "title",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_title"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AphaseId\u0028\u0029",
+            "name": "phaseId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_phaseId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AdueDate\u0028\u0029",
+            "name": "dueDate",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_dueDate"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AsetField\u0028\u0029",
+            "name": "setField",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_setField"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AaddParentCardId\u0028\u0029",
+            "name": "addParentCardId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_addParentCardId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AaddAssigneeId\u0028\u0029",
+            "name": "addAssigneeId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_addAssigneeId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AaddAttachmentURL\u0028\u0029",
+            "name": "addAttachmentURL",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_addAttachmentURL"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003AaddLabelId\u0028\u0029",
+            "name": "addLabelId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method_addLabelId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003A__newData\u0028\u0029",
+            "name": "__newData",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#method___newData"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Record\u003A\u003A\u0024newData",
+            "name": "newData",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Record.html#property_newData"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Entity\\Table",
+            "name": "Table",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Entity-Table.html"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Cards",
             "name": "Cards",
@@ -760,6 +805,86 @@ Search.appendIndex(
             "name": "evaluate",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Filter-Operator-OperatorInterface.html#method_evaluate"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records",
+            "name": "Records",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AaddToFilterArray\u0028\u0029",
+            "name": "addToFilterArray",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_addToFilterArray"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003Aby\u0028\u0029",
+            "name": "by",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_by"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003Ascript\u0028\u0029",
+            "name": "script",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_script"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003Acheck\u0028\u0029",
+            "name": "check",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_check"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003Aorder\u0028\u0029",
+            "name": "order",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_order"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AassigneeTo\u0028\u0029",
+            "name": "assigneeTo",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_assigneeTo"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AIgnoreCard\u0028\u0029",
+            "name": "IgnoreCard",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_IgnoreCard"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AlabeledWith\u0028\u0029",
+            "name": "labeledWith",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_labeledWith"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003Atitled\u0028\u0029",
+            "name": "titled",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_titled"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AincludeDone\u0028\u0029",
+            "name": "includeDone",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#method_includeDone"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003AASC_ORDER",
+            "name": "ASC_ORDER",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#constant_ASC_ORDER"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003ADESC_ORDER",
+            "name": "DESC_ORDER",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#constant_DESC_ORDER"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003A\u0024filters",
+            "name": "filters",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#property_filters"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Filter\\Records\u003A\u003A\u0024afterFilters",
+            "name": "afterFilters",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Filter-Records.html#property_afterFilters"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Bulk\\Page",
             "name": "Page",
@@ -1266,6 +1391,91 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Graphql-Pipe-One.html#property_id"
         },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All",
+            "name": "All",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#method_get"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003Aload\u0028\u0029",
+            "name": "load",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#method_load"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003AfirstPage\u0028\u0029",
+            "name": "firstPage",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#method_firstPage"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003AnextPage\u0028\u0029",
+            "name": "nextPage",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#method_nextPage"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003A\u0024tableId",
+            "name": "tableId",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#property_tableId"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003A\u0024search",
+            "name": "search",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#property_search"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record\\All\u003A\u003A\u0024filter",
+            "name": "filter",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Record-All.html#property_filter"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\All",
+            "name": "All",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-All.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\All\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-All.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\All\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-All.html#method_get"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\All\u003A\u003A\u0024orgid",
+            "name": "orgid",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-All.html#property_orgid"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\One",
+            "name": "One",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-One.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\One\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-One.html#method___construct"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\One\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-One.html#method_get"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table\\One\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Graphql-Table-One.html#property_id"
+        },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Label",
             "name": "Label",
             "summary": "",
@@ -1291,14 +1501,24 @@ Search.appendIndex(
             "summary": "Access\u0020one\u0020Organization\u0020defined\u0020by\u0020id.",
             "url": "classes/Clientedigital-Pipefy-Org.html#method___construct"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "return\u0020the\u0020Organization\u0028id\u0029\u0020Entity",
-            "url": "classes/Clientedigital-Pipefy-Org.html#method_get"
+            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Org.html#property_id"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Aentity\u0028\u0029",
+            "name": "entity",
+            "summary": "return\u0020Entity\\Org",
+            "url": "classes/Clientedigital-Pipefy-Org.html#method_entity"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "update\u0020the\u0020organization\u0028id\u0029\u0020data.",
+            "url": "classes/Clientedigital-Pipefy-Org.html#method_update"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Apipes\u0028\u0029",
             "name": "pipes",
-            "summary": "return\u0020all\u0020Pipes\u0020from\u0020Organization\u0028id\u0029.",
+            "summary": "return\u0020the\u0020Organization\u0020Pipes\u0020Array.",
             "url": "classes/Clientedigital-Pipefy-Org.html#method_pipes"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Apipe\u0028\u0029",
@@ -1306,30 +1526,15 @@ Search.appendIndex(
             "summary": "return\u0020a\u0020pipe\u0020from\u0020the\u0020Organization\u0028id\u0029\nand\u0020throw\u0020Exception\u0020if\u0020not\u0020found.",
             "url": "classes/Clientedigital-Pipefy-Org.html#method_pipe"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "update\u0020the\u0020organization\u0028id\u0029\u0020data.",
-            "url": "classes/Clientedigital-Pipefy-Org.html#method_update"
+            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Atables\u0028\u0029",
+            "name": "tables",
+            "summary": "return\u0020the\u0020Organization\u0020Tables\u0020Array.",
+            "url": "classes/Clientedigital-Pipefy-Org.html#method_tables"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Org.html#property_id"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Orgs",
-            "name": "Orgs",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Orgs.html"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Orgs\u003A\u003AAll\u0028\u0029",
-            "name": "All",
-            "summary": "list\u0020all\u0020Organizations\u0020the\u0020configured\u0020api\u0020key\u0020can\u0020access.",
-            "url": "classes/Clientedigital-Pipefy-Orgs.html#method_All"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Orgs\u003A\u003AOne\u0028\u0029",
-            "name": "One",
-            "summary": "retrieve\u0020one\u0020organization\u0020the\u0020configured\u0020api\u0020key\u0020can\u0020access",
-            "url": "classes/Clientedigital-Pipefy-Orgs.html#method_One"
+            "fqsen": "\\Clientedigital\\Pipefy\\Org\u003A\u003Atable\u0028\u0029",
+            "name": "table",
+            "summary": "return\u0020a\u0020table\u0020from\u0020the\u0020Organization\u0028id\u0029\nand\u0020throw\u0020Exception\u0020if\u0020not\u0020found.",
+            "url": "classes/Clientedigital-Pipefy-Org.html#method_table"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe",
             "name": "Pipe",
@@ -1341,30 +1546,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipe.html#method___construct"
         },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Pipe.html#property_id"
+        },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Aload\u0028\u0029",
             "name": "load",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipe.html#method_load"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Aget\u0028\u0029",
-            "name": "get",
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Aentity\u0028\u0029",
+            "name": "entity",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_get"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Acards\u0028\u0029",
-            "name": "cards",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_cards"
+            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_entity"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipe.html#method_update"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Alabels\u0028\u0029",
-            "name": "labels",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_labels"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003AcreateCard\u0028\u0029",
             "name": "createCard",
@@ -1376,10 +1576,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipe.html#method_field"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003A\u0024id",
-            "name": "id",
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Alabels\u0028\u0029",
+            "name": "labels",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipe.html#property_id"
+            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_labels"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Acards\u0028\u0029",
+            "name": "cards",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_cards"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003Acard\u0028\u0029",
+            "name": "card",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Pipe.html#method_card"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipe\u003A\u003A\u0024pipe",
             "name": "pipe",
@@ -1401,10 +1611,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipefy.html#method_getConfig"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipefy\u003A\u003AOrgs\u0028\u0029",
-            "name": "Orgs",
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipefy\u003A\u003Aorgs\u0028\u0029",
+            "name": "orgs",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipefy.html#method_Orgs"
+            "url": "classes/Clientedigital-Pipefy-Pipefy.html#method_orgs"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Pipefy\u003A\u003Aorg\u0028\u0029",
+            "name": "org",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Pipefy.html#method_org"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Pipefy\u003A\u003A\u0024useBulk",
             "name": "useBulk",
@@ -1420,31 +1635,6 @@ Search.appendIndex(
             "name": "config",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Pipefy.html#property_config"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipes",
-            "name": "Pipes",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipes.html"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipes\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Access\u0020the\u0020Organization\u0020Pipes\u0020defined\u0020by\u0020orgId",
-            "url": "classes/Clientedigital-Pipefy-Pipes.html#method___construct"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipes\u003A\u003AAll\u0028\u0029",
-            "name": "All",
-            "summary": "Get\u0020All\u0020Pipes\u0020from\u0020Organization\u0020defined\u0020by\u0020orgId\nreturn\u0020it\u0020as\u0020an\u0020Array\u0020of\u0020Pipefy\\Pipe\u0020Instances.",
-            "url": "classes/Clientedigital-Pipefy-Pipes.html#method_All"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipes\u003A\u003AOne\u0028\u0029",
-            "name": "One",
-            "summary": "Get\u0020One\u0020Pipes\u0020from\u0020Organization\u0020defined\u0020by\u0020orgId\nreturn\u0020it\u0020as\u0020a\u0020Pipefy\\Pipe\u0020Instances.",
-            "url": "classes/Clientedigital-Pipefy-Pipes.html#method_One"
-        },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Pipes\u003A\u003A\u0024orgId",
-            "name": "orgId",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Pipes.html#property_orgId"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Report\\Schema",
             "name": "Schema",
@@ -3661,20 +3851,35 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Table.html#method___construct"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003Alabels\u0028\u0029",
-            "name": "labels",
-            "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Table.html#method_labels"
-        },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
             "url": "classes/Clientedigital-Pipefy-Table.html#property_id"
         },                {
-            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003A\u0024pipe",
-            "name": "pipe",
+            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003Aentity\u0028\u0029",
+            "name": "entity",
             "summary": "",
-            "url": "classes/Clientedigital-Pipefy-Table.html#property_pipe"
+            "url": "classes/Clientedigital-Pipefy-Table.html#method_entity"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003Alabels\u0028\u0029",
+            "name": "labels",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Table.html#method_labels"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003Arecords\u0028\u0029",
+            "name": "records",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Table.html#method_records"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003Arecord\u0028\u0029",
+            "name": "record",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Table.html#method_record"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Table\u003A\u003A\u0024table",
+            "name": "table",
+            "summary": "",
+            "url": "classes/Clientedigital-Pipefy-Table.html#property_table"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -3745,6 +3950,16 @@ Search.appendIndex(
             "name": "Pipe",
             "summary": "",
             "url": "namespaces/clientedigital-pipefy-graphql-pipe.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Record",
+            "name": "Record",
+            "summary": "",
+            "url": "namespaces/clientedigital-pipefy-graphql-record.html"
+        },                {
+            "fqsen": "\\Clientedigital\\Pipefy\\Graphql\\Table",
+            "name": "Table",
+            "summary": "",
+            "url": "namespaces/clientedigital-pipefy-graphql-table.html"
         },                {
             "fqsen": "\\Clientedigital\\Pipefy\\Report",
             "name": "Report",

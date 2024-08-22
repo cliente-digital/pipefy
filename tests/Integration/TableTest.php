@@ -19,4 +19,14 @@ test('TryGetTablesWithSuccess', function () {
     expect($entity->type)->toEqual("Table");
 });
 
-
+test('TryGetRecordWithSuccess', function () {
+    $pipefy = new Pipefy();
+    $org = $pipefy->orgs()[0];
+    $table = $org->tables()[0];
+    expect($table->entity())->toBeInstanceOf(Entity\Table::class);
+    $records = $table->records();
+    var_dump($records);
+    foreach($records as $record){
+        var_dump($record);
+    }
+}); 
