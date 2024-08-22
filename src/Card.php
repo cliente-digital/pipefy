@@ -15,18 +15,33 @@ class Card
     public const ADD= 1;
     public const UPDATE= 2;
 
+    /**
+    * Each Card Instance point/ manipulate only one Card defined by constructor id.
+    **/ 
     public function __construct(int $id)
     {
         $this->id = $id;
     }
 
-    public function get()
+    /**
+    * Retrieve the entity of the card(id).
+    **/
+
+    private function reload(){
+        if(is_null($this->card)) return $this->entity();
+        return (new One($this->id))->get($this->card);
+    }
+
+    public function entity()
     {
         if(is_null($this->card))
             $this->card = (new One($this->id))->get();
         return $this->card;
     }
 
+    /**
+    * Retrieve the card labels. 
+    **/
     public function labels(?Filter\Label $filter=null)
     {
         $labels = (new Label\All())->fromCard($this->id); 
@@ -40,22 +55,46 @@ class Card
         return $labels;
     }
 
+    /**
+    * Retrieve the card comments.
+    **/
     public function comments()
     {
         return (new One($this->id))->comments(); 
     }
 
-    public function update(Entity\Card $card)
+    public function updateFields(Entity\Card $card)
     {
+         
         return (new One($this->id))
             ->updateFields($card); 
     }
 
-    public function comment(Entity\Comment $comment, $op=1)
+    /**
+    * Add and remove labels to the card.
+    */
+    public function updateLabels(Entity\label $label, int $op)
+    {
+        if(in_array($op, [self::REMOVE, self::ADD])){
+            if(!$label->loaded())
+                throw new \Exception("You Can Only Add or Remove Labels that Exist.");
+            $result = match($op){
+                self::REMOVE=>  (new One($this->id))->removeLabel($label, $this->entity()->labels),
+                self::ADD=>  (new One($this->id))->addLabel($label, $this->entity()->labels)
+            };
+            $this->reload();
+            return $result;
+        }
+        throw new \Exception("You Can Only Add or Remove Labels that Exist.");
+    }
+
+    /**
+    * Add or remove a Comment to card.
+    **/
+    public function comment(Entity\Comment $comment, $op=1) 
     {
         if($op == self::ADD)
-            return (new One($this->id))->comment($comment); 
-
+            return (new One($this->id))->comment($comment);
         if(!$comment->loaded())
             throw new \Exception("You Only can Remove Comments that Exist.");
 
@@ -63,21 +102,5 @@ class Card
             return (new One($this->id))->updateComment($comment); 
 
         return (new One($this->id))->removeComment($comment); 
-        
-    }
-
-    public function modifyLabels(Entity\label $label, int $op)
-    {
-        if(in_array($op, [self::REMOVE, self::ADD])){
-            if(!$label->loaded())
-                throw new \Exception("You Can Only Add or Remove Labels that Exist.");
-            $result = match($op){
-                self::REMOVE=>  (new One($this->id))->removeLabel($label, $this->get()->labels),
-                self::ADD=>  (new One($this->id))->addLabel($label, $this->get()->labels)
-            };
-            return $result;
-        }
-        throw new \Exception("You Can Only Add or Remove Labels that Exist.");
-            
     }
 } 
