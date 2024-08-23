@@ -61,12 +61,15 @@ class Org
     * return a pipe from the Organization(id)
     * and throw Exception if not found.
     */
-    public function pipe(int $id): Pipe
+    public function pipe(string|int $id): Pipe
     {
         $pipes = $this->pipes();
         foreach($pipes as $pipe){
-            if($pipe->id() == $id)
-                return $pipe;
+            if( 
+                (is_int($id) && $pipe->id() == $id) ||
+                (is_string($id) && $pipe->suid() == $id) 
+             )
+             return $pipe;
         }
         throw new \Exception("Organization({$this->id}) has no Pipe({$id}).");
     }

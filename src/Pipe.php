@@ -22,6 +22,12 @@ class Pipe
         return $this->id;
     }
 
+    public function suid(): string{
+        $entity = $this->entity();
+        return $entity->suid;
+    }
+
+
     private function load(){
         return (new Graphql\Pipe\One($this->id))->get(); 
     }
