@@ -33,6 +33,7 @@
       }
       name
       value
+      updated_at
     }
     child_relations {
       id
