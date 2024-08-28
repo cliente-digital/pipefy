@@ -60,7 +60,7 @@ class Config{
             $config[$key] = $value;
             $this->create($config);
             echo "\nyour {$key} was set.".PHP_EOL;
-            (new \Clientedigital\Pipefy\Cache())->clearCache(\Clientedigital\Pipefy\Cache::CACHE_ALL);
+            (new \Clientedigital\Pipefy\Cache())->clearCache(\Clientedigital\Pipefy\Cache::ALL);
             return 0; 
         }
 

@@ -8,8 +8,6 @@ use StdClass;
 
 Trait GraphQL{
 
-    final public const CACHE_ALL = "_clearall_";
-
     private ?Client $http=null; 
 
     function getGQL($name): GQL 
