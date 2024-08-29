@@ -53,5 +53,12 @@ class Schema
             if($field->id == $fieldName)
                 return $field;
         }
+        foreach($pipe->phases as $phase){
+            foreach($phase->fields as $field){
+                if($field->id == $fieldName)
+                    return $field;
+            }
+        }
+
     }
 }
