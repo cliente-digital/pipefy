@@ -11,11 +11,11 @@ class Schema
 
     public function build(): void
     {
+        $cacheState = Pipefy::useCache();
         Pipefy::useCache(true);
         $gql = $this->getGQL("schema.build");
         $schema = $this->request($gql);
-        $this->setCache($gql->info()->cacheId, $schema);
-        Pipefy::useCache(false);
+        Pipefy::useCache($cacheState);
     }
     public function report(): string
     {
