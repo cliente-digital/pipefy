@@ -28,8 +28,11 @@ class Connector extends AbstractType implements TypeInterface
         }
     }
 
-    public function script(): string
+    public function script($gqlname = null): string
     {
+        if($gqlname =="card-create")
+            return "{field_id:\"{$this->id()}\", field_value: \"{$this->value()}\"}";
+
         return $this->value();
     }
 }
