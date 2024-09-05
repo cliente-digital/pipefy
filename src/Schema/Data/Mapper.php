@@ -23,7 +23,8 @@ class Mapper{
         'number' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Number',
         'currency' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Currency',
         'cpf' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\CPF',
-        'RG' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\RG'
+        'RG' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\RG',
+        'connector' => '\\Clientedigital\\Pipefy\\Schema\Data\\Type\\Connector'
     ];
 
    public function load(stdclass $fieldDefinition): Type\TypeInterface 
