@@ -1,0 +1,54 @@
+{
+  table_records(table_id: _R.TABLEID_, first:50 _SEARCH_) {
+    edges{
+      node{
+        id
+        done
+				due_date
+        finished_at
+        created_at
+				created_by {
+				  id
+				}
+        labels{
+          id
+          name
+        }
+        record_fields{
+          field{
+            id
+            deleted
+            index_name
+            label
+            options
+            type
+            
+          }
+          required
+					value
+          date_value
+          datetime_value
+          phase_field {
+            id
+          }
+          connectedRepoItems
+        }
+        parent_relations{
+          id
+          name
+          repo_items {
+            edges {
+              node
+            }
+          }
+          source_type
+        }
+      }
+      
+    }
+    pageInfo{
+      endCursor
+      hasNextPage
+    }
+  }
+}

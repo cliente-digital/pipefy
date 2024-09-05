@@ -3,6 +3,32 @@
     id
     name
     createdAt
+    tables{
+      edges{
+        node{
+          id
+          internal_id
+          name
+          description
+          title_field{
+            id
+            
+          }
+          table_fields{
+            id
+            required
+            deleted
+            type
+            options
+            unique
+            is_multiple
+            internal_id
+            label
+          }
+        }
+      }
+    }
+
     pipes {
         id
       	labels{

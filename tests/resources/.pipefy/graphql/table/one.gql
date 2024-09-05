@@ -1,0 +1,95 @@
+{
+  table( id: _R.TABLEID_ ){
+    id
+  	anyone_can_create_card
+    authorization
+    color
+    conditionExpressionsFieldIds
+    countOnlyWeekDays
+    create_record_button_label
+    description
+    icon
+    id
+    internal_id
+    labels {
+      id
+      name
+    }
+    members{
+      user {
+        id
+      }
+      role_name
+    }
+    my_permissions {
+      can_manage_record
+      can_manage_table      
+    }
+    name
+    noun
+    orderableFields
+    organization {
+      id
+    }
+    permissions{
+      configure_repo
+      create_item
+      delete_item
+      delete_repo
+      manage_field
+      show_repo
+     }
+    public
+    publicForm {
+      id
+      active
+      url
+      title
+      logo
+    }
+    startFormPhaseId
+    statuses {
+      id
+      name
+    }
+    table_fields {
+      id
+      allChildrenMustBeDoneToFinishParent
+      canConnectExisting
+      canConnectMultiples
+      canCreateNewConnected
+      childMustExistToFinishParent
+      connectedRepo
+      custom_validation
+      deleted
+      description
+      help
+      id
+      internal_id
+      is_multiple
+      label
+      options
+      required
+      type      
+    }
+    table_records_count
+    title_field {
+      id
+      label      
+    }
+    type
+    url
+    users_count
+    uuid
+    webhooks {
+      id
+      actions
+      email
+      filters
+      headers
+      name
+      url      
+    }
+    
+  }
+}
