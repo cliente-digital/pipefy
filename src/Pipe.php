@@ -73,6 +73,7 @@ class Pipe
                unset($labels[$idx]); 
         }
         sort($labels);
+
         return $labels;
 
     }
@@ -81,9 +82,12 @@ class Pipe
     {
 
         $cards = new Graphql\Card\All($this->id);  
+
         if(!is_null($filter))
             $cards  = new Graphql\Card\All($this->id, $filter->script());
- 
+
+        $cards = $cards->get();         
+
         foreach($cards as $card){
             if(is_null($filter))
                 yield $card;
