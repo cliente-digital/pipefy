@@ -11,11 +11,8 @@ class Schema
 
     public function build(): void
     {
-        $cacheState = Pipefy::useCache();
-        Pipefy::useCache(true);
         $gql = $this->getGQL("schema.build");
-        $schema = $this->request($gql);
-        Pipefy::useCache($cacheState);
+        self::$cache = $this->request($gql);
     }
     public function report(): string
     {
@@ -24,8 +21,7 @@ class Schema
 
     public static function field(int $pipeId, string $fieldName){
         if(is_null(self::$cache)) {
-            $schema = new Schema();
-            self::$cache = $schema->getCache($schema->getGQL("schema.build")->info()->cacheId);
+            (new Schema())->build();
         }
 
         $pipe = self::getPipeSchema($pipeId);

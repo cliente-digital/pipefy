@@ -33,19 +33,21 @@ class One
         $gqlResult = $this->request($gql);
     }
 
-    public function createCard(array $createCardInput)
+    public function createCard($card)
     {
         $gql = $this->getGQL("card-create");
         $gql->set('PIPEID', $this->id);
+        $createCardInput = $card->__newData();
+
         foreach($createCardInput as $vName => $vValue){
             if(
                 $vValue instanceof \Clientedigital\Pipefy\Schema\Data\CollectionOf || 
                 $vValue instanceof \Clientedigital\Pipefy\Schema\Data\Type\TypeInterface
               )
                 $vValue = $vValue->script('card-create');
- 
             $gql->set($vName, $vValue);
         }
+
         $gqlResult = $this->request($gql);
         if(isset($gqlResult->errors))
             return $gqlResult->errors[0]->message;

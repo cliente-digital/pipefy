@@ -52,9 +52,8 @@ class Pipe
     public function createCard(Entity\Card $card)
     {
         $card->pipeId($this->id);
-        $newValues = $card->__newData();
         return (new Graphql\Pipe\One($this->id))
-            ->createCard($newValues); 
+            ->createCard($card); 
     }
 
     public function field(string $fieldName): DataType\TypeInterface
