@@ -20,12 +20,16 @@ abstract class  AbstractModel
        return !is_null($this->data); 
     }
 
-    public function __get($dataId=null) {
+    public function allData(){
         if(!$this->loaded())
             throw new \Exception("No Readable Properties are set.");
 
-        if(is_null($dataId))
-            return $this->data;
+        return $this->data;
+    }
+
+    public function __get($dataId) {
+        if(!$this->loaded())
+            throw new \Exception("No Readable Properties are set.");
 
         if(isset($this->data->$dataId))
             return $this->data->$dataId;
