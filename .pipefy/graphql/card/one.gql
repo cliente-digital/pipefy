@@ -6,8 +6,14 @@
         id
       }
     }
+    	current_phase {
+    	  id,
+        name
+    	}
+
         id
         title
+
     due_date
     overdue
     comments{
