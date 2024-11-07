@@ -1,0 +1,9 @@
+mutation{
+deleteCard(
+  input: {
+    id : _R.CARDID_
+  }
+) {
+  clientMutationId
+}
+}

@@ -61,6 +61,15 @@ class One
         return $gqlResult->data->createComment->comment->id; 
     }
 
+    public function delete(string $cardId){
+        $gql = $this->getGQL("card-delete");
+        $gql->set("CARDID", $cardId);
+        $gqlResult = $this->request($gql);
+        return $gqlResult->data->deleteCard; 
+    }
+
+
+
 
 
     public function comments(){

@@ -70,6 +70,13 @@ class Card
             ->updateFields($card); 
     }
 
+    public function delete(string $cardId)
+    {
+        return (new One($this->id))
+            ->delete($cardId); 
+    }
+
+
     /**
     * Add and remove labels to the card.
     */
