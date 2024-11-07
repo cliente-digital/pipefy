@@ -74,7 +74,7 @@ class One
         $gql->set("CHILDCARDID", $childCardId);
         $gql->set("SOURCEID", $sourceId);
         $gqlResult = $this->request($gql);
-        return $gqlResult->data->deleteCard; 
+        return $gqlResult->data->createCardRelation; 
     }
 
 
