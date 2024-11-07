@@ -1,0 +1,10 @@
+mutation {
+createCardRelation(input: {
+parentId : _R.PARENTCARDID_,
+childId : _R.CHILDCARDID_,
+sourceType : "PipeRelation",
+sourceId : _R.SOURCEID_ 
+}) {
+clientMutationId
+}
+}

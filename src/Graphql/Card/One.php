@@ -68,6 +68,16 @@ class One
         return $gqlResult->data->deleteCard; 
     }
 
+    public function connectCard(string $parentCardId, string $childCardId, string $sourceId){
+        $gql = $this->getGQL("card-delete");
+        $gql->set("PARENTCARDID", $parentCardId);
+        $gql->set("CHILDCARDID", $childCardId);
+        $gql->set("SOURCEID", $sourceId);
+        $gqlResult = $this->request($gql);
+        return $gqlResult->data->deleteCard; 
+    }
+
+
 
 
 

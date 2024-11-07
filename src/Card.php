@@ -76,6 +76,13 @@ class Card
             ->delete($cardId); 
     }
 
+    public function connectCard(string $parentCardId, string $childCardId, string $sourceId)
+    {
+        return (new One($this->id))
+            ->connectCard($parentCardId, $childCardId, $sourceId); 
+    }
+
+
 
     /**
     * Add and remove labels to the card.
